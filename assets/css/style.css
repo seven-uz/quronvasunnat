@@ -3313,7 +3313,8 @@ header .congr-juma {
   border-radius: 4px;
 }
 
-.header-carousel.daily .carousel-sm-more a, .header-carousel.daily .carousel-sm-more i {
+.header-carousel.daily .carousel-sm-more a,
+.header-carousel.daily .carousel-sm-more i {
   color: #fff;
 }
 
@@ -3735,7 +3736,7 @@ footer input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-footer input[type=number] {
+footer input[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -4116,7 +4117,7 @@ select {
 }
 
 .listSurah {
-  height: 650px;
+  height: 90vh;
   overflow: hidden;
   overflow-y: auto;
   position: relative;
@@ -4213,4 +4214,87 @@ select {
 .arabicFont {
   font-family: Amiri;
   font-size: 20px;
+}
+
+.wordsarabic {
+  font-family: "Scheherazade", serif;
+  font-size: 40px;
+  text-align: right;
+  direction: rtl;
+  text-align: justify;
+  cursor: pointer;
+}
+
+.wordsarabic:hover {
+  text-shadow: 0 0 3px black;
+}
+
+.tooltip2 {
+  color: #000000;
+  outline: none;
+  position: relative;
+}
+
+.tooltip2 span {
+  display: none;
+}
+
+.tooltip2:hover span {
+  position: absolute;
+  right: 0;
+  top: 57px;
+  z-index: 99;
+  min-width: 200px;
+  max-width: 300px;
+  width: 100% !important;
+  display: block;
+  text-align: left;
+  cursor: text;
+}
+
+.tooltip2 .custom h1 {
+  font-family: "Scheherazade", serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.tooltip2 .custom em {
+  font-family: Poppins, Geneva, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+}
+
+.tooltip2 .custom {
+  padding: 5px;
+  background: orange;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  position: relative;
+  text-shadow: none;
+}
+
+.tooltip2 .custom:before {
+  z-index: 10;
+  content: "";
+  position: absolute;
+  margin-left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0px;
+  width: 0;
+  height: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 5px solid orange;
+  border-color: transparent transparent orange orange;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
 }

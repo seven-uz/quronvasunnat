@@ -126,25 +126,24 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 							<i onclick="document.getElementById('fullsura<?= $rowSura['ns'] ?>').pause();document.getElementById('fullsura<?= $rowSura['no'] ?>').currentTime=0" class="fas fa-stop c-pointer stopSura d-none" id="stop<?= $rowSura['id'] ?>" alt="<?= $rowSura['id'] ?>" data-toggle="tooltip" data-placement="top" title="To'xtatish"></i>
 							<audio preload="none" id="fullsura<?= $rowSura['ns'] ?>">
 								<?
-											if($rowSura['ns'] < 10) $fullsura = '00'.$rowSura['ns'];else
-											if($rowSura['ns'] > 9 and $rowSura['ns'] < 100) $fullsura = '0'.$rowSura['ns'];else
-											if($rowSura['ns'] > 99) $fullsura = $rowSura['ns'];
-											
-											if($_COOKIE['qori']=="ahmed_ibn_ali_al_ajamy_128kbps") { $readerDir = 'ahmed-al-ajmi'; $reader = 'ahmed-al-ajmi-'.$fullsura; }
-											if($_COOKIE['qori']=="Alafasy_128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Husary_128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Ghamadi_40kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Abu_Bakr_Ash-Shaatree_128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Abdurrahmaan_As-Sudais_192kbps") { $readerDir = 'abdul-rahman-al-sudais/192'; $reader = 'abdul-rahman-al-sudais-'.$fullsura.'-qurancentral.com-192'; }
-											if($_COOKIE['qori']=="Abdul_Basit_Mujawwad_128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Abdul_Basit_Murattal_192kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="MaherAlMuaiqly128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Minshawy_Mujawwad_192kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Minshawy_Murattal_128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Saood_ash-Shuraym_128kbps") { $readerDir = ''; $reader = ''; }
-											if($_COOKIE['qori']=="Nasser_Alqatami_128kbps") { $readerDir = ''; $reader = ''; }
-									
-											?>
+								if($rowSura['ns'] < 10) $fullsura = '00'.$rowSura['ns'];else
+								if($rowSura['ns'] > 9 and $rowSura['ns'] < 100) $fullsura = '0'.$rowSura['ns'];else
+								if($rowSura['ns'] > 99) $fullsura = $rowSura['ns'];
+								
+								if($_COOKIE['qori']=="ahmed_ibn_ali_al_ajamy_128kbps") { $readerDir = 'ahmed-al-ajmi'; $reader = 'ahmed-al-ajmi-'.$fullsura; }
+								if($_COOKIE['qori']=="Alafasy_128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Husary_128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Ghamadi_40kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Abu_Bakr_Ash-Shaatree_128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Abdurrahmaan_As-Sudais_192kbps") { $readerDir = 'abdul-rahman-al-sudais/192'; $reader = 'abdul-rahman-al-sudais-'.$fullsura.'-qurancentral.com-192'; }
+								if($_COOKIE['qori']=="Abdul_Basit_Mujawwad_128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Abdul_Basit_Murattal_192kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="MaherAlMuaiqly128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Minshawy_Mujawwad_192kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Minshawy_Murattal_128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Saood_ash-Shuraym_128kbps") { $readerDir = ''; $reader = ''; }
+								if($_COOKIE['qori']=="Nasser_Alqatami_128kbps") { $readerDir = ''; $reader = ''; }
+								?>
 								<source src="https://podcasts.qurancentral.com/<?= $readerDir . '/' . $reader ?>.mp3" type="audio/mpeg">
 							</audio>
 						</p>
@@ -159,18 +158,17 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 						</p>
 						<?do{
 												
-												if($rowSura['ns'] < 10) $ns = '00'.$rowSura['ns'];else
-												if($rowSura['ns'] > 9 and $rowSura['ns'] < 100) $ns = '0'.$rowSura['ns'];else
-												if($rowSura['ns'] > 99) $ns = $rowSura['ns'];
+							if($rowSura['ns'] < 10) $ns = '00'.$rowSura['ns'];else
+							if($rowSura['ns'] > 9 and $rowSura['ns'] < 100) $ns = '0'.$rowSura['ns'];else
+							if($rowSura['ns'] > 99) $ns = $rowSura['ns'];
+							if($rowSura['no'] < 10) $no = '00'.$rowSura['no'];else
+							if($rowSura['no'] > 9 and $rowSura['no'] < 100) $no = '0'.$rowSura['no'];else
+							if($rowSura['no'] > 99) $no = $rowSura['no'];
 
-												if($rowSura['no'] < 10) $no = '00'.$rowSura['no'];else
-												if($rowSura['no'] > 9 and $rowSura['no'] < 100) $no = '0'.$rowSura['no'];else
-												if($rowSura['no'] > 99) $no = $rowSura['no'];
-
-										$linkSura = 'https://everyayah.com/data/'.$_COOKIE[qori].'/'.$ns.$no;
-										$share = 'share'.$rowSura['ns'].$rowSura['no'];
-										$copy = 'copy'.$rowSura['ns'].$rowSura['no'];
-									?>
+						$linkSura = 'https://everyayah.com/data/'.$_COOKIE[qori].'/'.$ns.$no;
+						$share = 'share'.$rowSura['ns'].$rowSura['no'];
+						$copy = 'copy'.$rowSura['ns'].$rowSura['no'];
+					?>
 						<div class="suraItem">
 							<div class="suraItem-media">
 								<i class="fas fa-share-alt" data-toggle="tooltip" data-placement="top" title="Do'stlar bilan ulashish" id="<?= $share ?>"></i>
@@ -186,9 +184,17 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 								<audio preload="none" id="oyat<?= $rowSura['ns'] . $rowSura['no'] ?>">
 									<source src="<?= $linkSura ?>.mp3" type="audio/mpeg">
 								</audio>
-								<p class="d-none" id="<?= $copy ?>"><i style="text-align:right"><?= $rowSura['textar'] . "</i>\nMa'nosi: " . $rowSura['mano'] . "\n[" . $rowSura['title'] . " surasi " . $rowSura['no'] . "-oyat]"; ?></p>
+								<p class="d-none" id="<?= $copy ?>"><i style="text-align:right"><?=$rowSura['textar']."</i>\nMa'nosi: ".$rowSura['mano']."\n[".$rowSura['title']." surasi ".$rowSura['no']."-oyat]";?></p>
 							</div>
 							<div class="suraItem-content">
+								<div style="text-align:right">
+								<?
+									$getword = mysqli_query($db, "SELECT * FROM `words` WHERE oyat = '$rowSura[no]' and sura = '$rowSura[ns]' ORDER BY `word`");
+									while($row = $getword->fetch_assoc()){
+										echo '<span class="wordsarabic tooltip2" style="font-family:page'.$row['page'].'">'.$row['font']; if(!empty($row['text_ar']) and !empty($row['mano'])) echo '<span class="custom"><h1 style="font-family:page'.$row['page'].'">'.$row['font'].'</h1><em>'.$row['text'].' - '.$row['mano'].'</em></span>'; echo '</span>';
+									}
+								?>
+								</div>
 								<p id="<?= $rowSura['no'] ?>" class="suraAr" style="font-family:page<?= $rowSura['np'] ?>"><?= $rowSura['textp'] ?></p>
 								<b class="indent-20"><?= $rowSura['mano'] ?></b>
 							</div>

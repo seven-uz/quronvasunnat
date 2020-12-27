@@ -1,0 +1,4216 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400;1,700&family=Comfortaa:wght@400;700&family=Dancing+Script:wght@400;700&family=Oswald:wght@400;600&family=Poppins:wght@400;600;900&family=Raleway:wght@400;700;900&display=swap");
+@font-face {
+  font-family: 'me_quranRegular';
+  src: url("../fonts/me_quran-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "me_quran";
+  src: url("me_quranR3HOQ.html");
+}
+
+@font-face {
+  font-family: "DejaVuSans";
+  src: url("../fonts/DejaVuSans.ttf");
+}
+
+@font-face {
+  font-family: "Arabic";
+  src: url("../fonts/trado.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto.TTF");
+}
+
+@font-face {
+  font-family: "Cambria";
+  src: url("../fonts/cambriai.ttf");
+}
+
+@font-face {
+  font-family: "Roboto Condensed";
+  src: url("../fonts/Roboto-Condensed.TTF");
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../fonts/Roboto-Medium.TTF");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/OpenSans.TTF");
+}
+
+@font-face {
+  font-family: "Open Sans Condensed";
+  src: url("../fonts/OpenSans-Condensed.TTF");
+}
+
+@font-face {
+  font-family: "Basmala";
+  src: url("../fonts/QCF_BSML.TTF");
+}
+
+@font-face {
+  font-family: "page1";
+  src: url("../fonts/QCF_P001.TTF");
+}
+
+@font-face {
+  font-family: "page2";
+  src: url("../fonts/QCF_P002.TTF");
+}
+
+@font-face {
+  font-family: "page3";
+  src: url("../fonts/QCF_P003.TTF");
+}
+
+@font-face {
+  font-family: "page4";
+  src: url("../fonts/QCF_P004.TTF");
+}
+
+@font-face {
+  font-family: "page5";
+  src: url("../fonts/QCF_P005.TTF");
+}
+
+@font-face {
+  font-family: "page6";
+  src: url("../fonts/QCF_P006.TTF");
+}
+
+@font-face {
+  font-family: "page7";
+  src: url("../fonts/QCF_P007.TTF");
+}
+
+@font-face {
+  font-family: "page8";
+  src: url("../fonts/QCF_P008.TTF");
+}
+
+@font-face {
+  font-family: "page9";
+  src: url("../fonts/QCF_P009.TTF");
+}
+
+@font-face {
+  font-family: "page10";
+  src: url("../fonts/QCF_P010.TTF");
+}
+
+@font-face {
+  font-family: "page11";
+  src: url("../fonts/QCF_P011.TTF");
+}
+
+@font-face {
+  font-family: "page12";
+  src: url("../fonts/QCF_P012.TTF");
+}
+
+@font-face {
+  font-family: "page13";
+  src: url("../fonts/QCF_P013.TTF");
+}
+
+@font-face {
+  font-family: "page14";
+  src: url("../fonts/QCF_P014.TTF");
+}
+
+@font-face {
+  font-family: "page15";
+  src: url("../fonts/QCF_P015.TTF");
+}
+
+@font-face {
+  font-family: "page16";
+  src: url("../fonts/QCF_P016.TTF");
+}
+
+@font-face {
+  font-family: "page17";
+  src: url("../fonts/QCF_P017.TTF");
+}
+
+@font-face {
+  font-family: "page18";
+  src: url("../fonts/QCF_P018.TTF");
+}
+
+@font-face {
+  font-family: "page19";
+  src: url("../fonts/QCF_P019.TTF");
+}
+
+@font-face {
+  font-family: "page20";
+  src: url("../fonts/QCF_P020.TTF");
+}
+
+@font-face {
+  font-family: "page21";
+  src: url("../fonts/QCF_P021.TTF");
+}
+
+@font-face {
+  font-family: "page22";
+  src: url("../fonts/QCF_P022.TTF");
+}
+
+@font-face {
+  font-family: "page23";
+  src: url("../fonts/QCF_P023.TTF");
+}
+
+@font-face {
+  font-family: "page24";
+  src: url("../fonts/QCF_P024.TTF");
+}
+
+@font-face {
+  font-family: "page25";
+  src: url("../fonts/QCF_P025.TTF");
+}
+
+@font-face {
+  font-family: "page26";
+  src: url("../fonts/QCF_P026.TTF");
+}
+
+@font-face {
+  font-family: "page27";
+  src: url("../fonts/QCF_P027.TTF");
+}
+
+@font-face {
+  font-family: "page28";
+  src: url("../fonts/QCF_P028.TTF");
+}
+
+@font-face {
+  font-family: "page29";
+  src: url("../fonts/QCF_P029.TTF");
+}
+
+@font-face {
+  font-family: "page30";
+  src: url("../fonts/QCF_P030.TTF");
+}
+
+@font-face {
+  font-family: "page31";
+  src: url("../fonts/QCF_P031.TTF");
+}
+
+@font-face {
+  font-family: "page32";
+  src: url("../fonts/QCF_P032.TTF");
+}
+
+@font-face {
+  font-family: "page33";
+  src: url("../fonts/QCF_P033.TTF");
+}
+
+@font-face {
+  font-family: "page34";
+  src: url("../fonts/QCF_P034.TTF");
+}
+
+@font-face {
+  font-family: "page35";
+  src: url("../fonts/QCF_P035.TTF");
+}
+
+@font-face {
+  font-family: "page36";
+  src: url("../fonts/QCF_P036.TTF");
+}
+
+@font-face {
+  font-family: "page37";
+  src: url("../fonts/QCF_P037.TTF");
+}
+
+@font-face {
+  font-family: "page38";
+  src: url("../fonts/QCF_P038.TTF");
+}
+
+@font-face {
+  font-family: "page39";
+  src: url("../fonts/QCF_P039.TTF");
+}
+
+@font-face {
+  font-family: "page40";
+  src: url("../fonts/QCF_P040.TTF");
+}
+
+@font-face {
+  font-family: "page41";
+  src: url("../fonts/QCF_P041.TTF");
+}
+
+@font-face {
+  font-family: "page42";
+  src: url("../fonts/QCF_P042.TTF");
+}
+
+@font-face {
+  font-family: "page43";
+  src: url("../fonts/QCF_P043.TTF");
+}
+
+@font-face {
+  font-family: "page44";
+  src: url("../fonts/QCF_P044.TTF");
+}
+
+@font-face {
+  font-family: "page45";
+  src: url("../fonts/QCF_P045.TTF");
+}
+
+@font-face {
+  font-family: "page46";
+  src: url("../fonts/QCF_P046.TTF");
+}
+
+@font-face {
+  font-family: "page47";
+  src: url("../fonts/QCF_P047.TTF");
+}
+
+@font-face {
+  font-family: "page48";
+  src: url("../fonts/QCF_P048.TTF");
+}
+
+@font-face {
+  font-family: "page49";
+  src: url("../fonts/QCF_P049.TTF");
+}
+
+@font-face {
+  font-family: "page50";
+  src: url("../fonts/QCF_P050.TTF");
+}
+
+@font-face {
+  font-family: "page51";
+  src: url("../fonts/QCF_P051.TTF");
+}
+
+@font-face {
+  font-family: "page52";
+  src: url("../fonts/QCF_P052.TTF");
+}
+
+@font-face {
+  font-family: "page53";
+  src: url("../fonts/QCF_P053.TTF");
+}
+
+@font-face {
+  font-family: "page54";
+  src: url("../fonts/QCF_P054.TTF");
+}
+
+@font-face {
+  font-family: "page55";
+  src: url("../fonts/QCF_P055.TTF");
+}
+
+@font-face {
+  font-family: "page56";
+  src: url("../fonts/QCF_P056.TTF");
+}
+
+@font-face {
+  font-family: "page57";
+  src: url("../fonts/QCF_P057.TTF");
+}
+
+@font-face {
+  font-family: "page58";
+  src: url("../fonts/QCF_P058.TTF");
+}
+
+@font-face {
+  font-family: "page59";
+  src: url("../fonts/QCF_P059.TTF");
+}
+
+@font-face {
+  font-family: "page60";
+  src: url("../fonts/QCF_P060.TTF");
+}
+
+@font-face {
+  font-family: "page61";
+  src: url("../fonts/QCF_P061.TTF");
+}
+
+@font-face {
+  font-family: "page62";
+  src: url("../fonts/QCF_P062.TTF");
+}
+
+@font-face {
+  font-family: "page63";
+  src: url("../fonts/QCF_P063.TTF");
+}
+
+@font-face {
+  font-family: "page64";
+  src: url("../fonts/QCF_P064.TTF");
+}
+
+@font-face {
+  font-family: "page65";
+  src: url("../fonts/QCF_P065.TTF");
+}
+
+@font-face {
+  font-family: "page66";
+  src: url("../fonts/QCF_P066.TTF");
+}
+
+@font-face {
+  font-family: "page67";
+  src: url("../fonts/QCF_P067.TTF");
+}
+
+@font-face {
+  font-family: "page68";
+  src: url("../fonts/QCF_P068.TTF");
+}
+
+@font-face {
+  font-family: "page69";
+  src: url("../fonts/QCF_P069.TTF");
+}
+
+@font-face {
+  font-family: "page70";
+  src: url("../fonts/QCF_P070.TTF");
+}
+
+@font-face {
+  font-family: "page71";
+  src: url("../fonts/QCF_P071.TTF");
+}
+
+@font-face {
+  font-family: "page72";
+  src: url("../fonts/QCF_P072.TTF");
+}
+
+@font-face {
+  font-family: "page73";
+  src: url("../fonts/QCF_P073.TTF");
+}
+
+@font-face {
+  font-family: "page74";
+  src: url("../fonts/QCF_P074.TTF");
+}
+
+@font-face {
+  font-family: "page75";
+  src: url("../fonts/QCF_P075.TTF");
+}
+
+@font-face {
+  font-family: "page76";
+  src: url("../fonts/QCF_P076.TTF");
+}
+
+@font-face {
+  font-family: "page77";
+  src: url("../fonts/QCF_P077.TTF");
+}
+
+@font-face {
+  font-family: "page78";
+  src: url("../fonts/QCF_P078.TTF");
+}
+
+@font-face {
+  font-family: "page79";
+  src: url("../fonts/QCF_P079.TTF");
+}
+
+@font-face {
+  font-family: "page80";
+  src: url("../fonts/QCF_P080.TTF");
+}
+
+@font-face {
+  font-family: "page81";
+  src: url("../fonts/QCF_P081.TTF");
+}
+
+@font-face {
+  font-family: "page82";
+  src: url("../fonts/QCF_P082.TTF");
+}
+
+@font-face {
+  font-family: "page83";
+  src: url("../fonts/QCF_P083.TTF");
+}
+
+@font-face {
+  font-family: "page84";
+  src: url("../fonts/QCF_P084.TTF");
+}
+
+@font-face {
+  font-family: "page85";
+  src: url("../fonts/QCF_P085.TTF");
+}
+
+@font-face {
+  font-family: "page86";
+  src: url("../fonts/QCF_P086.TTF");
+}
+
+@font-face {
+  font-family: "page87";
+  src: url("../fonts/QCF_P087.TTF");
+}
+
+@font-face {
+  font-family: "page88";
+  src: url("../fonts/QCF_P088.TTF");
+}
+
+@font-face {
+  font-family: "page89";
+  src: url("../fonts/QCF_P089.TTF");
+}
+
+@font-face {
+  font-family: "page90";
+  src: url("../fonts/QCF_P090.TTF");
+}
+
+@font-face {
+  font-family: "page91";
+  src: url("../fonts/QCF_P091.TTF");
+}
+
+@font-face {
+  font-family: "page92";
+  src: url("../fonts/QCF_P092.TTF");
+}
+
+@font-face {
+  font-family: "page93";
+  src: url("../fonts/QCF_P093.TTF");
+}
+
+@font-face {
+  font-family: "page94";
+  src: url("../fonts/QCF_P094.TTF");
+}
+
+@font-face {
+  font-family: "page95";
+  src: url("../fonts/QCF_P095.TTF");
+}
+
+@font-face {
+  font-family: "page96";
+  src: url("../fonts/QCF_P096.TTF");
+}
+
+@font-face {
+  font-family: "page97";
+  src: url("../fonts/QCF_P097.TTF");
+}
+
+@font-face {
+  font-family: "page98";
+  src: url("../fonts/QCF_P098.TTF");
+}
+
+@font-face {
+  font-family: "page99";
+  src: url("../fonts/QCF_P099.TTF");
+}
+
+@font-face {
+  font-family: "page100";
+  src: url("../fonts/QCF_P100.TTF");
+}
+
+@font-face {
+  font-family: "page101";
+  src: url("../fonts/QCF_P101.TTF");
+}
+
+@font-face {
+  font-family: "page102";
+  src: url("../fonts/QCF_P102.TTF");
+}
+
+@font-face {
+  font-family: "page103";
+  src: url("../fonts/QCF_P103.TTF");
+}
+
+@font-face {
+  font-family: "page104";
+  src: url("../fonts/QCF_P104.TTF");
+}
+
+@font-face {
+  font-family: "page105";
+  src: url("../fonts/QCF_P105.TTF");
+}
+
+@font-face {
+  font-family: "page106";
+  src: url("../fonts/QCF_P106.TTF");
+}
+
+@font-face {
+  font-family: "page107";
+  src: url("../fonts/QCF_P107.TTF");
+}
+
+@font-face {
+  font-family: "page108";
+  src: url("../fonts/QCF_P108.TTF");
+}
+
+@font-face {
+  font-family: "page109";
+  src: url("../fonts/QCF_P109.TTF");
+}
+
+@font-face {
+  font-family: "page110";
+  src: url("../fonts/QCF_P110.TTF");
+}
+
+@font-face {
+  font-family: "page111";
+  src: url("../fonts/QCF_P111.TTF");
+}
+
+@font-face {
+  font-family: "page112";
+  src: url("../fonts/QCF_P112.TTF");
+}
+
+@font-face {
+  font-family: "page113";
+  src: url("../fonts/QCF_P113.TTF");
+}
+
+@font-face {
+  font-family: "page114";
+  src: url("../fonts/QCF_P114.TTF");
+}
+
+@font-face {
+  font-family: "page115";
+  src: url("../fonts/QCF_P115.TTF");
+}
+
+@font-face {
+  font-family: "page116";
+  src: url("../fonts/QCF_P116.TTF");
+}
+
+@font-face {
+  font-family: "page117";
+  src: url("../fonts/QCF_P117.TTF");
+}
+
+@font-face {
+  font-family: "page118";
+  src: url("../fonts/QCF_P118.TTF");
+}
+
+@font-face {
+  font-family: "page119";
+  src: url("../fonts/QCF_P119.TTF");
+}
+
+@font-face {
+  font-family: "page120";
+  src: url("../fonts/QCF_P120.TTF");
+}
+
+@font-face {
+  font-family: "page121";
+  src: url("../fonts/QCF_P121.TTF");
+}
+
+@font-face {
+  font-family: "page122";
+  src: url("../fonts/QCF_P122.TTF");
+}
+
+@font-face {
+  font-family: "page123";
+  src: url("../fonts/QCF_P123.TTF");
+}
+
+@font-face {
+  font-family: "page124";
+  src: url("../fonts/QCF_P124.TTF");
+}
+
+@font-face {
+  font-family: "page125";
+  src: url("../fonts/QCF_P125.TTF");
+}
+
+@font-face {
+  font-family: "page126";
+  src: url("../fonts/QCF_P126.TTF");
+}
+
+@font-face {
+  font-family: "page127";
+  src: url("../fonts/QCF_P127.TTF");
+}
+
+@font-face {
+  font-family: "page128";
+  src: url("../fonts/QCF_P128.TTF");
+}
+
+@font-face {
+  font-family: "page129";
+  src: url("../fonts/QCF_P129.TTF");
+}
+
+@font-face {
+  font-family: "page130";
+  src: url("../fonts/QCF_P130.TTF");
+}
+
+@font-face {
+  font-family: "page131";
+  src: url("../fonts/QCF_P131.TTF");
+}
+
+@font-face {
+  font-family: "page132";
+  src: url("../fonts/QCF_P132.TTF");
+}
+
+@font-face {
+  font-family: "page133";
+  src: url("../fonts/QCF_P133.TTF");
+}
+
+@font-face {
+  font-family: "page134";
+  src: url("../fonts/QCF_P134.TTF");
+}
+
+@font-face {
+  font-family: "page135";
+  src: url("../fonts/QCF_P135.TTF");
+}
+
+@font-face {
+  font-family: "page136";
+  src: url("../fonts/QCF_P136.TTF");
+}
+
+@font-face {
+  font-family: "page137";
+  src: url("../fonts/QCF_P137.TTF");
+}
+
+@font-face {
+  font-family: "page138";
+  src: url("../fonts/QCF_P138.TTF");
+}
+
+@font-face {
+  font-family: "page139";
+  src: url("../fonts/QCF_P139.TTF");
+}
+
+@font-face {
+  font-family: "page140";
+  src: url("../fonts/QCF_P140.TTF");
+}
+
+@font-face {
+  font-family: "page141";
+  src: url("../fonts/QCF_P141.TTF");
+}
+
+@font-face {
+  font-family: "page142";
+  src: url("../fonts/QCF_P142.TTF");
+}
+
+@font-face {
+  font-family: "page143";
+  src: url("../fonts/QCF_P143.TTF");
+}
+
+@font-face {
+  font-family: "page144";
+  src: url("../fonts/QCF_P144.TTF");
+}
+
+@font-face {
+  font-family: "page145";
+  src: url("../fonts/QCF_P145.TTF");
+}
+
+@font-face {
+  font-family: "page146";
+  src: url("../fonts/QCF_P146.TTF");
+}
+
+@font-face {
+  font-family: "page147";
+  src: url("../fonts/QCF_P147.TTF");
+}
+
+@font-face {
+  font-family: "page148";
+  src: url("../fonts/QCF_P148.TTF");
+}
+
+@font-face {
+  font-family: "page149";
+  src: url("../fonts/QCF_P149.TTF");
+}
+
+@font-face {
+  font-family: "page150";
+  src: url("../fonts/QCF_P150.TTF");
+}
+
+@font-face {
+  font-family: "page151";
+  src: url("../fonts/QCF_P151.TTF");
+}
+
+@font-face {
+  font-family: "page152";
+  src: url("../fonts/QCF_P152.TTF");
+}
+
+@font-face {
+  font-family: "page153";
+  src: url("../fonts/QCF_P153.TTF");
+}
+
+@font-face {
+  font-family: "page154";
+  src: url("../fonts/QCF_P154.TTF");
+}
+
+@font-face {
+  font-family: "page155";
+  src: url("../fonts/QCF_P155.TTF");
+}
+
+@font-face {
+  font-family: "page156";
+  src: url("../fonts/QCF_P156.TTF");
+}
+
+@font-face {
+  font-family: "page157";
+  src: url("../fonts/QCF_P157.TTF");
+}
+
+@font-face {
+  font-family: "page158";
+  src: url("../fonts/QCF_P158.TTF");
+}
+
+@font-face {
+  font-family: "page159";
+  src: url("../fonts/QCF_P159.TTF");
+}
+
+@font-face {
+  font-family: "page160";
+  src: url("../fonts/QCF_P160.TTF");
+}
+
+@font-face {
+  font-family: "page161";
+  src: url("../fonts/QCF_P161.TTF");
+}
+
+@font-face {
+  font-family: "page162";
+  src: url("../fonts/QCF_P162.TTF");
+}
+
+@font-face {
+  font-family: "page163";
+  src: url("../fonts/QCF_P163.TTF");
+}
+
+@font-face {
+  font-family: "page164";
+  src: url("../fonts/QCF_P164.TTF");
+}
+
+@font-face {
+  font-family: "page165";
+  src: url("../fonts/QCF_P165.TTF");
+}
+
+@font-face {
+  font-family: "page166";
+  src: url("../fonts/QCF_P166.TTF");
+}
+
+@font-face {
+  font-family: "page167";
+  src: url("../fonts/QCF_P167.TTF");
+}
+
+@font-face {
+  font-family: "page168";
+  src: url("../fonts/QCF_P168.TTF");
+}
+
+@font-face {
+  font-family: "page169";
+  src: url("../fonts/QCF_P169.TTF");
+}
+
+@font-face {
+  font-family: "page170";
+  src: url("../fonts/QCF_P170.TTF");
+}
+
+@font-face {
+  font-family: "page171";
+  src: url("../fonts/QCF_P171.TTF");
+}
+
+@font-face {
+  font-family: "page172";
+  src: url("../fonts/QCF_P172.TTF");
+}
+
+@font-face {
+  font-family: "page173";
+  src: url("../fonts/QCF_P173.TTF");
+}
+
+@font-face {
+  font-family: "page174";
+  src: url("../fonts/QCF_P174.TTF");
+}
+
+@font-face {
+  font-family: "page175";
+  src: url("../fonts/QCF_P175.TTF");
+}
+
+@font-face {
+  font-family: "page176";
+  src: url("../fonts/QCF_P176.TTF");
+}
+
+@font-face {
+  font-family: "page177";
+  src: url("../fonts/QCF_P177.TTF");
+}
+
+@font-face {
+  font-family: "page178";
+  src: url("../fonts/QCF_P178.TTF");
+}
+
+@font-face {
+  font-family: "page179";
+  src: url("../fonts/QCF_P179.TTF");
+}
+
+@font-face {
+  font-family: "page180";
+  src: url("../fonts/QCF_P180.TTF");
+}
+
+@font-face {
+  font-family: "page181";
+  src: url("../fonts/QCF_P181.TTF");
+}
+
+@font-face {
+  font-family: "page182";
+  src: url("../fonts/QCF_P182.TTF");
+}
+
+@font-face {
+  font-family: "page183";
+  src: url("../fonts/QCF_P183.TTF");
+}
+
+@font-face {
+  font-family: "page184";
+  src: url("../fonts/QCF_P184.TTF");
+}
+
+@font-face {
+  font-family: "page185";
+  src: url("../fonts/QCF_P185.TTF");
+}
+
+@font-face {
+  font-family: "page186";
+  src: url("../fonts/QCF_P186.TTF");
+}
+
+@font-face {
+  font-family: "page187";
+  src: url("../fonts/QCF_P187.TTF");
+}
+
+@font-face {
+  font-family: "page188";
+  src: url("../fonts/QCF_P188.TTF");
+}
+
+@font-face {
+  font-family: "page189";
+  src: url("../fonts/QCF_P189.TTF");
+}
+
+@font-face {
+  font-family: "page190";
+  src: url("../fonts/QCF_P190.TTF");
+}
+
+@font-face {
+  font-family: "page191";
+  src: url("../fonts/QCF_P191.TTF");
+}
+
+@font-face {
+  font-family: "page192";
+  src: url("../fonts/QCF_P192.TTF");
+}
+
+@font-face {
+  font-family: "page193";
+  src: url("../fonts/QCF_P193.TTF");
+}
+
+@font-face {
+  font-family: "page194";
+  src: url("../fonts/QCF_P194.TTF");
+}
+
+@font-face {
+  font-family: "page195";
+  src: url("../fonts/QCF_P195.TTF");
+}
+
+@font-face {
+  font-family: "page196";
+  src: url("../fonts/QCF_P196.TTF");
+}
+
+@font-face {
+  font-family: "page197";
+  src: url("../fonts/QCF_P197.TTF");
+}
+
+@font-face {
+  font-family: "page198";
+  src: url("../fonts/QCF_P198.TTF");
+}
+
+@font-face {
+  font-family: "page199";
+  src: url("../fonts/QCF_P199.TTF");
+}
+
+@font-face {
+  font-family: "page200";
+  src: url("../fonts/QCF_P200.TTF");
+}
+
+@font-face {
+  font-family: "page201";
+  src: url("../fonts/QCF_P201.TTF");
+}
+
+@font-face {
+  font-family: "page202";
+  src: url("../fonts/QCF_P202.TTF");
+}
+
+@font-face {
+  font-family: "page203";
+  src: url("../fonts/QCF_P203.TTF");
+}
+
+@font-face {
+  font-family: "page204";
+  src: url("../fonts/QCF_P204.TTF");
+}
+
+@font-face {
+  font-family: "page205";
+  src: url("../fonts/QCF_P205.TTF");
+}
+
+@font-face {
+  font-family: "page206";
+  src: url("../fonts/QCF_P206.TTF");
+}
+
+@font-face {
+  font-family: "page207";
+  src: url("../fonts/QCF_P207.TTF");
+}
+
+@font-face {
+  font-family: "page208";
+  src: url("../fonts/QCF_P208.TTF");
+}
+
+@font-face {
+  font-family: "page209";
+  src: url("../fonts/QCF_P209.TTF");
+}
+
+@font-face {
+  font-family: "page210";
+  src: url("../fonts/QCF_P210.TTF");
+}
+
+@font-face {
+  font-family: "page211";
+  src: url("../fonts/QCF_P211.TTF");
+}
+
+@font-face {
+  font-family: "page212";
+  src: url("../fonts/QCF_P212.TTF");
+}
+
+@font-face {
+  font-family: "page213";
+  src: url("../fonts/QCF_P213.TTF");
+}
+
+@font-face {
+  font-family: "page214";
+  src: url("../fonts/QCF_P214.TTF");
+}
+
+@font-face {
+  font-family: "page215";
+  src: url("../fonts/QCF_P215.TTF");
+}
+
+@font-face {
+  font-family: "page216";
+  src: url("../fonts/QCF_P216.TTF");
+}
+
+@font-face {
+  font-family: "page217";
+  src: url("../fonts/QCF_P217.TTF");
+}
+
+@font-face {
+  font-family: "page218";
+  src: url("../fonts/QCF_P218.TTF");
+}
+
+@font-face {
+  font-family: "page219";
+  src: url("../fonts/QCF_P219.TTF");
+}
+
+@font-face {
+  font-family: "page220";
+  src: url("../fonts/QCF_P220.TTF");
+}
+
+@font-face {
+  font-family: "page221";
+  src: url("../fonts/QCF_P221.TTF");
+}
+
+@font-face {
+  font-family: "page222";
+  src: url("../fonts/QCF_P222.TTF");
+}
+
+@font-face {
+  font-family: "page223";
+  src: url("../fonts/QCF_P223.TTF");
+}
+
+@font-face {
+  font-family: "page224";
+  src: url("../fonts/QCF_P224.TTF");
+}
+
+@font-face {
+  font-family: "page225";
+  src: url("../fonts/QCF_P225.TTF");
+}
+
+@font-face {
+  font-family: "page226";
+  src: url("../fonts/QCF_P226.TTF");
+}
+
+@font-face {
+  font-family: "page227";
+  src: url("../fonts/QCF_P227.TTF");
+}
+
+@font-face {
+  font-family: "page228";
+  src: url("../fonts/QCF_P228.TTF");
+}
+
+@font-face {
+  font-family: "page229";
+  src: url("../fonts/QCF_P229.TTF");
+}
+
+@font-face {
+  font-family: "page230";
+  src: url("../fonts/QCF_P230.TTF");
+}
+
+@font-face {
+  font-family: "page231";
+  src: url("../fonts/QCF_P231.TTF");
+}
+
+@font-face {
+  font-family: "page232";
+  src: url("../fonts/QCF_P232.TTF");
+}
+
+@font-face {
+  font-family: "page233";
+  src: url("../fonts/QCF_P233.TTF");
+}
+
+@font-face {
+  font-family: "page234";
+  src: url("../fonts/QCF_P234.TTF");
+}
+
+@font-face {
+  font-family: "page235";
+  src: url("../fonts/QCF_P235.TTF");
+}
+
+@font-face {
+  font-family: "page236";
+  src: url("../fonts/QCF_P236.TTF");
+}
+
+@font-face {
+  font-family: "page237";
+  src: url("../fonts/QCF_P237.TTF");
+}
+
+@font-face {
+  font-family: "page238";
+  src: url("../fonts/QCF_P238.TTF");
+}
+
+@font-face {
+  font-family: "page239";
+  src: url("../fonts/QCF_P239.TTF");
+}
+
+@font-face {
+  font-family: "page240";
+  src: url("../fonts/QCF_P240.TTF");
+}
+
+@font-face {
+  font-family: "page241";
+  src: url("../fonts/QCF_P241.TTF");
+}
+
+@font-face {
+  font-family: "page242";
+  src: url("../fonts/QCF_P242.TTF");
+}
+
+@font-face {
+  font-family: "page243";
+  src: url("../fonts/QCF_P243.TTF");
+}
+
+@font-face {
+  font-family: "page244";
+  src: url("../fonts/QCF_P244.TTF");
+}
+
+@font-face {
+  font-family: "page245";
+  src: url("../fonts/QCF_P245.TTF");
+}
+
+@font-face {
+  font-family: "page246";
+  src: url("../fonts/QCF_P246.TTF");
+}
+
+@font-face {
+  font-family: "page247";
+  src: url("../fonts/QCF_P247.TTF");
+}
+
+@font-face {
+  font-family: "page248";
+  src: url("../fonts/QCF_P248.TTF");
+}
+
+@font-face {
+  font-family: "page249";
+  src: url("../fonts/QCF_P249.TTF");
+}
+
+@font-face {
+  font-family: "page250";
+  src: url("../fonts/QCF_P250.TTF");
+}
+
+@font-face {
+  font-family: "page251";
+  src: url("../fonts/QCF_P251.TTF");
+}
+
+@font-face {
+  font-family: "page252";
+  src: url("../fonts/QCF_P252.TTF");
+}
+
+@font-face {
+  font-family: "page253";
+  src: url("../fonts/QCF_P253.TTF");
+}
+
+@font-face {
+  font-family: "page254";
+  src: url("../fonts/QCF_P254.TTF");
+}
+
+@font-face {
+  font-family: "page255";
+  src: url("../fonts/QCF_P255.TTF");
+}
+
+@font-face {
+  font-family: "page256";
+  src: url("../fonts/QCF_P256.TTF");
+}
+
+@font-face {
+  font-family: "page257";
+  src: url("../fonts/QCF_P257.TTF");
+}
+
+@font-face {
+  font-family: "page258";
+  src: url("../fonts/QCF_P258.TTF");
+}
+
+@font-face {
+  font-family: "page259";
+  src: url("../fonts/QCF_P259.TTF");
+}
+
+@font-face {
+  font-family: "page260";
+  src: url("../fonts/QCF_P260.TTF");
+}
+
+@font-face {
+  font-family: "page261";
+  src: url("../fonts/QCF_P261.TTF");
+}
+
+@font-face {
+  font-family: "page262";
+  src: url("../fonts/QCF_P262.TTF");
+}
+
+@font-face {
+  font-family: "page263";
+  src: url("../fonts/QCF_P263.TTF");
+}
+
+@font-face {
+  font-family: "page264";
+  src: url("../fonts/QCF_P264.TTF");
+}
+
+@font-face {
+  font-family: "page265";
+  src: url("../fonts/QCF_P265.TTF");
+}
+
+@font-face {
+  font-family: "page266";
+  src: url("../fonts/QCF_P266.TTF");
+}
+
+@font-face {
+  font-family: "page267";
+  src: url("../fonts/QCF_P267.TTF");
+}
+
+@font-face {
+  font-family: "page268";
+  src: url("../fonts/QCF_P268.TTF");
+}
+
+@font-face {
+  font-family: "page269";
+  src: url("../fonts/QCF_P269.TTF");
+}
+
+@font-face {
+  font-family: "page270";
+  src: url("../fonts/QCF_P270.TTF");
+}
+
+@font-face {
+  font-family: "page271";
+  src: url("../fonts/QCF_P271.TTF");
+}
+
+@font-face {
+  font-family: "page272";
+  src: url("../fonts/QCF_P272.TTF");
+}
+
+@font-face {
+  font-family: "page273";
+  src: url("../fonts/QCF_P273.TTF");
+}
+
+@font-face {
+  font-family: "page274";
+  src: url("../fonts/QCF_P274.TTF");
+}
+
+@font-face {
+  font-family: "page275";
+  src: url("../fonts/QCF_P275.TTF");
+}
+
+@font-face {
+  font-family: "page276";
+  src: url("../fonts/QCF_P276.TTF");
+}
+
+@font-face {
+  font-family: "page277";
+  src: url("../fonts/QCF_P277.TTF");
+}
+
+@font-face {
+  font-family: "page278";
+  src: url("../fonts/QCF_P278.TTF");
+}
+
+@font-face {
+  font-family: "page279";
+  src: url("../fonts/QCF_P279.TTF");
+}
+
+@font-face {
+  font-family: "page280";
+  src: url("../fonts/QCF_P280.TTF");
+}
+
+@font-face {
+  font-family: "page281";
+  src: url("../fonts/QCF_P281.TTF");
+}
+
+@font-face {
+  font-family: "page282";
+  src: url("../fonts/QCF_P282.TTF");
+}
+
+@font-face {
+  font-family: "page283";
+  src: url("../fonts/QCF_P283.TTF");
+}
+
+@font-face {
+  font-family: "page284";
+  src: url("../fonts/QCF_P284.TTF");
+}
+
+@font-face {
+  font-family: "page285";
+  src: url("../fonts/QCF_P285.TTF");
+}
+
+@font-face {
+  font-family: "page286";
+  src: url("../fonts/QCF_P286.TTF");
+}
+
+@font-face {
+  font-family: "page287";
+  src: url("../fonts/QCF_P287.TTF");
+}
+
+@font-face {
+  font-family: "page288";
+  src: url("../fonts/QCF_P288.TTF");
+}
+
+@font-face {
+  font-family: "page289";
+  src: url("../fonts/QCF_P289.TTF");
+}
+
+@font-face {
+  font-family: "page290";
+  src: url("../fonts/QCF_P290.TTF");
+}
+
+@font-face {
+  font-family: "page291";
+  src: url("../fonts/QCF_P291.TTF");
+}
+
+@font-face {
+  font-family: "page292";
+  src: url("../fonts/QCF_P292.TTF");
+}
+
+@font-face {
+  font-family: "page293";
+  src: url("../fonts/QCF_P293.TTF");
+}
+
+@font-face {
+  font-family: "page294";
+  src: url("../fonts/QCF_P294.TTF");
+}
+
+@font-face {
+  font-family: "page295";
+  src: url("../fonts/QCF_P295.TTF");
+}
+
+@font-face {
+  font-family: "page296";
+  src: url("../fonts/QCF_P296.TTF");
+}
+
+@font-face {
+  font-family: "page297";
+  src: url("../fonts/QCF_P297.TTF");
+}
+
+@font-face {
+  font-family: "page298";
+  src: url("../fonts/QCF_P298.TTF");
+}
+
+@font-face {
+  font-family: "page299";
+  src: url("../fonts/QCF_P299.TTF");
+}
+
+@font-face {
+  font-family: "page300";
+  src: url("../fonts/QCF_P300.TTF");
+}
+
+@font-face {
+  font-family: "page301";
+  src: url("../fonts/QCF_P301.TTF");
+}
+
+@font-face {
+  font-family: "page302";
+  src: url("../fonts/QCF_P302.TTF");
+}
+
+@font-face {
+  font-family: "page303";
+  src: url("../fonts/QCF_P303.TTF");
+}
+
+@font-face {
+  font-family: "page304";
+  src: url("../fonts/QCF_P304.TTF");
+}
+
+@font-face {
+  font-family: "page305";
+  src: url("../fonts/QCF_P305.TTF");
+}
+
+@font-face {
+  font-family: "page306";
+  src: url("../fonts/QCF_P306.TTF");
+}
+
+@font-face {
+  font-family: "page307";
+  src: url("../fonts/QCF_P307.TTF");
+}
+
+@font-face {
+  font-family: "page308";
+  src: url("../fonts/QCF_P308.TTF");
+}
+
+@font-face {
+  font-family: "page309";
+  src: url("../fonts/QCF_P309.TTF");
+}
+
+@font-face {
+  font-family: "page310";
+  src: url("../fonts/QCF_P310.TTF");
+}
+
+@font-face {
+  font-family: "page311";
+  src: url("../fonts/QCF_P311.TTF");
+}
+
+@font-face {
+  font-family: "page312";
+  src: url("../fonts/QCF_P312.TTF");
+}
+
+@font-face {
+  font-family: "page313";
+  src: url("../fonts/QCF_P313.TTF");
+}
+
+@font-face {
+  font-family: "page314";
+  src: url("../fonts/QCF_P314.TTF");
+}
+
+@font-face {
+  font-family: "page315";
+  src: url("../fonts/QCF_P315.TTF");
+}
+
+@font-face {
+  font-family: "page316";
+  src: url("../fonts/QCF_P316.TTF");
+}
+
+@font-face {
+  font-family: "page317";
+  src: url("../fonts/QCF_P317.TTF");
+}
+
+@font-face {
+  font-family: "page318";
+  src: url("../fonts/QCF_P318.TTF");
+}
+
+@font-face {
+  font-family: "page319";
+  src: url("../fonts/QCF_P319.TTF");
+}
+
+@font-face {
+  font-family: "page320";
+  src: url("../fonts/QCF_P320.TTF");
+}
+
+@font-face {
+  font-family: "page321";
+  src: url("../fonts/QCF_P321.TTF");
+}
+
+@font-face {
+  font-family: "page322";
+  src: url("../fonts/QCF_P322.TTF");
+}
+
+@font-face {
+  font-family: "page323";
+  src: url("../fonts/QCF_P323.TTF");
+}
+
+@font-face {
+  font-family: "page324";
+  src: url("../fonts/QCF_P324.TTF");
+}
+
+@font-face {
+  font-family: "page325";
+  src: url("../fonts/QCF_P325.TTF");
+}
+
+@font-face {
+  font-family: "page326";
+  src: url("../fonts/QCF_P326.TTF");
+}
+
+@font-face {
+  font-family: "page327";
+  src: url("../fonts/QCF_P327.TTF");
+}
+
+@font-face {
+  font-family: "page328";
+  src: url("../fonts/QCF_P328.TTF");
+}
+
+@font-face {
+  font-family: "page329";
+  src: url("../fonts/QCF_P329.TTF");
+}
+
+@font-face {
+  font-family: "page330";
+  src: url("../fonts/QCF_P330.TTF");
+}
+
+@font-face {
+  font-family: "page331";
+  src: url("../fonts/QCF_P331.TTF");
+}
+
+@font-face {
+  font-family: "page332";
+  src: url("../fonts/QCF_P332.TTF");
+}
+
+@font-face {
+  font-family: "page333";
+  src: url("../fonts/QCF_P333.TTF");
+}
+
+@font-face {
+  font-family: "page334";
+  src: url("../fonts/QCF_P334.TTF");
+}
+
+@font-face {
+  font-family: "page335";
+  src: url("../fonts/QCF_P335.TTF");
+}
+
+@font-face {
+  font-family: "page336";
+  src: url("../fonts/QCF_P336.TTF");
+}
+
+@font-face {
+  font-family: "page337";
+  src: url("../fonts/QCF_P337.TTF");
+}
+
+@font-face {
+  font-family: "page338";
+  src: url("../fonts/QCF_P338.TTF");
+}
+
+@font-face {
+  font-family: "page339";
+  src: url("../fonts/QCF_P339.TTF");
+}
+
+@font-face {
+  font-family: "page340";
+  src: url("../fonts/QCF_P340.TTF");
+}
+
+@font-face {
+  font-family: "page341";
+  src: url("../fonts/QCF_P341.TTF");
+}
+
+@font-face {
+  font-family: "page342";
+  src: url("../fonts/QCF_P342.TTF");
+}
+
+@font-face {
+  font-family: "page343";
+  src: url("../fonts/QCF_P343.TTF");
+}
+
+@font-face {
+  font-family: "page344";
+  src: url("../fonts/QCF_P344.TTF");
+}
+
+@font-face {
+  font-family: "page345";
+  src: url("../fonts/QCF_P345.TTF");
+}
+
+@font-face {
+  font-family: "page346";
+  src: url("../fonts/QCF_P346.TTF");
+}
+
+@font-face {
+  font-family: "page347";
+  src: url("../fonts/QCF_P347.TTF");
+}
+
+@font-face {
+  font-family: "page348";
+  src: url("../fonts/QCF_P348.TTF");
+}
+
+@font-face {
+  font-family: "page349";
+  src: url("../fonts/QCF_P349.TTF");
+}
+
+@font-face {
+  font-family: "page350";
+  src: url("../fonts/QCF_P350.TTF");
+}
+
+@font-face {
+  font-family: "page351";
+  src: url("../fonts/QCF_P351.TTF");
+}
+
+@font-face {
+  font-family: "page352";
+  src: url("../fonts/QCF_P352.TTF");
+}
+
+@font-face {
+  font-family: "page353";
+  src: url("../fonts/QCF_P353.TTF");
+}
+
+@font-face {
+  font-family: "page354";
+  src: url("../fonts/QCF_P354.TTF");
+}
+
+@font-face {
+  font-family: "page355";
+  src: url("../fonts/QCF_P355.TTF");
+}
+
+@font-face {
+  font-family: "page356";
+  src: url("../fonts/QCF_P356.TTF");
+}
+
+@font-face {
+  font-family: "page357";
+  src: url("../fonts/QCF_P357.TTF");
+}
+
+@font-face {
+  font-family: "page358";
+  src: url("../fonts/QCF_P358.TTF");
+}
+
+@font-face {
+  font-family: "page359";
+  src: url("../fonts/QCF_P359.TTF");
+}
+
+@font-face {
+  font-family: "page360";
+  src: url("../fonts/QCF_P360.TTF");
+}
+
+@font-face {
+  font-family: "page361";
+  src: url("../fonts/QCF_P361.TTF");
+}
+
+@font-face {
+  font-family: "page362";
+  src: url("../fonts/QCF_P362.TTF");
+}
+
+@font-face {
+  font-family: "page363";
+  src: url("../fonts/QCF_P363.TTF");
+}
+
+@font-face {
+  font-family: "page364";
+  src: url("../fonts/QCF_P364.TTF");
+}
+
+@font-face {
+  font-family: "page365";
+  src: url("../fonts/QCF_P365.TTF");
+}
+
+@font-face {
+  font-family: "page366";
+  src: url("../fonts/QCF_P366.TTF");
+}
+
+@font-face {
+  font-family: "page367";
+  src: url("../fonts/QCF_P367.TTF");
+}
+
+@font-face {
+  font-family: "page368";
+  src: url("../fonts/QCF_P368.TTF");
+}
+
+@font-face {
+  font-family: "page369";
+  src: url("../fonts/QCF_P369.TTF");
+}
+
+@font-face {
+  font-family: "page370";
+  src: url("../fonts/QCF_P370.TTF");
+}
+
+@font-face {
+  font-family: "page371";
+  src: url("../fonts/QCF_P371.TTF");
+}
+
+@font-face {
+  font-family: "page372";
+  src: url("../fonts/QCF_P372.TTF");
+}
+
+@font-face {
+  font-family: "page373";
+  src: url("../fonts/QCF_P373.TTF");
+}
+
+@font-face {
+  font-family: "page374";
+  src: url("../fonts/QCF_P374.TTF");
+}
+
+@font-face {
+  font-family: "page375";
+  src: url("../fonts/QCF_P375.TTF");
+}
+
+@font-face {
+  font-family: "page376";
+  src: url("../fonts/QCF_P376.TTF");
+}
+
+@font-face {
+  font-family: "page377";
+  src: url("../fonts/QCF_P377.TTF");
+}
+
+@font-face {
+  font-family: "page378";
+  src: url("../fonts/QCF_P378.TTF");
+}
+
+@font-face {
+  font-family: "page379";
+  src: url("../fonts/QCF_P379.TTF");
+}
+
+@font-face {
+  font-family: "page380";
+  src: url("../fonts/QCF_P380.TTF");
+}
+
+@font-face {
+  font-family: "page381";
+  src: url("../fonts/QCF_P381.TTF");
+}
+
+@font-face {
+  font-family: "page382";
+  src: url("../fonts/QCF_P382.TTF");
+}
+
+@font-face {
+  font-family: "page383";
+  src: url("../fonts/QCF_P383.TTF");
+}
+
+@font-face {
+  font-family: "page384";
+  src: url("../fonts/QCF_P384.TTF");
+}
+
+@font-face {
+  font-family: "page385";
+  src: url("../fonts/QCF_P385.TTF");
+}
+
+@font-face {
+  font-family: "page386";
+  src: url("../fonts/QCF_P386.TTF");
+}
+
+@font-face {
+  font-family: "page387";
+  src: url("../fonts/QCF_P387.TTF");
+}
+
+@font-face {
+  font-family: "page388";
+  src: url("../fonts/QCF_P388.TTF");
+}
+
+@font-face {
+  font-family: "page389";
+  src: url("../fonts/QCF_P389.TTF");
+}
+
+@font-face {
+  font-family: "page390";
+  src: url("../fonts/QCF_P390.TTF");
+}
+
+@font-face {
+  font-family: "page391";
+  src: url("../fonts/QCF_P391.TTF");
+}
+
+@font-face {
+  font-family: "page392";
+  src: url("../fonts/QCF_P392.TTF");
+}
+
+@font-face {
+  font-family: "page393";
+  src: url("../fonts/QCF_P393.TTF");
+}
+
+@font-face {
+  font-family: "page394";
+  src: url("../fonts/QCF_P394.TTF");
+}
+
+@font-face {
+  font-family: "page395";
+  src: url("../fonts/QCF_P395.TTF");
+}
+
+@font-face {
+  font-family: "page396";
+  src: url("../fonts/QCF_P396.TTF");
+}
+
+@font-face {
+  font-family: "page397";
+  src: url("../fonts/QCF_P397.TTF");
+}
+
+@font-face {
+  font-family: "page398";
+  src: url("../fonts/QCF_P398.TTF");
+}
+
+@font-face {
+  font-family: "page399";
+  src: url("../fonts/QCF_P399.TTF");
+}
+
+@font-face {
+  font-family: "page400";
+  src: url("../fonts/QCF_P400.TTF");
+}
+
+@font-face {
+  font-family: "page401";
+  src: url("../fonts/QCF_P401.TTF");
+}
+
+@font-face {
+  font-family: "page402";
+  src: url("../fonts/QCF_P402.TTF");
+}
+
+@font-face {
+  font-family: "page403";
+  src: url("../fonts/QCF_P403.TTF");
+}
+
+@font-face {
+  font-family: "page404";
+  src: url("../fonts/QCF_P404.TTF");
+}
+
+@font-face {
+  font-family: "page405";
+  src: url("../fonts/QCF_P405.TTF");
+}
+
+@font-face {
+  font-family: "page406";
+  src: url("../fonts/QCF_P406.TTF");
+}
+
+@font-face {
+  font-family: "page407";
+  src: url("../fonts/QCF_P407.TTF");
+}
+
+@font-face {
+  font-family: "page408";
+  src: url("../fonts/QCF_P408.TTF");
+}
+
+@font-face {
+  font-family: "page409";
+  src: url("../fonts/QCF_P409.TTF");
+}
+
+@font-face {
+  font-family: "page410";
+  src: url("../fonts/QCF_P410.TTF");
+}
+
+@font-face {
+  font-family: "page411";
+  src: url("../fonts/QCF_P411.TTF");
+}
+
+@font-face {
+  font-family: "page412";
+  src: url("../fonts/QCF_P412.TTF");
+}
+
+@font-face {
+  font-family: "page413";
+  src: url("../fonts/QCF_P413.TTF");
+}
+
+@font-face {
+  font-family: "page414";
+  src: url("../fonts/QCF_P414.TTF");
+}
+
+@font-face {
+  font-family: "page415";
+  src: url("../fonts/QCF_P415.TTF");
+}
+
+@font-face {
+  font-family: "page416";
+  src: url("../fonts/QCF_P416.TTF");
+}
+
+@font-face {
+  font-family: "page417";
+  src: url("../fonts/QCF_P417.TTF");
+}
+
+@font-face {
+  font-family: "page418";
+  src: url("../fonts/QCF_P418.TTF");
+}
+
+@font-face {
+  font-family: "page419";
+  src: url("../fonts/QCF_P419.TTF");
+}
+
+@font-face {
+  font-family: "page420";
+  src: url("../fonts/QCF_P420.TTF");
+}
+
+@font-face {
+  font-family: "page421";
+  src: url("../fonts/QCF_P421.TTF");
+}
+
+@font-face {
+  font-family: "page422";
+  src: url("../fonts/QCF_P422.TTF");
+}
+
+@font-face {
+  font-family: "page423";
+  src: url("../fonts/QCF_P423.TTF");
+}
+
+@font-face {
+  font-family: "page424";
+  src: url("../fonts/QCF_P424.TTF");
+}
+
+@font-face {
+  font-family: "page425";
+  src: url("../fonts/QCF_P425.TTF");
+}
+
+@font-face {
+  font-family: "page426";
+  src: url("../fonts/QCF_P426.TTF");
+}
+
+@font-face {
+  font-family: "page427";
+  src: url("../fonts/QCF_P427.TTF");
+}
+
+@font-face {
+  font-family: "page428";
+  src: url("../fonts/QCF_P428.TTF");
+}
+
+@font-face {
+  font-family: "page429";
+  src: url("../fonts/QCF_P429.TTF");
+}
+
+@font-face {
+  font-family: "page430";
+  src: url("../fonts/QCF_P430.TTF");
+}
+
+@font-face {
+  font-family: "page431";
+  src: url("../fonts/QCF_P431.TTF");
+}
+
+@font-face {
+  font-family: "page432";
+  src: url("../fonts/QCF_P432.TTF");
+}
+
+@font-face {
+  font-family: "page433";
+  src: url("../fonts/QCF_P433.TTF");
+}
+
+@font-face {
+  font-family: "page434";
+  src: url("../fonts/QCF_P434.TTF");
+}
+
+@font-face {
+  font-family: "page435";
+  src: url("../fonts/QCF_P435.TTF");
+}
+
+@font-face {
+  font-family: "page436";
+  src: url("../fonts/QCF_P436.TTF");
+}
+
+@font-face {
+  font-family: "page437";
+  src: url("../fonts/QCF_P437.TTF");
+}
+
+@font-face {
+  font-family: "page438";
+  src: url("../fonts/QCF_P438.TTF");
+}
+
+@font-face {
+  font-family: "page439";
+  src: url("../fonts/QCF_P439.TTF");
+}
+
+@font-face {
+  font-family: "page440";
+  src: url("../fonts/QCF_P440.TTF");
+}
+
+@font-face {
+  font-family: "page441";
+  src: url("../fonts/QCF_P441.TTF");
+}
+
+@font-face {
+  font-family: "page442";
+  src: url("../fonts/QCF_P442.TTF");
+}
+
+@font-face {
+  font-family: "page443";
+  src: url("../fonts/QCF_P443.TTF");
+}
+
+@font-face {
+  font-family: "page444";
+  src: url("../fonts/QCF_P444.TTF");
+}
+
+@font-face {
+  font-family: "page445";
+  src: url("../fonts/QCF_P445.TTF");
+}
+
+@font-face {
+  font-family: "page446";
+  src: url("../fonts/QCF_P446.TTF");
+}
+
+@font-face {
+  font-family: "page447";
+  src: url("../fonts/QCF_P447.TTF");
+}
+
+@font-face {
+  font-family: "page448";
+  src: url("../fonts/QCF_P448.TTF");
+}
+
+@font-face {
+  font-family: "page449";
+  src: url("../fonts/QCF_P449.TTF");
+}
+
+@font-face {
+  font-family: "page450";
+  src: url("../fonts/QCF_P450.TTF");
+}
+
+@font-face {
+  font-family: "page451";
+  src: url("../fonts/QCF_P451.TTF");
+}
+
+@font-face {
+  font-family: "page452";
+  src: url("../fonts/QCF_P452.TTF");
+}
+
+@font-face {
+  font-family: "page453";
+  src: url("../fonts/QCF_P453.TTF");
+}
+
+@font-face {
+  font-family: "page454";
+  src: url("../fonts/QCF_P454.TTF");
+}
+
+@font-face {
+  font-family: "page455";
+  src: url("../fonts/QCF_P455.TTF");
+}
+
+@font-face {
+  font-family: "page456";
+  src: url("../fonts/QCF_P456.TTF");
+}
+
+@font-face {
+  font-family: "page457";
+  src: url("../fonts/QCF_P457.TTF");
+}
+
+@font-face {
+  font-family: "page458";
+  src: url("../fonts/QCF_P458.TTF");
+}
+
+@font-face {
+  font-family: "page459";
+  src: url("../fonts/QCF_P459.TTF");
+}
+
+@font-face {
+  font-family: "page460";
+  src: url("../fonts/QCF_P460.TTF");
+}
+
+@font-face {
+  font-family: "page461";
+  src: url("../fonts/QCF_P461.TTF");
+}
+
+@font-face {
+  font-family: "page462";
+  src: url("../fonts/QCF_P462.TTF");
+}
+
+@font-face {
+  font-family: "page463";
+  src: url("../fonts/QCF_P463.TTF");
+}
+
+@font-face {
+  font-family: "page464";
+  src: url("../fonts/QCF_P464.TTF");
+}
+
+@font-face {
+  font-family: "page465";
+  src: url("../fonts/QCF_P465.TTF");
+}
+
+@font-face {
+  font-family: "page466";
+  src: url("../fonts/QCF_P466.TTF");
+}
+
+@font-face {
+  font-family: "page467";
+  src: url("../fonts/QCF_P467.TTF");
+}
+
+@font-face {
+  font-family: "page468";
+  src: url("../fonts/QCF_P468.TTF");
+}
+
+@font-face {
+  font-family: "page469";
+  src: url("../fonts/QCF_P469.TTF");
+}
+
+@font-face {
+  font-family: "page470";
+  src: url("../fonts/QCF_P470.TTF");
+}
+
+@font-face {
+  font-family: "page471";
+  src: url("../fonts/QCF_P471.TTF");
+}
+
+@font-face {
+  font-family: "page472";
+  src: url("../fonts/QCF_P472.TTF");
+}
+
+@font-face {
+  font-family: "page473";
+  src: url("../fonts/QCF_P473.TTF");
+}
+
+@font-face {
+  font-family: "page474";
+  src: url("../fonts/QCF_P474.TTF");
+}
+
+@font-face {
+  font-family: "page475";
+  src: url("../fonts/QCF_P475.TTF");
+}
+
+@font-face {
+  font-family: "page476";
+  src: url("../fonts/QCF_P476.TTF");
+}
+
+@font-face {
+  font-family: "page477";
+  src: url("../fonts/QCF_P477.TTF");
+}
+
+@font-face {
+  font-family: "page478";
+  src: url("../fonts/QCF_P478.TTF");
+}
+
+@font-face {
+  font-family: "page479";
+  src: url("../fonts/QCF_P479.TTF");
+}
+
+@font-face {
+  font-family: "page480";
+  src: url("../fonts/QCF_P480.TTF");
+}
+
+@font-face {
+  font-family: "page481";
+  src: url("../fonts/QCF_P481.TTF");
+}
+
+@font-face {
+  font-family: "page482";
+  src: url("../fonts/QCF_P482.TTF");
+}
+
+@font-face {
+  font-family: "page483";
+  src: url("../fonts/QCF_P483.TTF");
+}
+
+@font-face {
+  font-family: "page484";
+  src: url("../fonts/QCF_P484.TTF");
+}
+
+@font-face {
+  font-family: "page485";
+  src: url("../fonts/QCF_P485.TTF");
+}
+
+@font-face {
+  font-family: "page486";
+  src: url("../fonts/QCF_P486.TTF");
+}
+
+@font-face {
+  font-family: "page487";
+  src: url("../fonts/QCF_P487.TTF");
+}
+
+@font-face {
+  font-family: "page488";
+  src: url("../fonts/QCF_P488.TTF");
+}
+
+@font-face {
+  font-family: "page489";
+  src: url("../fonts/QCF_P489.TTF");
+}
+
+@font-face {
+  font-family: "page490";
+  src: url("../fonts/QCF_P490.TTF");
+}
+
+@font-face {
+  font-family: "page491";
+  src: url("../fonts/QCF_P491.TTF");
+}
+
+@font-face {
+  font-family: "page492";
+  src: url("../fonts/QCF_P492.TTF");
+}
+
+@font-face {
+  font-family: "page493";
+  src: url("../fonts/QCF_P493.TTF");
+}
+
+@font-face {
+  font-family: "page494";
+  src: url("../fonts/QCF_P494.TTF");
+}
+
+@font-face {
+  font-family: "page495";
+  src: url("../fonts/QCF_P495.TTF");
+}
+
+@font-face {
+  font-family: "page496";
+  src: url("../fonts/QCF_P496.TTF");
+}
+
+@font-face {
+  font-family: "page497";
+  src: url("../fonts/QCF_P497.TTF");
+}
+
+@font-face {
+  font-family: "page498";
+  src: url("../fonts/QCF_P498.TTF");
+}
+
+@font-face {
+  font-family: "page499";
+  src: url("../fonts/QCF_P499.TTF");
+}
+
+@font-face {
+  font-family: "page500";
+  src: url("../fonts/QCF_P500.TTF");
+}
+
+@font-face {
+  font-family: "page501";
+  src: url("../fonts/QCF_P501.TTF");
+}
+
+@font-face {
+  font-family: "page502";
+  src: url("../fonts/QCF_P502.TTF");
+}
+
+@font-face {
+  font-family: "page503";
+  src: url("../fonts/QCF_P503.TTF");
+}
+
+@font-face {
+  font-family: "page504";
+  src: url("../fonts/QCF_P504.TTF");
+}
+
+@font-face {
+  font-family: "page505";
+  src: url("../fonts/QCF_P505.TTF");
+}
+
+@font-face {
+  font-family: "page506";
+  src: url("../fonts/QCF_P506.TTF");
+}
+
+@font-face {
+  font-family: "page507";
+  src: url("../fonts/QCF_P507.TTF");
+}
+
+@font-face {
+  font-family: "page508";
+  src: url("../fonts/QCF_P508.TTF");
+}
+
+@font-face {
+  font-family: "page509";
+  src: url("../fonts/QCF_P509.TTF");
+}
+
+@font-face {
+  font-family: "page510";
+  src: url("../fonts/QCF_P510.TTF");
+}
+
+@font-face {
+  font-family: "page511";
+  src: url("../fonts/QCF_P511.TTF");
+}
+
+@font-face {
+  font-family: "page512";
+  src: url("../fonts/QCF_P512.TTF");
+}
+
+@font-face {
+  font-family: "page513";
+  src: url("../fonts/QCF_P513.TTF");
+}
+
+@font-face {
+  font-family: "page514";
+  src: url("../fonts/QCF_P514.TTF");
+}
+
+@font-face {
+  font-family: "page515";
+  src: url("../fonts/QCF_P515.TTF");
+}
+
+@font-face {
+  font-family: "page516";
+  src: url("../fonts/QCF_P516.TTF");
+}
+
+@font-face {
+  font-family: "page517";
+  src: url("../fonts/QCF_P517.TTF");
+}
+
+@font-face {
+  font-family: "page518";
+  src: url("../fonts/QCF_P518.TTF");
+}
+
+@font-face {
+  font-family: "page519";
+  src: url("../fonts/QCF_P519.TTF");
+}
+
+@font-face {
+  font-family: "page520";
+  src: url("../fonts/QCF_P520.TTF");
+}
+
+@font-face {
+  font-family: "page521";
+  src: url("../fonts/QCF_P521.TTF");
+}
+
+@font-face {
+  font-family: "page522";
+  src: url("../fonts/QCF_P522.TTF");
+}
+
+@font-face {
+  font-family: "page523";
+  src: url("../fonts/QCF_P523.TTF");
+}
+
+@font-face {
+  font-family: "page524";
+  src: url("../fonts/QCF_P524.TTF");
+}
+
+@font-face {
+  font-family: "page525";
+  src: url("../fonts/QCF_P525.TTF");
+}
+
+@font-face {
+  font-family: "page526";
+  src: url("../fonts/QCF_P526.TTF");
+}
+
+@font-face {
+  font-family: "page527";
+  src: url("../fonts/QCF_P527.TTF");
+}
+
+@font-face {
+  font-family: "page528";
+  src: url("../fonts/QCF_P528.TTF");
+}
+
+@font-face {
+  font-family: "page529";
+  src: url("../fonts/QCF_P529.TTF");
+}
+
+@font-face {
+  font-family: "page530";
+  src: url("../fonts/QCF_P530.TTF");
+}
+
+@font-face {
+  font-family: "page531";
+  src: url("../fonts/QCF_P531.TTF");
+}
+
+@font-face {
+  font-family: "page532";
+  src: url("../fonts/QCF_P532.TTF");
+}
+
+@font-face {
+  font-family: "page533";
+  src: url("../fonts/QCF_P533.TTF");
+}
+
+@font-face {
+  font-family: "page534";
+  src: url("../fonts/QCF_P534.TTF");
+}
+
+@font-face {
+  font-family: "page535";
+  src: url("../fonts/QCF_P535.TTF");
+}
+
+@font-face {
+  font-family: "page536";
+  src: url("../fonts/QCF_P536.TTF");
+}
+
+@font-face {
+  font-family: "page537";
+  src: url("../fonts/QCF_P537.TTF");
+}
+
+@font-face {
+  font-family: "page538";
+  src: url("../fonts/QCF_P538.TTF");
+}
+
+@font-face {
+  font-family: "page539";
+  src: url("../fonts/QCF_P539.TTF");
+}
+
+@font-face {
+  font-family: "page540";
+  src: url("../fonts/QCF_P540.TTF");
+}
+
+@font-face {
+  font-family: "page541";
+  src: url("../fonts/QCF_P541.TTF");
+}
+
+@font-face {
+  font-family: "page542";
+  src: url("../fonts/QCF_P542.TTF");
+}
+
+@font-face {
+  font-family: "page543";
+  src: url("../fonts/QCF_P543.TTF");
+}
+
+@font-face {
+  font-family: "page544";
+  src: url("../fonts/QCF_P544.TTF");
+}
+
+@font-face {
+  font-family: "page545";
+  src: url("../fonts/QCF_P545.TTF");
+}
+
+@font-face {
+  font-family: "page546";
+  src: url("../fonts/QCF_P546.TTF");
+}
+
+@font-face {
+  font-family: "page547";
+  src: url("../fonts/QCF_P547.TTF");
+}
+
+@font-face {
+  font-family: "page548";
+  src: url("../fonts/QCF_P548.TTF");
+}
+
+@font-face {
+  font-family: "page549";
+  src: url("../fonts/QCF_P549.TTF");
+}
+
+@font-face {
+  font-family: "page550";
+  src: url("../fonts/QCF_P550.TTF");
+}
+
+@font-face {
+  font-family: "page551";
+  src: url("../fonts/QCF_P551.TTF");
+}
+
+@font-face {
+  font-family: "page552";
+  src: url("../fonts/QCF_P552.TTF");
+}
+
+@font-face {
+  font-family: "page553";
+  src: url("../fonts/QCF_P553.TTF");
+}
+
+@font-face {
+  font-family: "page554";
+  src: url("../fonts/QCF_P554.TTF");
+}
+
+@font-face {
+  font-family: "page555";
+  src: url("../fonts/QCF_P555.TTF");
+}
+
+@font-face {
+  font-family: "page556";
+  src: url("../fonts/QCF_P556.TTF");
+}
+
+@font-face {
+  font-family: "page557";
+  src: url("../fonts/QCF_P557.TTF");
+}
+
+@font-face {
+  font-family: "page558";
+  src: url("../fonts/QCF_P558.TTF");
+}
+
+@font-face {
+  font-family: "page559";
+  src: url("../fonts/QCF_P559.TTF");
+}
+
+@font-face {
+  font-family: "page560";
+  src: url("../fonts/QCF_P560.TTF");
+}
+
+@font-face {
+  font-family: "page561";
+  src: url("../fonts/QCF_P561.TTF");
+}
+
+@font-face {
+  font-family: "page562";
+  src: url("../fonts/QCF_P562.TTF");
+}
+
+@font-face {
+  font-family: "page563";
+  src: url("../fonts/QCF_P563.TTF");
+}
+
+@font-face {
+  font-family: "page564";
+  src: url("../fonts/QCF_P564.TTF");
+}
+
+@font-face {
+  font-family: "page565";
+  src: url("../fonts/QCF_P565.TTF");
+}
+
+@font-face {
+  font-family: "page566";
+  src: url("../fonts/QCF_P566.TTF");
+}
+
+@font-face {
+  font-family: "page567";
+  src: url("../fonts/QCF_P567.TTF");
+}
+
+@font-face {
+  font-family: "page568";
+  src: url("../fonts/QCF_P568.TTF");
+}
+
+@font-face {
+  font-family: "page569";
+  src: url("../fonts/QCF_P569.TTF");
+}
+
+@font-face {
+  font-family: "page570";
+  src: url("../fonts/QCF_P570.TTF");
+}
+
+@font-face {
+  font-family: "page571";
+  src: url("../fonts/QCF_P571.TTF");
+}
+
+@font-face {
+  font-family: "page572";
+  src: url("../fonts/QCF_P572.TTF");
+}
+
+@font-face {
+  font-family: "page573";
+  src: url("../fonts/QCF_P573.TTF");
+}
+
+@font-face {
+  font-family: "page574";
+  src: url("../fonts/QCF_P574.TTF");
+}
+
+@font-face {
+  font-family: "page575";
+  src: url("../fonts/QCF_P575.TTF");
+}
+
+@font-face {
+  font-family: "page576";
+  src: url("../fonts/QCF_P576.TTF");
+}
+
+@font-face {
+  font-family: "page577";
+  src: url("../fonts/QCF_P577.TTF");
+}
+
+@font-face {
+  font-family: "page578";
+  src: url("../fonts/QCF_P578.TTF");
+}
+
+@font-face {
+  font-family: "page579";
+  src: url("../fonts/QCF_P579.TTF");
+}
+
+@font-face {
+  font-family: "page580";
+  src: url("../fonts/QCF_P580.TTF");
+}
+
+@font-face {
+  font-family: "page581";
+  src: url("../fonts/QCF_P581.TTF");
+}
+
+@font-face {
+  font-family: "page582";
+  src: url("../fonts/QCF_P582.TTF");
+}
+
+@font-face {
+  font-family: "page583";
+  src: url("../fonts/QCF_P583.TTF");
+}
+
+@font-face {
+  font-family: "page584";
+  src: url("../fonts/QCF_P584.TTF");
+}
+
+@font-face {
+  font-family: "page585";
+  src: url("../fonts/QCF_P585.TTF");
+}
+
+@font-face {
+  font-family: "page586";
+  src: url("../fonts/QCF_P586.TTF");
+}
+
+@font-face {
+  font-family: "page587";
+  src: url("../fonts/QCF_P587.TTF");
+}
+
+@font-face {
+  font-family: "page588";
+  src: url("../fonts/QCF_P588.TTF");
+}
+
+@font-face {
+  font-family: "page589";
+  src: url("../fonts/QCF_P589.TTF");
+}
+
+@font-face {
+  font-family: "page590";
+  src: url("../fonts/QCF_P590.TTF");
+}
+
+@font-face {
+  font-family: "page591";
+  src: url("../fonts/QCF_P591.TTF");
+}
+
+@font-face {
+  font-family: "page592";
+  src: url("../fonts/QCF_P592.TTF");
+}
+
+@font-face {
+  font-family: "page593";
+  src: url("../fonts/QCF_P593.TTF");
+}
+
+@font-face {
+  font-family: "page594";
+  src: url("../fonts/QCF_P594.TTF");
+}
+
+@font-face {
+  font-family: "page595";
+  src: url("../fonts/QCF_P595.TTF");
+}
+
+@font-face {
+  font-family: "page596";
+  src: url("../fonts/QCF_P596.TTF");
+}
+
+@font-face {
+  font-family: "page597";
+  src: url("../fonts/QCF_P597.TTF");
+}
+
+@font-face {
+  font-family: "page598";
+  src: url("../fonts/QCF_P598.TTF");
+}
+
+@font-face {
+  font-family: "page599";
+  src: url("../fonts/QCF_P599.TTF");
+}
+
+@font-face {
+  font-family: "page600";
+  src: url("../fonts/QCF_P600.TTF");
+}
+
+@font-face {
+  font-family: "page601";
+  src: url("../fonts/QCF_P601.TTF");
+}
+
+@font-face {
+  font-family: "page602";
+  src: url("../fonts/QCF_P602.TTF");
+}
+
+@font-face {
+  font-family: "page603";
+  src: url("../fonts/QCF_P603.TTF");
+}
+
+@font-face {
+  font-family: "page604";
+  src: url("../fonts/QCF_P604.TTF");
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 4px solid rgba(0, 123, 255, 0);
+  background-clip: padding-box;
+  border-radius: 15px;
+  background-color: rgba(0, 123, 255, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+@font-face {
+  font-family: "me_quranRegular23";
+  src: url("../fonts/tajweed/me_quran.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*:root {
+  --primary: #0d8005;
+}
+
+a {
+  color: #388b01;
+}
+
+a:hover {
+  color: #1f4d01;
+}
+
+a:active {
+  color: #5f8b41;
+}
+
+a:visited {
+  color: #5f8b41;
+}
+
+.btn-primary {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background: #1f4d01;
+  border-color: #1f4d01;
+}
+
+.btn-primary:visited {
+  color: white;
+}
+
+body {
+  margin-top: 70px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  z-index: 1030;
+}
+
+.navbar i:hover {
+  cursor: pointer;
+}
+
+.navbar .navbar-brand {
+  font-family: "Dancing Script";
+  font-size: 30px !important;
+  font-weight: bold;
+  color: var(--success) !important;
+}
+
+.navbar .fa-cog {
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+
+.navbar .fa-cog:hover {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.navbar .fa-user {
+  transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+}
+
+.navbar .fa-user:hover {
+  text-shadow: 0 0 10px green;
+  color: white;
+}
+
+.navbar .search-box {
+  position: relative;
+}
+
+@media (max-width: 480px) {
+  .navbar .search-box .search-form {
+    position: absolute;
+    top: 40px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+.navbar .search-box .search-form input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar .search-box .search-form .result {
+  position: absolute;
+  top: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  min-width: 300px;
+  width: 90%;
+  overflow: hidden;
+  overflow-y: auto;
+  max-height: 430px;
+}
+
+.navbar .search-box .search-form .result a {
+  margin: 10px 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  border-top: none;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.navbar .search-box .search-form .result span {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+.navbar .search-box .search-form .result p {
+  padding: 20px;
+}
+
+.navbar .search-box .search-form .result mark {
+  background: yellow;
+}
+
+.navbar .search-box .search-form .result .result_content {
+  border-radius: 4px;
+  background: #fff;
+  -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.9);
+          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.9);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  height: auto;
+  background-size: cover;
+  background-position: center right;
+}
+
+header .congr-juma {
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #7cff52;
+  background: linear-gradient(135deg, #7cff52 0%, #24eef2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-carousel .card-body {
+  max-height: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+@media (max-width: 480px) {
+  .header-carousel {
+    font-size: 16px;
+  }
+  .header-carousel .arabicSlider {
+    font-size: 25px;
+    font-weight: bold;
+  }
+}
+
+.header-carousel .owl-dots {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  padding: 15px;
+}
+
+.header-carousel button {
+  outline: none;
+}
+
+.header-carousel.daily .carousel-sm-more {
+  background-color: var(--primary);
+  margin: 5px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+.header-carousel.daily .carousel-sm-more a, .header-carousel.daily .carousel-sm-more i {
+  color: #fff;
+}
+
+.header-carousel.daily .owl-dots {
+  position: absolute;
+  bottom: -5px;
+  right: 100px;
+}
+
+.header-carousel.daily .owl-nav .owl-prev {
+  bottom: 0;
+  right: 50px;
+}
+
+.header-carousel.daily .owl-nav .owl-next {
+  bottom: 0;
+  right: 0px;
+}
+
+.header-carousel.daily .owl-nav .owl-prev,
+.header-carousel.daily .owl-nav .owl-next {
+  position: absolute;
+  background-color: var(--primary);
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.header-carousel.daily .owl-nav .owl-prev span,
+.header-carousel.daily .owl-nav .owl-next span {
+  position: absolute;
+  background-color: var(--primary);
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  font-size: 30px;
+  color: #fff;
+  top: 0;
+  right: 0px;
+  border-radius: 4px;
+}
+
+.header-carousel.daily .owl-nav .owl-prev span:active,
+.header-carousel.daily .owl-nav .owl-next span:active {
+  -webkit-box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.header-carousel.juma .owl-nav .owl-prev {
+  top: 0;
+  right: 60px;
+}
+
+.header-carousel.juma .owl-nav .owl-next {
+  top: 0;
+  right: 10px;
+}
+
+.header-carousel.juma .owl-nav .owl-prev,
+.header-carousel.juma .owl-nav .owl-next {
+  position: absolute;
+  background-color: var(--primary);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.header-carousel.juma .owl-nav .owl-prev span,
+.header-carousel.juma .owl-nav .owl-next span {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  background-color: var(--primary);
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+section {
+  padding: 20px 0;
+}
+
+section #randomSection .card-body {
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+section #randomSection ::-webkit-scrollbar {
+  width: 10px;
+}
+
+section #randomSection ::-moz-scrollbar {
+  width: 10px;
+}
+
+section #randomSection ::-o-scrollbar {
+  width: 10px;
+}
+
+section #randomSection ::scrollbar {
+  width: 10px;
+}
+
+section:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+section .h2 {
+  cursor: default;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  position: relative;
+  color: #0d8005;
+}
+
+section h4 a i {
+  padding: 5px;
+}
+
+section h4 a i:hover {
+  padding: 5px;
+  margin: 0;
+  color: white;
+  background: #1f4d01;
+}
+
+@media (max-width: 768px) {
+  section .h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+#asmaulhusna .owl-carousel a {
+  display: block;
+  border: 1px solid #afafaf;
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  height: 100%;
+}
+
+#asmaulhusna .owl-carousel a:hover {
+  color: #0d8005;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dayLine {
+  display: block;
+  padding: 30px 10px;
+}
+
+.right-profile,
+.right-setting {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  z-index: 1040;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+  display: none;
+}
+
+#modal-settings .modal-body .nav {
+  border: none;
+}
+
+#modal-settings .modal-body .nav a {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+#modal-settings .modal-body .nav .active {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+#modal-settings .modal-body .nav li {
+  padding: 5px 5px 0 5px;
+}
+
+.right-profile::scrollbar,
+.right-setting::scrollbar {
+  display: none;
+}
+
+.right-profile::-o-scrollbar,
+.right-setting::-o-scrollbar {
+  display: none;
+}
+
+.right-profile::-moz-scrollbar,
+.right-setting::-moz-scrollbar {
+  display: none;
+}
+
+.right-profile::-webkit-scrollbar,
+.right-setting::-webkit-scrollbar {
+  display: none;
+}
+
+.close-right-profile,
+.close-right-setting {
+  padding: 8px 10px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.close-right-setting:hover,
+.close-right-profile:hover {
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.content-item {
+  background: rgba(211, 211, 211, 0.3);
+  padding: 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-bottom: 10px;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  position: relative;
+}
+
+.content-item:last-child {
+  margin: 0;
+}
+
+.content-item .arabicFont {
+  font-family: Scheherazade;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.content-item .fa-copy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 15px;
+  cursor: pointer;
+  color: #388b01;
+}
+
+#lastDuo .grid i {
+  padding: 10px;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+#lastDuo .grid i:hover {
+  background: var(--primary);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.randBtns {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.header-carousel i,
+.randBtns i {
+  padding: 10px;
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.owl-stage i:hover,
+.randBtns i:hover {
+  background: var(--primary);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.grid-item {
+  width: 33.33333333333333%;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    width: 100%;
+  }
+}
+
+.blockHeader {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+#ayahName {
+  font-family: "me_quranRegular23", serif;
+  text-align: right;
+  direction: rtl;
+  font-size: 20px;
+}
+
+.arabicText {
+  font-family: "Scheherazade", serif;
+  line-height: 45px;
+  font-size: 30px;
+  text-align: right;
+  direction: rtl;
+}
+
+.arabicSlider {
+  font-family: "Scheherazade", serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: right;
+  direction: rtl;
+  text-align: justify;
+  color: #0d8005;
+  padding: 0 10px;
+}
+
+.arabic {
+  font-family: "Scheherazade", serif;
+  line-height: 60px;
+  font-size: 30px;
+  text-align: right;
+  padding: 15px;
+  direction: rtl;
+  text-align: justify;
+}
+
+.arabic_title {
+  text-align: center;
+  font-family: "Scheherazade", serif;
+  line-height: 60px;
+  font-size: 30px;
+}
+
+.arabic_text {
+  font-size: 35px;
+  font-family: "Scheherazade", serif;
+  direction: rtl;
+}
+
+#randDuo,
+.randDuo {
+  font-family: "Scheherazade";
+  font-size: 30px;
+  text-align: right;
+}
+
+.sameHeight div[class*="col-"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.bs-tooltip-auto[x-placement^="top"] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #f00;
+}
+
+.card-title {
+  margin: 0 !important;
+}
+
+footer {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+
+footer input::-webkit-outer-spin-button,
+footer input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+footer input[type=number] {
+  -moz-appearance: textfield;
+}
+
+footer .tagFooter {
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 5px;
+  border: 1px solid #388b01;
+  border-radius: 5px;
+  color: #d3d3d3;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  text-decoration: none;
+}
+
+footer .tagFooter:hover {
+  color: #fff;
+  background-color: #388b01;
+}
+
+footer .links a {
+  text-decoration: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  padding-bottom: 5px;
+}
+
+footer .links a i {
+  width: 20px;
+  text-align: center;
+}
+
+footer .links a:hover {
+  color: var(--success);
+}
+
+.bottom {
+  padding: 10px 0;
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #5c6671;
+}
+
+.bottom div {
+  opacity: 0.7;
+}
+
+.bottom div:hover {
+  opacity: 1;
+}
+
+.bottom a {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.bottom a:hover {
+  color: var(--success);
+}
+
+.bottom i {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 5px;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.bottom i.fa-telegram {
+  color: #1e96c8;
+  background-color: #fff;
+}
+
+.bottom i.fa-instagram {
+  background: #a23a99;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#a23a99), color-stop(#c7358a), color-stop(#e33b76), color-stop(#f64d5f), color-stop(#fe6746), color-stop(#ff773c), color-stop(#fd8732), color-stop(#fa972a), color-stop(#fa9d31), color-stop(#fba437), color-stop(#fbaa3e), to(#fcb045));
+  background-image: linear-gradient(to right bottom, #a23a99, #c7358a, #e33b76, #f64d5f, #fe6746, #ff773c, #fd8732, #fa972a, #fa9d31, #fba437, #fbaa3e, #fcb045);
+}
+
+.bottom i.fa-facebook {
+  color: #4267b2;
+  background-color: #fff;
+}
+
+.bottom img {
+  width: 30px;
+  border-radius: 50%;
+  background: #fff;
+  margin: 0 5px;
+}
+
+.up-down {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 30px;
+  display: none;
+}
+
+.up-down .fa-angle-up, .up-down .fa-angle-down {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  display: block;
+  opacity: 0.3;
+  cursor: pointer;
+  -webkit-box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px 1px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+.up-down .fa-angle-up:hover {
+  opacity: 1;
+}
+
+.up-down .fa-angle-down {
+  margin-top: 5px;
+}
+
+.up-down .fa-angle-down:hover {
+  opacity: 1;
+}
+
+.indent-20 {
+  text-indent: 20px;
+}
+
+.height-200 {
+  height: 200px !important;
+}
+
+.height-400 {
+  height: 400px !important;
+}
+
+.ovw {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.custom-switch .custom-control-label {
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+.sortQuron {
+  margin-bottom: 10px;
+}
+
+.quronFullTable tr:hover {
+  background-color: var(--light);
+}
+
+.quronFullTable thead th {
+  border-top: none;
+}
+
+.playBtn {
+  width: 35px;
+  display: inline-block;
+  cursor: pointer;
+  height: 30px;
+}
+
+.playBtn.active {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#line2img,
+#line1img {
+  top: -20px;
+  left: -23px;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#resetGbColor {
+  margin-left: 5px;
+  padding: 5px 6px;
+  background-color: var(--primary);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/**
+ * How to make 3-corner-rounded triangle in CSS (SO)
+ * http://stackoverflow.com/q/14446677/1397351
+ */
+.triangle,
+.triangle:before,
+.triangle:after {
+  width: 4em;
+  height: 4em;
+}
+
+.triangle {
+  overflow: hidden;
+  position: relative;
+  border-radius: 20%;
+  -webkit-transform: translateY(50%) rotate(0deg) skewY(30deg) scaleX(0.866);
+          transform: translateY(50%) rotate(0deg) skewY(30deg) scaleX(0.866);
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.triangle:before,
+.triangle:after {
+  position: absolute;
+  background: var(--primary);
+  pointer-events: auto;
+  content: "";
+}
+
+.triangle:before {
+  border-radius: 20% 20% 20% 53%;
+  -webkit-transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(30deg) scaleY(0.866) translateX(-24%);
+          transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(30deg) scaleY(0.866) translateX(-24%);
+}
+
+.triangle:after {
+  border-radius: 20% 20% 53% 20%;
+  -webkit-transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(-30deg) scaleY(0.866) translateX(24%);
+          transform: scaleX(1.155) skewY(-30deg) rotate(-30deg) translateY(-42.3%) skewX(-30deg) scaleY(0.866) translateX(24%);
+}
+
+.qorilar {
+  border-radius: 5px;
+  width: auto;
+  font-size: 20px;
+  font-family: Poppins;
+  padding: 5px;
+  border-color: #ced4da;
+  margin-left: 20px;
+  max-width: 200px;
+}
+
+.linkBook a {
+  text-decoration: none;
+}
+
+.pagesz {
+  width: 684px;
+  margin: 0 auto;
+  border: 20px double #b5b5b5;
+  -webkit-box-shadow: 0 0 10px 1px #b5b5b5;
+          box-shadow: 0 0 10px 1px #b5b5b5;
+  padding: 20px;
+  min-height: 990px;
+  height: 100%;
+  position: relative;
+}
+
+.numPage {
+  font-weight: bold;
+  font-family: Amiri;
+  width: 7%;
+  background: #fff;
+  text-align: center;
+  position: absolute;
+  left: 46.5%;
+  bottom: -23px;
+  border: 1px solid #ccc;
+}
+
+.headeroyat {
+  background: url("../images/headeroyat.jpg") no-repeat center;
+  background-size: 100%;
+  display: block;
+  text-align: center;
+  padding: 15px 0;
+  position: relative;
+}
+
+.headeroyat .playHeader,
+.headeroyat .pauseHeader,
+.headeroyat .loopHeader,
+.headeroyat .stopHeader {
+  position: absolute;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--primary);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.headeroyat .playHeader {
+  left: 115px;
+  top: 32px;
+}
+
+.headeroyat .pauseHeader {
+  left: 112px;
+  top: 32px;
+}
+
+.headeroyat .loopHeader {
+  right: 112px;
+  top: 32px;
+}
+
+.headeroyat .stopHeader {
+  right: 114px;
+  top: 32px;
+}
+
+.headeroyat i:hover {
+  color: var(--success);
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.kitobPag {
+  margin: 20px auto 0;
+  max-width: 688px;
+}
+
+.linkSuraArabic {
+  text-decoration: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.linkSuraArabic:hover {
+  text-decoration: none;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.bismillah {
+  display: block;
+  text-align: center !important;
+  padding-bottom: 15px;
+}
+
+.headeroyat em,
+.basmala_surah,
+.fatiha em,
+.basmala_surah em {
+  text-align: justify;
+  text-align-last: center;
+  direction: rtl;
+  font-family: basmala;
+  color: #333;
+  font-size: 40px;
+  font-style: normal;
+}
+
+#asok {
+  font-family: "Scheherazade", serif;
+  font-size: 40px;
+  text-align: right;
+  direction: rtl;
+  text-align: justify;
+}
+
+.listSurah {
+  height: 650px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100% !important;
+}
+
+.absolute {
+  position: absolute;
+  bottom: 0;
+  width: 89% !important;
+}
+
+.fixed {
+  position: fixed;
+  top: 80px;
+  width: 16% !important;
+}
+
+.surahContent {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.suraItem {
+  border-bottom: 1px solid #dfe4ea;
+}
+
+.suraItem:last-child {
+  border: none;
+}
+
+.suraItem:hover {
+  background-color: var(--light);
+}
+
+.suraItem-media {
+  display: none !important;
+  position: absolute;
+  padding-left: 5px;
+  width: 20px;
+}
+
+.suraItem:hover > .suraItem-media {
+  display: block !important;
+}
+
+.suraItem-media i {
+  font-style: normal;
+  color: var(--secondary);
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suraItem-media i:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.suraItem-content {
+  padding: 10px 10px 10px 40px;
+  min-height: 130px;
+}
+
+.suraItem .suraAr {
+  font-family: "Scheherazade", serif;
+  font-size: 40px;
+  text-align: right;
+  direction: rtl;
+  text-align: justify;
+}
+
+#modal-settings .modal-body {
+  min-height: 350px;
+}
+
+.saved,
+.copiedBlock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 40px;
+  width: 300px;
+  background-color: var(--success);
+  padding: 20px 10px;
+  color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1050;
+}
+
+.arabicFont {
+  font-family: Amiri;
+  font-size: 20px;
+}

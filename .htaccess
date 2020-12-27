@@ -1,0 +1,9 @@
+RewriteEngine On
+AddDefaultCharset UTF-8
+ErrorDocument 401 /error/401.php
+ErrorDocument 403 /error/403.php
+ErrorDocument 404 /admin/404.php
+ErrorDocument 500 /error/500.php
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php

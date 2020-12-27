@@ -1,0 +1,10 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("../fonts/rubik/rubik.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/rubik/rubik.eot?#iefix") format("embedded-opentype"), url("../fonts/rubik/rubik.otf") format("opentype"), url("../fonts/rubik/rubik.svg") format("svg"), url("../fonts/rubik/rubik.ttf") format("truetype"), url("../fonts/rubik/rubik.woff") format("woff"), url("../fonts/rubik/rubik.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

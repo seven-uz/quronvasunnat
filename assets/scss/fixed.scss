@@ -1,0 +1,33 @@
+.right-profile::scrollbar,
+.right-setting::scrollbar {
+   display: none;
+}
+
+.right-profile::-o-scrollbar,
+.right-setting::-o-scrollbar {
+   display: none;
+}
+
+.right-profile::-moz-scrollbar,
+.right-setting::-moz-scrollbar {
+   display: none;
+}
+
+.right-profile::-webkit-scrollbar,
+.right-setting::-webkit-scrollbar {
+   display: none;
+}
+.close-right-profile,
+.close-right-setting {
+   padding: 8px 10px;
+   -webkit-transition: all 0.1s ease-in-out;
+   -o-transition: all 0.1s ease-in-out;
+   transition: all 0.1s ease-in-out;
+}
+
+.close-right-setting:hover,
+.close-right-profile:hover {
+   background: var(--secondary);
+   color: #fff;
+   border-radius: 5px;
+}

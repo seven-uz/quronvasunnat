@@ -8,6 +8,7 @@ $headerColor = "linear-gradient(109.6deg, rgba(9,15,33,1) 16%, #233E67 91.1% );"
 require 'blocks/head.php';
 require 'blocks/header.php';
 ?>
+
 <main>
 	<section id="randomSection">
 		<div class="container-fluid">

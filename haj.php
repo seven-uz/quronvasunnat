@@ -13,6 +13,7 @@ require 'blocks/head.php';
 require 'blocks/nav.php';
 require 'blocks/header.php';
 
+
 ?>
 <main>
 	<section>

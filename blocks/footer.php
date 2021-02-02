@@ -5,10 +5,10 @@
                 <h4>
                     <? echo word('Biz bilan bog‘lanish')?>
                 </h4>
-                <form>
-                    <input type="text" name="name" class="form-control my-2" placeholder="<? echo word('Ismingiz:')?>">
-                    <input type="email" name="email" class="form-control" placeholder="<? echo word('E-mail manzilingiz:')?>">
-                    <textarea name="text" class="form-control my-2" placeholder="<? echo word('Matnni yozing:')?>"></textarea>
+                <form id="contactform">
+                    <input type="text" name="name" class="form-control my-2" placeholder="<? echo word('Ismingiz:')?>" required>
+                    <input type="email" name="email" class="form-control" placeholder="<? echo word('E-mail manzilingiz:')?>" required>
+                    <textarea name="text" class="form-control my-2" placeholder="<? echo word('Matnni yozing:')?>" required></textarea>
                     <div class="d-flex justify-content-between align-items-center">
                         <? $mt1 = mt_rand(10,99);?>
                         <? $mt2 = mt_rand(10,99);?>
@@ -16,7 +16,7 @@
                         <input type="hidden" name="mt2" value="<?= $mt2 ?>">
                         <span style="font-size:16px;font-weight:bold;width:100%;display:block">
                             <? echo $mt1.' + '.$mt2.' = ?';?></span>
-                        <input type="number" name="code" placeholder="<? echo word('Javob:')?>" class="form-control mx-3" autocomplete="off">
+                        <input type="number" name="code" placeholder="<? echo word('Javob:')?>" class="form-control mx-3" autocomplete="off" required>
                         <button type="submit" class="btn btn-primary">
                             <? echo word('Yuborish')?></button>
                     </div>
@@ -410,3 +410,20 @@
 <!-- Custom Js -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/livesearch.js"></script>
+
+<script>
+	$("#contactform").on('submit', (function(el) {
+		el.preventDefault();
+      $.ajax({
+			url: "actions/contactform.php",
+         type: "POST",
+         data: new FormData(this),
+         contentType: false,
+         cache: false,
+         processData: false,
+         success: function(data) {
+            $("#output22").html(data);
+         }
+      });
+	}));
+</script>

@@ -8,6 +8,7 @@ $headerColor = "linear-gradient(109.6deg, rgba(9,15,33,1) 16%, #233E67 91.1% );"
 require 'blocks/head.php';
 require 'blocks/header.php';
 ?>
+<div id="output22"></div>
 
 <main>
 	<section id="randomSection">
@@ -255,8 +256,11 @@ require 'blocks/header.php';
 		</div>
 	</section>
 </main>
+
 <?include 'blocks/footer.php'?>
+
 <script src="assets/js/pages/index.js"></script>
+
 </body>
 
 </html>

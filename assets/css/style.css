@@ -4298,3 +4298,58 @@ select {
   -ms-transform: rotate(135deg);
   -o-transform: rotate(135deg);
 }
+
+.mymodal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 20000;
+  width: 100%;
+  height: 100vh;
+}
+
+.mymodal-success {
+  width: 200px;
+  padding: 10px;
+  background: green;
+  -webkit-box-shadow: 0 5px 20px -5px green;
+          box-shadow: 0 5px 20px -5px green;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.mymodal-error {
+  width: 200px;
+  padding: 10px;
+  background: red;
+  -webkit-box-shadow: 0 5px 20px -5px red;
+          box-shadow: 0 5px 20px -5px red;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: white;
+  text-align: center;
+}

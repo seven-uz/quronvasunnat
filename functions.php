@@ -217,54 +217,56 @@ function textType($value)
     return($value);
 }
 
+function textType2($value){
+    $value = trim($value);
+    $value = str_replace("ʻ", "'",$value);
+    $value = str_replace("ʼ", "'",$value);
+    $value = str_replace("O'", "O‘",$value);
+    $value = str_replace("o'", "o‘",$value);
+    $value = str_replace("G'", "G‘",$value);
+    $value = str_replace("g'", "g‘",$value);
+    $value = str_replace("'", "’",$value);
+    $value = str_replace(' "', " “",$value);
+    $value = str_replace('" ', "” ",$value);
+    $value = str_replace('", ', "”, ",$value);
+    $value = stripslashes($value);
+    $value = htmlspecialchars($value);
+    return($value);
+}
+
 function modalScs($value){
     $value = '
-<div class="my-modal-container my-modal-center my-modal-shown" style="overflow-y: auto;">
-  <div aria-labelledby="my-modal-title" aria-describedby="my-modal-content" class="my-modal-popup my-modal-modal my-modal-show" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style="display: flex;">
-    <div class="my-modal-header">
-      <div class="my-modal-icon my-modal-success my-modal-animate-success-icon">
-        <div class="my-modal-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div>
-        <span class="my-modal-success-line-tip"></span>
-        <span class="my-modal-success-line-long"></span>
-        <div class="my-modal-success-ring"></div>
-        <div class="my-modal-success-fix" style="background-color: rgb(255, 255, 255);"></div>
-        <div class="my-modal-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div>
-      </div>
-      <h2 class="my-modal-title" id="my-modal-title">'.$words['err'].'</h2>
+<div class="mymodal">
+<div class="mymodal-success">
+    <div class="header">
+      <h2 class="title">'.$words['success'].'</h2>
     </div>
-    <div class="my-modal-content">
-      <div id="my-modal-content" style="display: block;">'.$value.'</div>
-      <div class="my-modal-validation-message" id="my-modal-validation-message"></div>
+    <div class="content">
+      <div>'.$value.'</div>
     </div>
     <div class="my-modal-actions">
-      <button type="button" class="my-modal-confirm btn btn-secondary my-modal-styled scs" id="my-modal-ok">OK</button>
+      <button type="button" class="my-modal-confirm btn btn-secondary">OK</button>
     </div>
-  </div>
+    </div>
 </div>';
     return($value);
 }
 
 function modalErr($value){
     $value = '
-<div class="my-modal-container my-modal-center my-modal-shown" style="overflow-y:auto;">
-  <div aria-labelledby="my-modal-title" aria-describedby="my-modal-content" class="my-modal-popup my-modal-modal my-modal-show" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style="display: flex;">
-    <div class="my-modal-header">
-      <div class="my-modal-icon my-modal-error my-modal-animate-error-icon" style="display: flex;">
-        <span class="my-modal-x-mark">
-          <span class="my-modal-x-mark-line-left"></span>
-          <span class="my-modal-x-mark-line-right"></span>
-        </span>
-      </div>
-      <h2 class="my-modal-title" id="my-modal-title" style="display: flex;">'.$words['errors'].'</h2>
-    </div>
-    <div class="my-modal-content">
-      <div id="my-modal-content" style="display: block;">'.$value.'</div>
-    </div>
-    <div class="my-modal-actions">
-      <button type="button" class="my-modal-confirm btn btn-secondary m-btn m-btn--wide my-modal-styled err" id="my-modal-ok">OK</button>
-    </div>
-  </div>
-</div>';
+    <div class="mymodal">
+        <div class="mymodal-error">
+            <div class="header">
+            <h2 class="title">'.$words['error'].'ss</h2>
+            </div>
+            <div class="content">
+            <div>'.$value.'</div>
+            </div>
+            <div class="my-modal-actions">
+            <button type="button" class="my-modal-confirm btn btn-secondary">OK</button>
+            </div>
+        </div>
+    </div>';
     return($value);
 }
 

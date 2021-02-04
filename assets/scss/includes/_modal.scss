@@ -1,0 +1,70 @@
+.modal_link{
+   color: $mcolor;
+   cursor: pointer;
+   &:hover{
+      text-decoration: underline;
+      
+   }
+}
+
+.modal{
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background-color: rgba(#000,.7);
+   z-index: 100;
+   @include flexbox;
+   align-items: center;
+   justify-content: center;
+   backdrop-filter: blur(2px);
+   @include transition(.5s,0s);
+   opacity: 0;
+   visibility: hidden;
+   &.open{
+      opacity: 1;
+      visibility:visible;
+      .modal__body{
+         transform:perspective(600px) translate(0px, 0%) rotateX(0deg);
+         p-webkit-transform: translate(0px,-100px);
+         -moz-transform:perspective(600px) translate(0px, 0%) rotateX(0deg);
+         -ms-transform:perspective(600px) translate(0px, 0%) rotateX(0deg);
+         -o-transform:perspective(600px) translate(0px, 0%) rotateX(0deg);
+         -webkit-transform:perspective(600px) translate(0px, 0%) rotateX(0deg);
+         opacity: 1;
+      }
+   }
+   &__body{
+      font-size: 16px;
+      background-color: #fff;
+      padding: 30px;
+      color: #000;
+      max-width: 800px;
+      max-height: 80%;
+      overflow: hidden;
+      overflow-y: auto;
+      position: relative;
+      opacity: 0;
+      transform:perspective(600px) translate(0px, -100%) rotateX(45deg);
+      p-webkit-transform: translate(0px,-100px);
+      -moz-transform:perspective(600px) translate(0px, -100%) rotateX(45deg);
+      -ms-transform:perspective(600px) translate(0px, -100%) rotateX(45deg);
+      -o-transform:perspective(600px) translate(0px, -100%) rotateX(45deg);
+      -webkit-transform:perspective(600px) translate(0px, -100%) rotateX(45deg);
+      @include transition(.7s,0s);
+   }
+   &__close{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+      cursor: pointer;
+      @include transition(.7s,0s);
+      &:hover{
+         color: $mcolor;
+      }
+   }
+}

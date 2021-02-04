@@ -1,0 +1,11 @@
+.row:after{display: block;content: '';clear: both;}
+.sum:after{content: 'sum';}
+.rub:after{content: '₽';}
+.eur:after{content: '€';}
+.usd:after{content: '$';}
+.won:after{content: '₩';}
+.yuan:after{content: '¥';}
+.lira:after{content: '₺';}
+.btcn:after{content: '₿';}
+
+.noselect{-webkit-touch-callout: none;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;-o-user-select: none;-khtml-user-select: none;user-select: none;}

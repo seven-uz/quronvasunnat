@@ -1,0 +1,58 @@
+@mixin transition($time:.3s, $delay:0s) { transition: all $time ease $delay; -webkit-transition: all $time ease $delay; -moz-transition: all $time ease $delay; -ms-transition: all $time ease $delay; -o-transition: all $time ease $delay; }
+@mixin anim_cubic($time:.3s, $delay:0s) {transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);-webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);-moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);-ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);-o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55);}
+@mixin rotate($deg) {transform: rotate($deg);-webkit-transform: rotate($deg);-moz-transform: rotate($deg);-ms-transform: rotate($deg);-o-transform: rotate($deg);}
+@mixin scale($num) {transform: scale($num);-webkit-transform: scale($num);-moz-transform: scale($num);-ms-transform: scale($num);-o-transform: scale($num);}
+@mixin skew($num) {transform: skewX($num);-webkit-transform: skewX($num);-moz-transform: skewX($num);-ms-transform: skewX($num);-o-transform: skewX($num);}
+@mixin cnt($h) {display: flex;flex-direction: column;height: $h;text-align: center;align-items: stretch;justify-content: center;}
+@mixin tr($x, $y, $z) { transform: translate3d($x, $y, $z); -webkit-transform: translate3d($x, $y, $z); -moz-transform: translate3d($x, $y, $z); -ms-transform: translate3d($x, $y, $z); -o-transform: translate3d($x, $y, $z); }
+@mixin flexbox {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 0;}
+@mixin flexboxinline() {}
+@mixin flexorder($val) {-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-ordeer: $val;order: $val;}
+@mixin border-radius($num:50%) {border-radius: $num;-webkit-border-radius: $num;-moz-border-radius: $num;-ms-border-radius: $num;-o-border-radius: $num;}
+@mixin burger($color:#ffffff) {
+    &__burger{
+        display: none;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        & span{
+            background-color: $color;
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 100%;
+            height: 2px;
+            @include transition(0.3s, 0s);
+        }
+        &.active span{
+            @include scale(0)
+        }
+        &.active:after{
+            @include rotate(-45deg);
+            bottom: 9px;
+        }
+        &.active:before{
+            @include rotate(45deg);
+            top: 9px;
+        }
+        @media (max-width:$md3+px) {
+            display: block;
+            z-index: 3;
+            &:before,
+            &:after{
+                content: '';
+                background-color: $color;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                @include transition(0.3s, 0s);
+            }
+            &:before{
+                top: 0;
+            }
+            &:after{
+                bottom: 0;
+            }
+        }
+    }}

@@ -10,7 +10,6 @@ $headerColor = "linear-gradient(to right top, #000000, #392123, #6f3d37, #a45f42
 $duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 require 'blocks/head.php';
-require 'blocks/nav.php';
 require 'blocks/header.php';
 
 ?>
@@ -24,7 +23,7 @@ require 'blocks/header.php';
 								$result1 = mysqli_query($db, "SELECT count(*) FROM suralar");
 								$row1 = mysqli_fetch_row($result1);
 								$rand = mt_rand(0,$row1[0] - 1);
-						
+
 								$result101 = mysqli_query($db, "SELECT * FROM suralar LIMIT $rand, 1");
 								$row101 = mysqli_fetch_assoc($result101);
 								?>
@@ -50,7 +49,7 @@ require 'blocks/header.php';
 								$result2 = mysqli_query($db, "SELECT count(*) FROM duolar");
 								$row2 = mysqli_fetch_row($result2);
 								$rand2 = mt_rand(0,$row2[0] - 1);
-						
+
 								$result201 = mysqli_query($db, "SELECT * FROM duolar LIMIT $rand2, 1");
 								$row201 = mysqli_fetch_assoc($result201);
 								?>

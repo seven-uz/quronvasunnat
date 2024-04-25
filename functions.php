@@ -85,14 +85,14 @@ function bytes($bytes){
 
 function search_file($folderName, $fileName)
 {
-    $dir = opendir($folderName); 
+    $dir = opendir($folderName);
     while (($file = readdir($dir)) !== false){
         if($file != "." && $file != ".."){
             if(is_file($folderName."/".$file)){
                 if($file == $fileName) return $folderName."/".$file;
-            } 
+            }
             if(is_dir($folderName."/".$file)) return search_file($folderName."/".$file, $fileName);
-        } 
+        }
     }
     closedir($dir);
 }
@@ -162,7 +162,7 @@ $converter = array(
 '<strong>' => '<strong>','</strong>' => '</strong>',
 '<code>' => '<code>','</code>' => '</code>',
 	);
- 
+
 	$value = str_replace(array_keys($converter),array_values($converter),$value);
 	return $value;
 }
@@ -172,11 +172,11 @@ function tokr($value)
 	$converter = array('o‘'=>'ў','O‘'=>'Ў',' E'=>' Э','E'=>' Э','Ya'=>'Я','Yu'=>'Ю','Yo'=>'Ё','yo'=>'ё','G‘'=>'Ғ','Ch'=>'Ч','CH'=>'Ч','Sh'=>'Ш','SH'=>'Ш','ʼ'=>'ъ',' e'=>' э','ya'=>'я','yu'=>'ю','ye'=>'е','’'=>'ъ','g‘'=>'ғ','ch'=>'ч','sh'=>'ш','A'=>'А','B'=>'Б','C'=>'С','D'=>'Д','F'=>'Ф','G'=>'Г','H'=>'Ҳ','I'=>'И','J'=>'Ж','K'=>'К','L'=>'Л','M'=>'М','N'=>'Н','O' => 'О','P'=>'П','Q'=>'Қ','R'=>'Р','S'=>'С','T'=>'Т','U'=>'У','V'=>'В','W'=>'В','X'=>'Х','Y'=>'Й','Z'=>'З','a'=>'а','b'=>'б','c'=>'с','d'=>'д','e'=>'е','f'=>'ф','g'=>'г','h'=>'ҳ','i'=>'и','j'=>'ж','k'=>'к','l'=>'л','m'=>'м','n'=>'н','o'=>'о','p'=>'п','q'=>'қ','r'=>'р','s'=>'с','t'=>'т','u'=>'у','v'=>'в','w'=>'в','x'=>'х','y'=>'й','z'=>'з');
 
 	$value = str_replace(array_keys($converter),array_values($converter),$value);
-    $value = str_replace('<бр>','<br>',$value); 
-    $value = str_replace('<п>','<p>',$value); 
-    $value = str_replace('</п>','</p>',$value); 
-    $value = str_replace('<ҳ6>','<h6>',$value); 
-    $value = str_replace('</ҳ6>','</h6>',$value); 
+    $value = str_replace('<бр>','<br>',$value);
+    $value = str_replace('<п>','<p>',$value);
+    $value = str_replace('</п>','</p>',$value);
+    $value = str_replace('<ҳ6>','<h6>',$value);
+    $value = str_replace('</ҳ6>','</h6>',$value);
 	return $value;
 }
 
@@ -351,7 +351,7 @@ function d($val){
         }elseif($_COOKIE['lang'] == 'ru'){
             $val = 'Вчера';
         }
-    } 
+    }
     else if ($date != date('d.m.Y') && $date_year != date('Y')) {
     $val = $ndate_exp[0].'-'.$nmonth_name.' '.$ndate_exp[2];
     }
@@ -408,7 +408,7 @@ function dt($val){
         }elseif($_COOKIE['lang'] == 'ru'){
             $val = 'Вчера '.$date_time;
         }
-    } 
+    }
     else if ($date != date('d.m.Y') && $date_year != date('Y')) {
     $val = $ndate_exp[0].'-'.$nmonth_name.' '.$ndate_exp[2];
     }
@@ -459,7 +459,7 @@ function dwt2($val){
         }elseif($_COOKIE['lang'] == 'ru'){
             $val = 'Вчера '.$date_time;
         }
-    } 
+    }
     else if ($date != date('d.m.Y') && $date_year != date('Y')) {
     $val = $ndate_exp[0].'-'.$nmonth_name.' '.$ndate_exp[2];
     }
@@ -473,7 +473,7 @@ function cmn(){
     $date = date('m');
 
     $nmonth = array(1=>'Yanvar',2=>'Fevral',3=>'Mart',4=>'Aprel',5=>'May',6=>'Iyun',7=>'Iyul',8=>'Avgust',9=>'Sentabr',10=>'Oktabr',11=>'Noyabr',12=>'Dekabr');
-    
+
     foreach($nmonth as $key => $value) {
         if ($key == intval(date('m'))) {
             if($_COOKIE['lang'] == 'uzl') $val = $value;else
@@ -512,5 +512,12 @@ function removeSymbol($value){
 
 
 
-
-?>
+function getArabicDate($date){
+	$url = 'https://api.aladhan.com/v1/gToH/'.$date.'?date='.$date;
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_URL, $url);
+	$response = curl_exec($ch);
+	return json_decode($response, true)['data'];
+	curl_close($ch);
+}

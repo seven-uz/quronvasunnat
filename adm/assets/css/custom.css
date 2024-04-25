@@ -1,0 +1,71 @@
+table.table-bordered.dataTable td:first-child, table.table-bordered.dataTable th:first-child,
+div.dataTables_scrollFootInner table.table-bordered tr th:first-child, div.dataTables_scrollHeadInner table.table-bordered tr th:first-child
+{
+	border-left-color: var(--bs-code-bg) !important;
+}
+.btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon){
+	padding: 7px 14px;
+}
+
+.custom_radio input{
+	display: none;
+}
+.custom_radio label{
+	position: relative;
+	width: 40px;
+	height: 40px;
+	display: block;
+	content: '';
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	cursor: pointer;
+}
+.custom_radio label:hover{
+	box-shadow: 0 0 10px 1px #ccc;
+}
+.custom_radio label.active{
+	box-shadow: 0 0 10px 1px #ccc;
+}
+.custom_radio label.active:before{
+	position: absolute;
+	content: '✓';
+	font-size: 20px;
+	text-shadow: 0 0 20px #fff;
+	font-weight: bold;
+	color: green;
+	display: block;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width:767px){
+	.app-container{
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+	.app-content{
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+	}
+	.table>:not(caption)>*>*{
+		padding: 0.25rem 0.25rem;
+	}
+	.card .card-body{
+		padding: 1rem 1.25rem;
+	}
+	.card .card-header{
+		padding: 0 1.25rem;
+	}
+	div.dt-buttons {
+		width: auto;
+		margin-bottom: 0;
+	}
+}

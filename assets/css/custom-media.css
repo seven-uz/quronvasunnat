@@ -1,0 +1,63 @@
+/* Media */
+
+@media (max-width:1020px) {
+    .searchForm{
+	    display: none;
+	}
+	.searchBtn,
+	.searchBtnClose{
+		display: block;
+	}
+	.searchForm{
+		position: absolute;
+		top: 50px;
+		width: 100%;
+		left: 0;
+		border-right: none;
+	}
+	.searchForm .inside{
+		width: 100%;
+		padding: 20px;
+		background: #fff;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.searchForm .inside button{
+		margin: 0 0 0 10px;
+	}
+}
+@media (max-width:767px) {
+	.pagesz {width: 100%;}
+	.headeroyat em{font-size: 70%;}
+	.basmala_surah em{font-size: 70%;}
+	.search-box{
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 70px;
+	}
+	.result_content{
+		margin: 10px auto 0;
+		width: 90% !important;
+	}
+	.result::-webkit-scrollbar {display: none}
+	.result::-moz-scrollbar {display: none}
+	.result::-o-scrollbar {display: none}
+	.result::-scrollbar {display: none}
+	.search-box input{
+		width: 90% !important;
+	}
+	.search-box button{
+		margin-left: 5px;
+	}
+}
+
+@media (max-width:600px) {
+	.right-profile{width: 100%;}
+	.carousel{
+	    margin:0 auto;
+	    width: 100%;
+	    padding: 50px 20px 0;
+	}
+}
+

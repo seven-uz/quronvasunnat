@@ -10,7 +10,7 @@ $headerColor = "linear-gradient(74deg, rgba(24,24,24,1) 0%, rgba(121,121,121,1) 
 $duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 include 'blocks/head.php';
-include 'blocks/nav.php';
+// include 'blocks/nav.php';
 include 'blocks/header.php';
 ?>
 <main>
@@ -25,8 +25,11 @@ include 'blocks/header.php';
 					$n2 = 1;
 					while($row = $asmaulhusna->fetch_assoc()){
 						echo '
-						<div class="content-item">
-							<div class="head-item d-flex justify-content-between"><h4>'.$n++.'. '.word($row['title']).'</h4><h4 class="arabicFont">'.arabicNumbers($n2++).'. '.$row['titlear'].'</h4></div>
+						<div class="content-item" id="'.$row['title'].'">
+							<div class="head-item d-flex justify-content-between">
+								<h4>'.$n++.'. '.word($row['title']).'</h4>
+								<h4 class="arabicFont">'.arabicNumbers($n2++).'. '.$row['titlear'].'</h4>
+							</div>
 							<div class="body-item">
 							<p>'.word($row['text']).'</p>
 							<p>'.word($row['title'].' ismi qur’ondagi');
@@ -55,7 +58,6 @@ include 'blocks/header.php';
 								}
 							}
 							echo '</div>
-							<i class="fas fa-copy"></i>
 						</div>';
 					}
 				?>

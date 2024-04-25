@@ -1,7 +1,8 @@
-<footer class="bg-dark text-white py-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 pb-md-0 pb-4 text-sm-left text-center">
+<footer class="bg-dark text-white">
+	<!-- <div class="py-4"> -->
+    <!-- <div class="container"> -->
+        <!-- <div class="row"> -->
+            <!-- <div class="col-md-4 pb-md-0 pb-4 text-sm-left text-center">
                 <h4>
                     <? echo word('Biz bilan bog‘lanish')?>
                 </h4>
@@ -10,40 +11,40 @@
                     <input type="email" name="email" class="form-control" placeholder="<? echo word('E-mail manzilingiz:')?>" required>
                     <textarea name="text" class="form-control my-2" placeholder="<? echo word('Matnni yozing:')?>" required></textarea>
                     <div class="d-flex justify-content-between align-items-center">
-                        <? $mt1 = mt_rand(10,99);?>
-                        <? $mt2 = mt_rand(10,99);?>
-                        <input type="hidden" name="mt1" value="<?= $mt1 ?>">
-                        <input type="hidden" name="mt2" value="<?= $mt2 ?>">
+                        <? //$mt1 = mt_rand(10,99);?>
+                        <? //$mt2 = mt_rand(10,99);?>
+                        <input type="hidden" name="mt1" value="<? // $mt1 ?>">
+                        <input type="hidden" name="mt2" value="<? // $mt2 ?>">
                         <span style="font-size:16px;font-weight:bold;width:100%;display:block">
-                            <? echo $mt1.' + '.$mt2.' = ?';?></span>
-                        <input type="number" name="code" placeholder="<? echo word('Javob:')?>" class="form-control mx-3" autocomplete="off" required>
+                            <? //echo $mt1.' + '.$mt2.' = ?';?></span>
+                        <input type="number" name="code" placeholder="<? //echo word('Javob:')?>" class="form-control mx-3" autocomplete="off" required>
                         <button type="submit" class="btn btn-primary">
-                            <? echo word('Yuborish')?></button>
+                            <? //echo word('Yuborish')?></button>
                     </div>
                 </form>
-            </div>
+            </div> -->
             <div class="col-md-3 pb-md-0 pb-4 links text-sm-left text-center">
-                <h4>
+                <!-- <h4>
                     <? echo word('Havolalar')?>
                 </h4>
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column"> -->
                     <?
-                    $link3 = mysqli_query($db, "SELECT * FROM duolar ORDER BY RAND() LIMIT 1");
-                    $link3Row = $link3->fetch_assoc();
+                    // $link3 = mysqli_query($db, "SELECT * FROM duolar ORDER BY $rand0 LIMIT 1");
+                    // $link3Row = $link3->fetch_assoc();
 
-                    $link5 = mysqli_query($db, "SELECT * FROM roviylar ORDER BY RAND() LIMIT 1");
-                    $link5Row = $link5->fetch_assoc();
+                    // $link5 = mysqli_query($db, "SELECT * FROM roviylar ORDER BY $rand1 LIMIT 1");
+                    // $link5Row = $link5->fetch_assoc();
 
-                    $link6 = mysqli_query($db, "SELECT * FROM rivoyatchilar ORDER BY RAND() LIMIT 1");
-                    $link6Row = $link6->fetch_assoc();
+                    // $link6 = mysqli_query($db, "SELECT * FROM rivoyatchilar ORDER BY $rand2 LIMIT 1");
+                    // $link6Row = $link6->fetch_assoc();
 
-                    $link7 = mysqli_query($db, "SELECT * FROM qorilar ORDER BY RAND() LIMIT 1");
-                    $link7Row = $link7->fetch_assoc();
+                    // $link7 = mysqli_query($db, "SELECT * FROM qorilar ORDER BY $rand3 LIMIT 1");
+                    // $link7Row = $link7->fetch_assoc();
                     ?>
-                    <a href="about"><i class="fa fa-info-circle"></i>&nbsp;
-                        <? echo word('Biz haqimizda') ?>
-                    </a>
-                    <a href="duo?id=<?= $link3Row['id'] ?>"><i class="fas fa-pray"></i>&nbsp;
+                    <!-- <a href="about"><i class="fa fa-info-circle"></i>&nbsp;
+                        <? //echo word('Biz haqimizda') ?>
+                    </a> -->
+                    <!-- <a href="duo?id=<?= $link3Row['id'] ?>"><i class="fas fa-pray"></i>&nbsp;
                         <? echo word($link3Row['title']) ?>
                     </a>
                     <a href="person?imom=<?= $link5Row['id'] ?>"><i class="fas fa-mosque"></i>&nbsp;
@@ -66,9 +67,10 @@
                 while($row = $tags->fetch_assoc()){
                     echo '<a class="tagFooter" href="search?q='.word($row['title']).'">#'.word($row['title']).'</a>';
                 }?>
-            </div>
-        </div>
-    </div>
+            </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+		<!-- </div> -->
 </footer>
 <div class="container-fluid bottom">
     <div class="container d-flex justify-content-md-between justify-content-center align-items-center">
@@ -195,7 +197,7 @@
 
 <!-- Modals, Popups, Fixed blocks -->
 
-<div class="modal fade" id="auth" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- <div class="modal fade" id="auth" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -208,9 +210,6 @@
                         <a data-toggle="tab" class="nav-link" href="#reg-tab">
                             <? echo word('Royhatdan otish') ?></a>
                     </li>
-                    <!-- <li class="nav-item">
-                <a data-toggle="tab" class="nav-link disabled" href="#menu3" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> -->
                 </ul>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -244,7 +243,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="modal fade" id="modal-settings" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

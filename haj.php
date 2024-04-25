@@ -10,7 +10,6 @@ $headerColor = "linear-gradient(to right bottom, #1b171b, #2b1f25, #3d272b, #4e3
 $duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 require 'blocks/head.php';
-require 'blocks/nav.php';
 require 'blocks/header.php';
 
 

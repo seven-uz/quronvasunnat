@@ -128,6 +128,15 @@ $(document).ready(function () {
       autoHeight: true,
       dots: true
    })
+   $("#asmaulhusna .owl-carousel").owlCarousel({
+     items: 1,
+     loop: true,
+     autoplay: true,
+     autoplayTimeout: 7000,
+     autoplayHoverPause: true,
+     autoHeight: false,
+     autoHeightClass: "owl-height",
+   });
 
    // $("#play").on("click",function() {
    //     var file = this.onclick;

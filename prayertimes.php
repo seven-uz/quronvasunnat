@@ -8,10 +8,7 @@ $headerImg = "dua.jpg";
 $duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 include 'blocks/head.php';
-include 'blocks/nav.php';
 include 'blocks/header2.php';
-
-// printr($data3);
 
 ?>
 		<main>

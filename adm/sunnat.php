@@ -11,8 +11,8 @@ $header['breadcrumb'] = [0 => ['val' => lot_kir("Asosiy sahifa"), 'link' => '/ad
 
 $header['add_btn'] = '<div class="app-navbar-item ms-1 ms-md-3"><a data-bs-toggle="modal" data-bs-target="#addSupplierModal" class="btn btn-sm btn-primary"><i class="fas fa-plus pe-0 d-sm-none d-inline-block"></i><span class="d-sm-inline-block d-none">'.lot_kir("Kontragent qo'shish").'</span></a></div>';
 
-$hadislar = $Query->getN("hadislar", [
-	'fields' => 'id, roviy_id, rivoyatchi_id, name, title, titlear, text, textar, mano, tags',
+$sunnatlar = $Query->getN("sunnatlar", [
+	'fields' => 'id, name, title, titlear, text, textar, mano, tags',
 	'order' => ['id desc'],
 ]);
 include 'inc/begin_body.php';
@@ -22,39 +22,32 @@ include 'inc/begin_body.php';
 <div class="app-content flex-column-fluid">
 	<div class="app-container container-fluid">
 		<div class="card card-flush">
-			<table class="table align-middle table-row-dashed" data-table="suppliers" datatable="true">
+			<table class="table align-middle table-row-dashed" data-table="sunnatlar" datatable="true">
 				<thead>
 					<tr class="text-primary fw-bold text-uppercase">
-						<th>№</th>
+						<th class="ps-5">№</th>
 						<th><?php echo lot_kir("Nomi") ?></th>
-						<th class="text-center"><?php echo lot_kir("Telefon raqami") ?></th>
-						<th><?php echo lot_kir("Izoh") ?></th>
-						<th class="text-center"><?php echo lot_kir("Aktivligi") ?></th>
+						<th><?php echo lot_kir("Sarlavha") ?></th>
+						<th><?php echo lot_kir("Matni") ?></th>
 						<?php if($user_permissions[SCRIPTNAME]['edit_access'] === '1' || $user_permissions[SCRIPTNAME]['delete_access'] === '1'): ?>
 							<th class="text-end pe-5"><?php echo lot_kir("Amallar") ?></th>
 						<?php endif; ?>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($suppliers as $key => $val) {
+					<?php foreach ($sunnatlar as $key => $val) {
 						echo '<tr>
-							<td>'.++$suppliers_num.'</td>
-							<td>
-								<div class="d-flex align-items-center">
-									<a href="?id='.$val['id'].'" class="text-gray-800 text-hover-primary fs-5 fw-bold">'.$val['name'].'</a>
-								</div>
-							</td>
-							<td class="text-center" data-order="'.$val['phone'].'"><a href="tel:+998'.$val['phone'].'">'.phone_number9($val['phone']).'</a></td>
-							<td>'.$val['info'].'</td>
-							<td align="center" data-order="'.$val['active'].'">'; echo ($val['active'] === '1') ? ' <i class="far fa-check-circle text-success fs-1"></i>' : '<i class="far fa-check-circle text-secondary fs-1"></i>'; echo '</td>
+							<td class="ps-5">'.++$sunnatlar_num.'</td>
+							<td><a href="?id='.$val['id'].'" class="text-gray-800 text-hover-primary fs-5 fw-bold">'.$val['name'].'</a></td>
+							<td>'.$val['title'].'</td>
+							<td>'.$val['text'].'</td>
 							' . actionsFunction('editSupplierModal', [
 								'data-id' => $val['id'],
 								'data-name' => $val['name'],
-								'data-phone' => $val['phone'],
-								'data-info' => $val['info'],
-								'data-active' => $val['active'],
-								'data-table' => 'suppliers',
-							], $user_permissions['suppliers']).'
+								'data-title' => $val['title'],
+								'data-text' => $val['text'],
+								'data-table' => 'sunnatlar',
+							], $user_permissions['sunnatlar']).'
 						</tr>';
 					} ?>
 				</tbody>

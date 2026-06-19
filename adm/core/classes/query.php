@@ -135,7 +135,7 @@ class Query
 					foreach ($inputData['join'] as $v) {
 						// $joinWhere .= explode(' ', $v['table'])[1] . ".deleted <> '1' AND ";
 					}
-					$additional .= ' AND '.substr($joinWhere, 0, -5);
+					// $additional .= ' AND '.substr($joinWhere, 0, -5);
 				}
 				if($inputData['ignore']['join']){
 					$additional = str_replace($inputData['ignore']['join'], '', $additional);

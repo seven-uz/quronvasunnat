@@ -28,17 +28,17 @@ $randomAuH = rtrim($randomAuH, ',');
 						$sura = mysqli_query($db, "SELECT * FROM suralar LIMIT $suraRand, 1");
 						$suraRow = $sura->fetch_assoc();
 						if($suraRow['ns'] < 10) $audioFNs = '00'.$suraRow['ns'].'/00'.$suraRow['ns'];else
-						if($suraRow['ns'] > 10 and $suraRow['ns'] < 100) $audioFNs = '0'.$suraRow['ns'].'/0'.$suraRow['ns'];else
+						if($suraRow['ns'] > 10 && $suraRow['ns'] < 100) $audioFNs = '0'.$suraRow['ns'].'/0'.$suraRow['ns'];else
 						if($suraRow['ns'] > 99) $audioFNs = $suraRow['ns'].'/'.$suraRow['ns'];
 						if($suraRow['no'] < 10) $audioFNo = '00'.$suraRow['no'];else
-						if($suraRow['no'] > 10 and $suraRow['no'] < 100) $audioFNo = '00'.$suraRow['no']-1;else
-						if($suraRow['no'] > 99) $audioFNo = '00'.$suraRow['no']-1;
+						if(($suraRow['no'] > 10) && ($suraRow['no'] < 100)) $audioFNo = '00' . ($suraRow['no'] - 1); else
+						if($suraRow['no'] > 99) $audioFNo = '00'.($suraRow['no']-1);
 						if($suraRow['ns'] < 10) $ns = '00'.$suraRow['ns'];else
-						if($suraRow['ns'] > 10 and $suraRow['ns'] < 100) $ns = '0'.$suraRow['ns'];else
+						if($suraRow['ns'] > 10 && $suraRow['ns'] < 100) $ns = '0'.$suraRow['ns'];else
 						if($suraRow['ns'] > 99) $ns = $suraRow['ns'];
 
 						if($suraRow['no'] < 10) $no = '00'.$suraRow['no'];else
-						if($suraRow['no'] > 10 and $suraRow['no'] < 100) $no = '0'.$suraRow['no'];else
+						if($suraRow['no'] > 10 && $suraRow['no'] < 100) $no = '0'.$suraRow['no'];else
 						if($suraRow['no'] > 99) $no = $suraRow['no'];
 						$linkSura = 'https://everyayah.com/data/'.$_COOKIE['qori'].'/'.$ns.$no;
 						// echo $linkSura;

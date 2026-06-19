@@ -10,10 +10,19 @@ $header['title'] = lot_kir("Tovarlar");
 $header['breadcrumb'] = [0 => ['val' => lot_kir("Asosiy sahifa"), 'link' => '/'], $header['title']];
 $header['add_btn'] = '<div class="app-navbar-item ms-1 ms-md-3"><a data-bs-toggle="modal" data-bs-target="#addHadis" class="btn btn-sm btn-primary"><i class="fas fa-plus pe-0 d-sm-none d-inline-block"></i><span class="d-sm-inline-block d-none">'.lot_kir("Qo'shish").'</span></a></div>';
 
-$hadislarQ = mysqli_query($db, "SELECT h.id, h.title, rv.name as roviy, rvch.name as rivoyatchi, k.title as kunya FROM hadislar h LEFT JOIN roviylar rv ON h.id_roviy = rv.id LEFT JOIN rivoyatchilar rvch ON h.id_rivoyatchi = rvch.id LEFT JOIN kunyalar k ON rvch.id_kunya = k.id ORDER BY h.id DESC");
-while($row = $hadislarQ->fetch_assoc()){
-	$hadislar[] = $row;
-}
+$hadislar = $Query->getN("hadislar h", [
+	'fields' => 'h.id, h.title, h.text, GROUP_CONCAT(DISTINCT rv.name ORDER BY rv.id SEPARATOR ", ") AS roviy,
+		GROUP_CONCAT(DISTINCT rvch.name ORDER BY rvch.id SEPARATOR ", ") AS rivoyatchi,
+		k.title AS kunya',
+	'join' => [
+		['table' => 'roviylar rv', 'on' => "JSON_CONTAINS(h.id_roviy, CAST(rv.id AS JSON), '$')"],
+		['table' => 'rivoyatchilar rvch', 'on' => 'JSON_CONTAINS(h.id_rivoyatchi, CAST(rvch.id AS JSON), "$")'],
+		['table' => 'kunyalar k', 'on' => 'rvch.id_kunya = k.id'],
+	],
+	'group' => 'h.id, h.title, k.title',
+	'order' => ['h.id DESC'],
+]);
+
 $roviylar = $Query->getN("roviylar", [
 	'order' => ['name'],
 ]);
@@ -32,7 +41,8 @@ include 'inc/begin_body.php';
 					<tr class="text-primary fw-bold text-uppercase">
 						<th class="ps-4">№</th>
 						<th><?php echo lot_kir("Sarlavha") ?></th>
-						<th><?php echo lot_kir("Roviy") ?></th>
+						<th><?php echo lot_kir("Matni") ?></th>
+						<th><?php echo lot_kir("Roviy(lar)") ?></th>
 						<th><?php echo lot_kir("Rivoyatchi") ?></th>
 						<th class="text-end pe-5"><?php echo lot_kir("Amallar") ?></th>
 					</tr>
@@ -42,6 +52,7 @@ include 'inc/begin_body.php';
 						echo '<tr>
 							<td class="ps-4">'.++$hadislar_num.'</td>
 							<td><a href="?id='.$val['id'].'" class="text-gray-800 text-hover-primary fs-5 fw-bold">'.$val['title'].'</a></td>
+							<td>'. mb_strimwidth($val['text'], 0, 100, '...') .'</td>
 							<td>'.$val['roviy'].'</td>
 							<td>'.$val['rivoyatchi'].'</td>
 							<td class="text-end pe-5 text-nowrap">
@@ -82,7 +93,7 @@ include 'inc/begin_body.php';
 	<div class="modal-dialog modal-dialog-centered mw-450px">
 		<div class="modal-content">
 			<div class="modal-header pb-0 border-0">
-				<h2 class="fw-bold"><?php echo lot_kir("Tovar qo'shish") ?></h2>
+				<h2 class="fw-bold"><?php echo lot_kir("Hadis qo'shish") ?></h2>
 				<div class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" aria-label="Close">
 					<i class="ki-duotone ki-cross fs-1">
 						<span class="path1"></span>
@@ -93,7 +104,7 @@ include 'inc/begin_body.php';
 			<div class="modal-body">
 				<form id="addHadisForm">
 					<div class="form-floating mb-4">
-						<select class="form-select" name="id_roviy" data-control="select2" data-placeholder="<?php echo lot_kir("Birini tanlang") ?>" data-dropdown-parent="#addHadis" required>
+						<select multiple class="form-select" name="id_roviy" data-control="select2" data-placeholder="<?php echo lot_kir("Birini tanlang") ?>" data-dropdown-parent="#addHadis" required>
 							<option></option>
 							<?php foreach ($roviylar as $key => $val) {
 							echo '<option value="'.$val['id'].'">'.$val['name'].'</option>';
@@ -120,7 +131,7 @@ include 'inc/begin_body.php';
 					</div>
 					<div class="form-floating mb-4">
 						<textarea class="form-control" name="info" placeholder="Matni AR" style="height: 100px"></textarea>
-						<label><?php echo lot_kir("Matni AR") ?></label>
+						<label><?php echo lot_kir("Matn AR") ?></label>
 					</div>
 					<div class="form-floating mb-4">
 						<textarea class="form-control" name="info" placeholder="Matn UZ" style="height: 100px"></textarea>
@@ -128,7 +139,7 @@ include 'inc/begin_body.php';
 					</div>
 					<div class="form-floating mb-4">
 						<textarea class="form-control" name="mano" placeholder="Izoh" style="height: 100px"></textarea>
-						<label><?php echo lot_kir("Manosi") ?></label>
+						<label><?php echo lot_kir("Ma'nosi") ?></label>
 					</div>
 					<div class="text-center pt-5">
 						<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" aria-label="Close"><?php echo lot_kir("Inkor etish") ?></button>
@@ -162,7 +173,7 @@ include 'inc/begin_body.php';
 				<form id="editHadisForm">
 					<div class="input-group mb-4">
 						<div class="form-floating">
-							<select class="form-control form-select" name="id_roviy" data-control="select2" data-placeholder="<?php echo lot_kir("Birini tanlang") ?>" data-dropdown-parent="#editHadis" required>
+							<select multiple class="form-control form-select" name="id_roviy" data-control="select2" data-placeholder="<?php echo lot_kir("Birini tanlang") ?>" data-dropdown-parent="#editHadis" required>
 								<option></option>
 								<?php foreach ($roviylar as $key => $val) {
 								echo '<option value="'.$val['id'].'">'.$val['name'].'</option>';
@@ -176,7 +187,7 @@ include 'inc/begin_body.php';
 					</div>
 					<div class="input-group mb-4">
 						<div class="form-floating">
-							<select class="form-select" name="id_roviy" data-control="select2" data-placeholder="<?php echo lot_kir("Birini tanlang") ?>" data-dropdown-parent="#editHadis" required>
+							<select class="form-select" name="id_rivoyatchi" data-control="select2" data-placeholder="<?php echo lot_kir("Birini tanlang") ?>" data-dropdown-parent="#editHadis" required>
 								<option></option>
 								<?php foreach ($rivoyatchi as $key => $val) {
 								echo '<option value="'.$val['id'].'">'.$val['name'].'</option>';

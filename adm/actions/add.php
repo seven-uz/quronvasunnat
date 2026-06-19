@@ -173,6 +173,8 @@ if($main_table === 'roles'){
 	$main_sql = "(".$Functions->createData("$date, $_SESSION[id], $amount, $comment").")";
 }elseif($main_table === 'menu'){
 	$main_sql = "(".$Functions->createData("$title, $cat_id, $parent_id, $link, $sort, $active").")";
+}elseif($main_table === 'hadislar'){
+	$main_sql = "(".$Functions->createData("$title, $cat_id, $parent_id, $link, $sort, $active").")";
 }elseif($main_table === 'menu_categories'){
 	$main_sql = "(".$Functions->createData("$title, $sort, $active").")";
 }elseif($main_table === 'menu_parents'){

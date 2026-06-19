@@ -1,0 +1,9 @@
+# Bu papkadagi fayllar faqat ichki require() uchun.
+# To'g'ridan-to'g'ri brauzerdan kirishni taqiqlaymiz.
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order allow,deny
+	Deny from all
+</IfModule>

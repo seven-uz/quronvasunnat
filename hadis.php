@@ -15,7 +15,7 @@ require 'blocks/header.php';
 	<section class="section" id="lastHadis">
 		<div class="container">
 			<?php if(isset($_GET['id'])):
-				$lastHadis = mysqli_query($db, "SELECT h.*, rv.name as roviy, rvch.name as rivoyatchi, k.title as kunya FROM hadislar h LEFT JOIN roviylar rv ON h.id_roviy = rv.id LEFT JOIN rivoyatchilar rvch ON h.id_rivoyatchi = rvch.id LEFT JOIN kunyalar k ON rvch.id_kunya = k.id WHERE h.id = $_GET[id]");
+				$lastHadis = mysqli_query($db, "SELECT h.*, rv.name as roviy, rvch.name as rivoyatchi, k.title as kunya FROM hadislar h LEFT JOIN roviylar rv ON h.id_roviy = rv.id LEFT JOIN rivoyatchilar rvch ON h.id_rivoyatchi = rvch.id LEFT JOIN kunyalar k ON rvch.id_kunya = k.id WHERE h.id = ".intval($_GET['id']));
 				$row = $lastHadis->fetch_assoc();
 			?>
 				<h3><?php echo word($row['title']) ?></h3>

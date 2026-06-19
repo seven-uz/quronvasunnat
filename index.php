@@ -8,6 +8,8 @@ $headerColor = "linear-gradient(109.6deg, rgba(9,15,33,1) 16%, #233E67 91.1% );"
 require 'blocks/head.php';
 require 'blocks/header.php';
 
+$a = 0;
+$randomAuH = '';
 while ($a <= 30) {
 	$a++;
 	$randomAuH .= rand(1, 99).',';
@@ -117,9 +119,10 @@ $randomAuH = rtrim($randomAuH, ',');
 				<div class="col-md-4">
 					<div class="card w-100">
 						<?$getSunnat = mysqli_query($db, "SELECT count(*) FROM sunnatlar");
-						if($getSunnat->fetch_row()[0] > 0){
+						$sunnatCount = $getSunnat->fetch_row()[0];
+						if($sunnatCount > 0){
 
-							$sunnatRand = mt_rand(0,$getSunnat->fetch_row()[0] - 1);
+							$sunnatRand = mt_rand(0,$sunnatCount - 1);
 							$sunnat = mysqli_query($db, "SELECT * FROM sunnatlar LIMIT $sunnatRand, 1");
 							$sunnatRow = $sunnat->fetch_assoc();
 

@@ -2,13 +2,13 @@
 
 // $arabic_date = getArabicDate(date("d-m-Y"));
 
-$hijriMonthName = $arabic_date['hijri']['month']['en'];
-$hijriMonthNameAr = $arabic_date['hijri']['month']['ar'];
-$hijriDay = $arabic_date['hijri']['day'];
-$hijriMonth = $arabic_date['hijri']['month']['number'];
-$hijriYear = $arabic_date['hijri']['year'];
-$hijriDayName = $arabic_date['hijri']['weekday']['en'];
-$hijriDayNameAr = $arabic_date['hijri']['weekday']['ar'];
+$hijriMonthName = $arabic_date['hijri']['month']['en'] ?? '';
+$hijriMonthNameAr = $arabic_date['hijri']['month']['ar'] ?? '';
+$hijriDay = $arabic_date['hijri']['day'] ?? '';
+$hijriMonth = $arabic_date['hijri']['month']['number'] ?? '';
+$hijriYear = $arabic_date['hijri']['year'] ?? '';
+$hijriDayName = $arabic_date['hijri']['weekday']['en'] ?? '';
+$hijriDayNameAr = $arabic_date['hijri']['weekday']['ar'] ?? '';
 
 if($hijriMonthName == "Shawwāl") $hijriMonthName = "Shavvol";else
 if($hijriMonthName == "Ṣafar") $hijriMonthName = "Safar";
@@ -32,10 +32,12 @@ require 'nav.php';
 				<h6 class="m-0 pb-md-0 pb-2">
 					<?php echo word('Milodiy sana: '.date("d").'-'.cmn(date("m")).', '.date("Y").'-yil. ').wn() ?>
 				</h6>
-				<h6 class="m-0 d-md-block d-none"><?= $words['bugun'] ?></h6>
+				<h6 class="m-0 d-md-block d-none"><?= $words['bugun'] ?? '' ?></h6>
+				<?php if(!empty($hijriYear)): ?>
 				<h6 class="m-0">
 					<?php echo word('Xijriy sana: '.$hijriDay.'-'.$hijriMonthName.', '.$hijriYear.'-yil. '.$hijriDayName) ?>
 				</h6>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

@@ -14,8 +14,8 @@ include 'blocks/header.php';
 
 if(isset($_GET['saralash'])) $saralash = $_GET['saralash'];
 if(isset($_GET['sahifa'])) $sahifa = $_GET['sahifa'];
-if(isset($_GET['sura'])) $getsura = $_GET['sura'];
-if(isset($_GET['kitob'])) $kitob = $_GET['kitob'];
+if(isset($_GET['sura'])) $getsura = intval($_GET['sura']);
+if(isset($_GET['kitob'])) $kitob = intval($_GET['kitob']);
 
 if(empty($_GET)){
 	$globalQuery = mysqli_query($db, "SELECT * FROM suranames");
@@ -136,7 +136,7 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 						<p class="basmala_surah text-center">
 							<?php if($getsura == 1){ ?>
 							ﭷ ﭸ ﭹ ﭺ ﭻ
-							<p style="text-align: center;font-size:20px;font-weight: 600"><?php echo  $words['auzu'] ?>.</p>
+							<p style="text-align: center;font-size:20px;font-weight: 600"><?php echo  $words['auzu'] ?? '' ?>.</p>
 							<?}else{ ?>
 							ﭑ ﭒ ﭓ
 							<!-- <p style="text-align: center;font-size:20px;font-weight: 600"><?php //echo  $words['swnoA'] ?>.</p> -->
@@ -193,13 +193,13 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 						</div>
 						<?}while($rowSura = $sqlSura->fetch_assoc());
 
-										$prvs = $_GET['sura'] - 1;
-										$next = $_GET['sura'] + 1;
+										$prvs = $getsura - 1;
+										$next = $getsura + 1;
 
 										?>
 						<div class="suraItem-bottom d-flex justify-content-between">
-							<a href="quron?sura=<?php echo  $prvs ?>" class="btn <?php if($_GET['sura'] < 2)echo 'disabled';?> btn-primary m-3"><i class="fas fa-arrow-left"></i> &nbsp; Avvalgi sura</a>
-							<a href="quron?sura=<?php echo  $next ?>" class="btn <?php if($_GET['sura'] > 113)echo 'disabled';?> btn-primary btn-pill m-3">Keyingi sura &nbsp; <i class="fas fa-arrow-right"></i></a>
+							<a href="quron?sura=<?php echo  $prvs ?>" class="btn <?php if($getsura < 2)echo 'disabled';?> btn-primary m-3"><i class="fas fa-arrow-left"></i> &nbsp; Avvalgi sura</a>
+							<a href="quron?sura=<?php echo  $next ?>" class="btn <?php if($getsura > 113)echo 'disabled';?> btn-primary btn-pill m-3">Keyingi sura &nbsp; <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -264,12 +264,12 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 						<?}?>
 						<div class="numPage"><?php echo arabicNumbers($kitob)?></div>
 					</div>
-					<?$prvs = $_GET['kitob'] - 1;$next = $_GET['kitob'] + 1;$disabled = 'disabled';?>
+					<?$prvs = $kitob - 1;$next = $kitob + 1;$disabled = 'disabled';?>
 					<div class="kitobPag d-flex justify-content-between">
-						<a href="quron?kitob=<?php echo  $next ?>" class="btn btn-primary <?php if($_GET['kitob'] == 604)echo $disabled;?>">
+						<a href="quron?kitob=<?php echo  $next ?>" class="btn btn-primary <?php if($kitob == 604)echo $disabled;?>">
 							<i class="fas fa-arrow-left"></i> &nbsp; Keyingi sahifa
 						</a>
-						<a href="quron?kitob=<?php echo  $prvs ?>" class="btn btn-primary <?php if($_GET['kitob'] == 1)echo $disabled;?>">
+						<a href="quron?kitob=<?php echo  $prvs ?>" class="btn btn-primary <?php if($kitob == 1)echo $disabled;?>">
 							<i class="fas fa-arrow-right"></i> &nbsp; Avvalgi sahifa
 						</a>
 					</div>

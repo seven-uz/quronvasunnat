@@ -33,13 +33,13 @@ curl_close($ch2);
 // $data3 = json_decode($response3, true);
 // curl_close($ch3);
 
-$hijriMonthName = $data2['data']['hijri']['month']['en'];
-$hijriMonthNameAr = $data2['data']['hijri']['month']['ar'];
-$hijriDay = $data2['data']['hijri']['day'];
-$hijriMonth = $data2['data']['hijri']['month']['number'];
-$hijriYear = $data2['data']['hijri']['year'];
-$hijriDayName = $data2['data']['hijri']['year'];
-$hijriDayNameAr = $data2['data']['hijri']['weekday']['ar'];
+$hijriMonthName = $data2['data']['hijri']['month']['en'] ?? '';
+$hijriMonthNameAr = $data2['data']['hijri']['month']['ar'] ?? '';
+$hijriDay = $data2['data']['hijri']['day'] ?? '';
+$hijriMonth = $data2['data']['hijri']['month']['number'] ?? '';
+$hijriYear = $data2['data']['hijri']['year'] ?? '';
+$hijriDayName = $data2['data']['hijri']['weekday']['en'] ?? '';
+$hijriDayNameAr = $data2['data']['hijri']['weekday']['ar'] ?? '';
 
 if($hijriMonthName == "Shawwāl") $hijriMonthName = "Shavvol";
 

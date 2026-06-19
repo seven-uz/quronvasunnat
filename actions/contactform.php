@@ -10,7 +10,7 @@ if(isset($_POST['text'])) {$text = $_POST['text'];}
 if(isset($_POST['code'])) {$code = $_POST['code'];}
 if(isset($_POST['mt1'])) {$mt1 = $_POST['mt1'];}
 if(isset($_POST['mt2'])) {$mt2 = $_POST['mt2'];}
-$codeft = $mt1 + $mt2;
+$codeft = ($mt1 ?? 0) + ($mt2 ?? 0);
 
 ?><script>
     $(".my-modal-confirm").on("click", function(){
@@ -24,7 +24,7 @@ if($_POST) {
    $code = "";
 
    if(isset($_POST['name'])) {
-     $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+     $name = trim(strip_tags($_POST['name']));
    }
 
    if(isset($_POST['email'])) {
@@ -33,11 +33,11 @@ if($_POST) {
    }
 
    if(isset($_POST['text'])) {
-       $text = filter_var($_POST['text'], FILTER_SANITIZE_STRING);
+       $text = trim(strip_tags($_POST['text']));
    }
 
    if(isset($_POST['code'])) {
-       $code = filter_var($_POST['code'], FILTER_SANITIZE_STRING);
+       $code = trim(strip_tags($_POST['code']));
    }
 
    if(isset($_POST['visitor_message'])) {

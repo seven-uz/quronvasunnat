@@ -1,0 +1,16 @@
+# Mahalliy (production) ma'lumotlar bazasi kredensiallari — hech qachon commit qilinmasin
+blocks/db.local.php
+adm/config.local.php
+
+# Claude Code mahalliy sozlamalari
+.claude/settings.local.json
+.claude/worktrees/
+
+# OS / muharrir fayllari
+desktop.ini
+Thumbs.db
+.DS_Store
+*.log
+
+# Foydalanuvchi yuklagan media (xohishga ko'ra ochib qo'ying)
+# assets/media/

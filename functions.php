@@ -1,10 +1,10 @@
 <?
-session_start();
+if(session_status() === PHP_SESSION_NONE) session_start();
 
 $siteTitle = word(' | Qur’on va Sunnat');
 
 function word($value){
-    if($_COOKIE['lang'] == 'uzk'){
+    if(($_COOKIE['lang'] ?? '') == 'uzk'){
         return tokr($value);
     }else{
         return $value;
@@ -99,10 +99,10 @@ function search_file($folderName, $fileName)
 
 function phone_number12($sPhone)
 {
-    $sPhone = preg_replace("[^0-9]",'',$sPhone);
+    $sPhone = preg_replace("/[^0-9]/",'',$sPhone);
     if(strlen($sPhone) != 12) return(False);
     $sArea = substr($sPhone, 0,3);
-    $sArea = substr($sPhone, 3,2);
+    $sArea2 = substr($sPhone, 3,2);
     $sPrefix = substr($sPhone,5,3);
     $sNumber = substr($sPhone,8,2);
     $sNumber2 = substr($sPhone,10,2);
@@ -112,7 +112,7 @@ function phone_number12($sPhone)
 
 function phone_number9($sPhone)
 {
-    $sPhone = preg_replace("[^0-9]",'',$sPhone);
+    $sPhone = preg_replace("/[^0-9]/",'',$sPhone);
     if(strlen($sPhone) != 9) return(False);
     $sArea = substr($sPhone, 0,2);
     $sPrefix = substr($sPhone,2,3);
@@ -124,7 +124,7 @@ function phone_number9($sPhone)
 
 function phone_number9w($sPhone)
 {
-    $sPhone = preg_replace("[^0-9]",'',$sPhone);
+    $sPhone = preg_replace("/[^0-9]/",'',$sPhone);
     if(strlen($sPhone) != 9) return(False);
     $sArea = substr($sPhone, 0,2);
     $sPrefix = substr($sPhone,2,3);
@@ -239,7 +239,7 @@ function modalScs($value){
 <div class="mymodal">
 <div class="mymodal-success">
     <div class="header">
-      <h2 class="title">'.$words['success'].'</h2>
+      <h2 class="title">'.word('Muvaffaqiyatli').'</h2>
     </div>
     <div class="content">
       <div>'.$value.'</div>
@@ -257,7 +257,7 @@ function modalErr($value){
     <div class="mymodal">
         <div class="mymodal-error">
             <div class="header">
-            <h2 class="title">'.$words['error'].'ss</h2>
+            <h2 class="title">'.word('Xatolik').'</h2>
             </div>
             <div class="content">
             <div>'.$value.'</div>
@@ -518,6 +518,6 @@ function getArabicDate($date){
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	curl_setopt($ch, CURLOPT_URL, $url);
 	$response = curl_exec($ch);
-	return json_decode($response, true)['data'];
 	curl_close($ch);
+	return json_decode($response, true)['data'];
 }

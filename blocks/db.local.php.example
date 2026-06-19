@@ -1,0 +1,13 @@
+<?php
+// Namuna fayl. Production serverda nusxa oling: db.local.php nomi bilan saqlang.
+// Bu fayl .gitignore ichida, shuning uchun parollar git'ga tushmaydi.
+//
+//   cp blocks/db.local.php.example blocks/db.local.php
+//
+// db.php avval $host/$user/$password/$database larni e'lon qiladi, keyin
+// (agar mavjud bo'lsa) db.local.php ni require qilib ularning ustiga yozadi.
+
+$host     = "localhost";
+$user     = "PRODUCTION_USER";
+$password = "PRODUCTION_PASSWORD";
+$database = "quronvasunnat";

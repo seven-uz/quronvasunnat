@@ -1,5 +1,23 @@
 <?
-session_start();
+if(session_status() === PHP_SESSION_NONE) session_start();
+
+// Muhitga qarab xatolar: lokal/dev'da HAMMA xato ekranda ko‘rinadi (debug uchun),
+// hosting/production'da ko‘rsatilmaydi — faqat log'ga yoziladi.
+$host = $_SERVER['SERVER_NAME'] ?? ($_SERVER['HTTP_HOST'] ?? '');
+$host = preg_replace('/:\d+$/', '', $host); // bo‘lsa, portni olib tashlash
+$isDev = in_array($host, ['localhost', '127.0.0.1', '::1'], true)
+	|| strpos($host, '.') === false                    // OSPanel papka-domeni, masalan "quronvasunnat"
+	|| preg_match('/\.(local|test|localhost|dev)$/i', $host);
+
+ini_set('log_errors', '1');
+if ($isDev) {
+	error_reporting(E_ALL);
+	ini_set('display_errors', '1');
+} else {
+	error_reporting(E_ALL & ~E_DEPRECATED);
+	ini_set('display_errors', '0');
+}
+
 require 'db.php';
 
 if(!isset($_COOKIE['lang'])) $_COOKIE['lang'] = 'uzk';

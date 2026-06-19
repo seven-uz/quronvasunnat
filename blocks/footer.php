@@ -288,7 +288,7 @@
                                 <?if(!empty($_COOKIE['globalColor'])){?> <i class="fas fa-times" id="resetGbColor"></i>
                                 <?}?></label>
                             <div class="col-6 custom-control pl-0">
-                                <input type="color" class="form-control" id="globalColor" value="<?if(empty($_COOKIE['globalColor']))echo '#007BFF';else echo $_COOKIE['globalColor'];?>">
+                                <input type="color" class="form-control" id="globalColor" value="<?if(empty($_COOKIE['globalColor']))echo '#007BFF';else echo htmlspecialchars($_COOKIE['globalColor'], ENT_QUOTES, 'UTF-8');?>">
                             </div>
                         </div>
                         <div class="form-group row">

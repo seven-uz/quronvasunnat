@@ -10,15 +10,10 @@ $headerColor = "linear-gradient(to right, #05053c, #083465, #28618b, #548fad, #8
 $duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 require 'blocks/head.php';
-require 'blocks/nav.php';
 require 'blocks/header.php';
 
 ?>
-<main>
-	<section>
-		<h3>Roza</h3>
-	</section>
-</main>
+<?include 'blocks/empty-state.php'?>
 
 <?include 'blocks/footer.php'?>
 </body>

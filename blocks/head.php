@@ -21,7 +21,12 @@
 	<link rel="manifest" href="assets/images/favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#1B7F5E">
+
+	<!-- Fonts: serif sarlavhalar (Lora) + sans matn (Inter), kirill+lotin qo'llab-quvvatlaydi -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap&subset=cyrillic,cyrillic-ext,latin,latin-ext">
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
@@ -38,7 +43,7 @@
 
 	<!-- Custom Styles -->
 	<!-- <link rel="stylesheet" href="assets/css/element.css"> -->
-	<link rel="stylesheet" href="assets/css/style.css?v=1.0.4">
+	<link rel="stylesheet" href="assets/css/style.css?v=2.0.0">
 	<!-- <link rel="stylesheet" href="assets/css/media.css"> -->
 	<title><?= $pageTitle . $siteTitle ?></title>
 	<!-- Yandex.Metrika counter -->

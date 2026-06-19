@@ -13,11 +13,7 @@ require 'blocks/head.php';
 require 'blocks/header.php';
 
 ?>
-<main>
-	<section>
-		<h3>Content</h3>
-	</section>
-</main>
+<?include 'blocks/empty-state.php'?>
 
 <?include 'blocks/footer.php'?>
 </body>

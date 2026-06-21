@@ -11,7 +11,7 @@ Sayt to'rt tilda/yozuvda ishlaydi va matnni **vaqtida** (on-the-fly) o'giradi:
 
 | Qatlam        | Texnologiya                                          |
 |---------------|------------------------------------------------------|
-| Backend       | PHP 8.1 (protsedural), `mysqli`                       |
+| Backend       | PHP 8.3 mos (protsedural), `mysqli`                   |
 | Ma'lumotlar b.| MySQL / MariaDB (`quronvasunnat`)                    |
 | Frontend      | Bootstrap 4, jQuery, OwlCarousel 2, Font Awesome 5   |
 | Server        | Apache (`.htaccess` rewrite), mahalliy — OSPanel     |
@@ -31,7 +31,9 @@ Sayt to'rt tilda/yozuvda ishlaydi va matnni **vaqtida** (on-the-fly) o'giradi:
 ├── quron.php         # Qur'on: suralar, juz, sahifa, sajda + audio
 ├── duo.php           # Duolar ro'yxati va bitta duo (?id=)
 ├── hadis.php         # Hadislar ro'yxati va bitta hadis (?id=)
+├── sunnat.php        # Sunnatlar ro'yxati va bitta sunnat (?id=)
 ├── asmaulhusna.php   # Allohning 99 ismi
+├── search.php        # To'liq qidiruv natijalari sahifasi (?q=)
 ├── iymon, roza, haj, zakot, namoz, kalendar, prayertimes ...
 ├── livesearch.php    # AJAX jonli qidiruv (suralar bo'yicha)
 ├── functions.php     # Yordamchi funksiyalar (word(), tokr(), sana, telefon ...)
@@ -49,7 +51,7 @@ Sayt to'rt tilda/yozuvda ishlaydi va matnni **vaqtida** (on-the-fly) o'giradi:
 │
 ├── assets/           # css, js, images, audio, media
 │
-└── adm/              # Admin panel (Metronic asosidagi alohida panel — pastga qarang)
+└── adm/              # Kichik, xavfsiz Qur'on kontent admini (CRUD — pastga qarang)
 ```
 
 ### Sahifa shabloni (har bir frontend sahifasi)
@@ -90,7 +92,8 @@ Frontend quyidagi jadvallarni o'qiydi (sxema kodga qarab tiklangan):
 | `qorilar`       | qiroat qiluvchilar ro'yxati                                   |
 | `tags`, `words` | teglar / tarjima lug'ati                                      |
 
-> Sxema fayli (`.sql`) repozitoriyda yo'q. Bo'lsa, `db/` papkasiga qo'shing.
+> To'liq sxema: [`db/schema.sql`](db/schema.sql) — koddan qayta tiklangan struktura
+> (ma'lumot dump'i emas). Yangi muhitda import qiling (pastga qarang).
 
 ---
 
@@ -99,7 +102,12 @@ Frontend quyidagi jadvallarni o'qiydi (sxema kodga qarab tiklangan):
 1. Repozitoriyni OSPanel domeni papkasiga joylang
    (`OSPanel/domains/quronvasunnat`).
 2. OSPanel'da PHP 8.1 va MySQL ni yoqing. `php.ini`: `short_open_tag = On`.
-3. MySQL'da `quronvasunnat` bazasini yarating va sxema/ma'lumotlarni import qiling.
+3. MySQL'da bazani yarating va sxemani import qiling:
+   ```
+   mysql -u root -e "CREATE DATABASE quronvasunnat CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+   mysql -u root quronvasunnat < db/schema.sql
+   ```
+   So'ng kontentni (oyatlar, duolar, hadislar ...) to'ldiring — admin panel orqali yoki o'z dump'ingizdan.
 4. Mahalliy ulanish: standart `blocks/db.php` `root` / bo'sh parol bilan ishlaydi.
    Production uchun:
    ```
@@ -124,11 +132,19 @@ Frontend quyidagi jadvallarni o'qiydi (sxema kodga qarab tiklangan):
 
 ## Admin panel (`adm/`)
 
-`adm/` ichidagi panel — Metronic shablonidagi **boshqa loyihadan** (tikuvchilik/savdo
-tizimi: `products`, `raw_materials`, `clients`, `orders`, `attendance` ...) olib qo'shilgan
-qoldiq kod. U Qur'on saytining ma'lumotlar bazasiga **mos kelmaydi** va hozir to'liq
-ishlamaydi. Undan foydalanishdan oldin tozalash yoki qaytadan yozish kerak
-(qarang: [docs/ANALYSIS.md](docs/ANALYSIS.md)).
+`adm/` — Qur'on kontentini boshqarish uchun **kichik va xavfsiz** CRUD panel (eski begona
+Metronic ERP butunlay o'chirildi). Xususiyatlari:
+
+- `password_verify` + `hash_equals` bilan login, barcha POST'da CSRF token.
+- `$ADMIN_TABLES` **oq ro'yxati** (`duolar, hadislar, sunnatlar, asmaulhusna, tags`) —
+  SQL'ga faqat shu jadval nomlari tushadi; formalar `SHOW COLUMNS` orqali quriladi.
+- CRUD to'liq `mysqli_prepare` + `bind_param`; chiqish `htmlspecialchars`.
+
+Maxfiy login/parol `adm/config.local.php` (gitignore) da turadi. Namuna:
+`adm/config.local.example.php`. Yangi parol hash'i:
+```
+php -r "echo password_hash('YANGI_PAROL', PASSWORD_DEFAULT);"
+```
 
 ---
 

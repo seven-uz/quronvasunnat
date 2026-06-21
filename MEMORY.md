@@ -7,7 +7,7 @@ darhol tushunib, ishni davom ettira olsin. Repozitoriya bilan birga git'da yurad
 > Bu yerda **HECH QACHON** maxfiy ma'lumot (parol, token, real kredensial) yozilmaydi.
 > Ular faqat gitignore qilingan `blocks/db.local.php` va `adm/config.local.php` da turadi.
 
-Yangilangan sana: 2026-06-05.
+Yangilangan sana: 2026-06-21.
 
 ---
 
@@ -57,6 +57,30 @@ konvensiyalar va xavfsizlik qoidalari: [CLAUDE.md](CLAUDE.md). Audit tarixi:
   shriftlari; mavjud class/ID'lar (JS uchun) saqlandi. Buzuq `kalendar.php`/`prayertimes.php`
   qayta tiklandi; tayyor bo'lmagan bo'limlar uchun `blocks/empty-state.php`.
 
+### 2026-06-21 yangilanishi (UI + kamchiliklar)
+- **Ishlaydigan tungi rejim (dark mode)**: toggle id `customSwitch1`→`darkMode` (JS bilan
+  moslandi), `body.darkMode` server tomonda cookie'dan qo'yiladi, `style.css` ga to'liq
+  to'q dizayn-tizim qo'shildi (CSS o'zgaruvchilarni qayta bo'yash). Brauzerda computed-style
+  bilan tekshirildi: fon `#0F1512`, karta `#161C19`, tugma `#36B083` — ishlaydi.
+- **Urg'u rangi (accent) endi ishlaydi**: `functions.php` da `accent_css()` tanlangan rangdan
+  soyalarni hosil qiladi, `head.php` `globalColor` cookie bo'lsa `:root` ni override qiladi.
+  O'lik "Sayt 2-rangi" boshqaruvi olib tashlandi. Sozlama cookie'lariga `path=/;max-age` qo'shildi
+  (endi saqlanadi).
+- **Mobil sura navigatsiyasi**: `quron.php` da off-canvas drawer (toggle tugma + backdrop + JS),
+  ilgari `listSurah` mobil'da butunlay yashirin edi.
+- **Yangi sahifalar**: `sunnat.php` (nav va bosh sahifadagi `sunnat?id=` havolalari 404 edi) va
+  `search.php` (qidiruv formasi/teglar nishoni — prepared LIKE bir nechta jadval bo'yicha).
+  Nav qidiruv formasi GET + `name="q"` ga o'tkazildi; "Sunnat" menyu havolasi tuzatildi.
+- **PHP kamchiliklar**: `index.php` `>10` padding bug'i (10-raqam tushib qolardi) `str_pad` ga;
+  `asmaulhusna.php` `WHERE id='$thisval'`→`intval`; o'lik `WHERE type=1` so'rovlari (6 fayl) va
+  brain.php dagi "Eskidan ketdi" debug echo olib tashlandi; `textType2`→`textType` alias.
+- **a11y**: skip-link, `<main id="main-content">`, fokus halqalari, ikonka-tugmalarga
+  `aria-label`, chop etish (print) uslublari.
+- **DB sxema**: `db/schema.sql` qo'shildi (koddan tiklangan struktura).
+- **Tozalash**: 21 ta `desktop.ini` va 2 ta 1-baytli axlat fayl git'dan olib tashlandi.
+- **Tekshiruv**: barcha 39 PHP fayl `php-parser` (JS) bilan parse qilindi — 0 xato.
+  (Bu muhitda PHP runtime yo'q; sintaksis shu yo'l bilan tekshirildi.)
+
 ### Admin'ga kirish
 - Standart login/parol: **admin / admin** (faqat dastlabki sozlash uchun).
 - Production'da ALBATTA o'zgartiring: `adm/config.local.example.php` ni `adm/config.local.php`
@@ -69,8 +93,11 @@ konvensiyalar va xavfsizlik qoidalari: [CLAUDE.md](CLAUDE.md). Audit tarixi:
 
 1. **[KRITIK] Tarqalgan production DB paroli git tarixida qoldi** — hostingda **darhol
    almashtiring**. (Qiymat bu yerda yozilmaydi; eski commit'larda bor.)
-2. Admin CRUD va yangi dizayn **brauzerda tekshirilmadi** (bu muhitda MySQL yo'q) — egasi
-   haqiqiy serverda bir ko'zdan kechirsin.
-3. Kichik ochiq kamchiliklar (ANALYSIS.md "QOLGAN" bo'limi): qisqa teglarga bog'liqlik,
-   `functions.php` da takror kod, `index.php` audio nomi mantig'i, repozitoriyada DB sxema
-   dump'i yo'q (`db/schema.sql` qo'shish tavsiya etiladi).
+2. Admin CRUD, yangi dizayn, dark mode, qidiruv va `sunnat.php` **haqiqiy MySQL bilan
+   brauzerda tekshirilmadi** (bu muhitda DB yo'q). Egasi serverda bir bor ko'zdan kechirsin.
+3. **DB to'ldirish**: `db/schema.sql` faqat struktura. Oyatlar/duolar/hadislar kabi kontentni
+   admin panel orqali yoki mavjud dump'dan yuklash kerak.
+4. **[O'RTA] Qisqa PHP teglari (`<?`)** — hamon `short_open_tag=On` ga bog'liq (ANALYSIS "C").
+   Server sozlamasi hujjatlashtirilgan; xohlasa asta `<?php`/`<?=` ga o'tkazish mumkin.
+5. (Ixtiyoriy) `functions.php` dagi `d()/dt()/dwt2()` sana funksiyalari hamon o'xshash —
+   kelajakda umumiy yordamchiga birlashtirish mumkin (`textType2` allaqachon alias qilindi).

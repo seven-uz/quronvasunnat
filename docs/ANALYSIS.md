@@ -188,3 +188,64 @@ Audio havolasini tekshirish kerak.
 ## Tekshirish
 O'zgartirilgan barcha fayllar `php -d short_open_tag=On -l` bilan lint qilindi — sintaksis
 xatosi yo'q. UI brauzerda tekshirilmadi (bu muhitda MySQL/OSPanel yo'q).
+
+
+---
+
+## 2026-06-21: UI yaxshilash + qolgan kamchiliklarni yopish
+
+Maqsad: butun loyihani ko'rib chiqib, qolgan kamchiliklarni tuzatish va UI'ni yaxshilash.
+Barcha o'zgargan/yangi PHP fayllar `php-parser` (JS) bilan parse qilindi — **39/39 fayl, 0 xato**
+(bu muhitda PHP runtime yo'q). Dizayn brauzerda computed-style orqali tekshirildi.
+
+### UI / UX
+- **Tungi rejim (dark mode) endi to'liq ishlaydi.** Ilgari toggle JS'da `#darkMode`, HTML'da
+  `#customSwitch1` edi (umuman bog'lanmagan) va to'q tema CSS yo'q edi. Tuzatish:
+  - `blocks/footer.php`: checkbox id `darkMode`, cookie holatiga qarab `checked`.
+  - `blocks/head.php`: `<body class="darkMode">` server tomonda cookie'dan; `theme-color` ham.
+  - `blocks/brain.php`: `darkMode` cookie default.
+  - `assets/css/style.css`: `body.darkMode` uchun dizayn-tizim o'zgaruvchilarini qayta bo'yash
+    (fon, sirt, matn, chiziq, urg'u) + navbar/karta/forma/jadval moslamalari.
+  - Tekshiruv: fon `#0F1512`, karta `#161C19`, tugma `#36B083`, matn ochiq — ✓.
+- **Urg'u rangi (accent) sozlamasi ishga tushirildi.** `globalColor` cookie ilgari faqat
+  input qiymatida aks etardi, hech narsani bo'yamasdi. Endi `functions.php` da `accent_css()`
+  tanlangan rangdan soyalar hosil qiladi, `head.php` `:root` ni override qiladi. O'lik
+  "Sayt 2-rangi" boshqaruvi olib tashlandi. Sozlama cookie'lariga `path=/;max-age` qo'shildi.
+- **Mobil sura navigatsiyasi.** `quron.php` da sura ro'yxati mobil'da `d-none` + CSS
+  `display:none` tufayli butunlay yashirin edi. Endi off-canvas drawer (tugma + backdrop +
+  `main.js` handlerlari, Esc bilan yopiladi).
+- **a11y:** "mazmunga o'tish" skip-link, `<main id="main-content">`, klaviatura fokus
+  halqalari, ikonka-tugmalarga `aria-label` (sozlama, scroll), chop etish (print) uslublari.
+
+### Yangi sahifalar (sinmagan havolalar)
+- **`sunnat.php`** — nav "Sunnat" va bosh sahifadagi `sunnat?id=` / "Barchasini ko'rish"
+  havolalari 404 berardi (sahifa yo'q edi). Endi ro'yxat + bitta sunnat ko'rinishi (hadis.php
+  uslubida, `intval` bilan).
+- **`search.php`** — qidiruv formasi va footer teglari `search` ga yo'naltirardi, lekin
+  sahifa yo'q edi va formada `name` yo'q edi. Endi: nav forma GET + `name="q"`; `search.php`
+  bir nechta jadval bo'yicha **prepared LIKE** qidiradi (suralar, duolar, hadislar, sunnatlar,
+  asmaulhusna) va natijalarni guruhlab ko'rsatadi. "Sunnat" menyu havolasi ham tuzatildi.
+
+### Kod kamchiliklari (ANALYSIS "QOLGAN" — yopildi)
+- **E (audio nomi):** `index.php` da `> 10` shartli padding **10-raqamni tushirib qoldirardi**
+  (ns/no = 10 da bo'sh qiymat). `str_pad(..., 3, '0')` ga almashtirildi; o'lik `$audioFNs`/
+  `$audioFNo` hisoblari olib tashlandi. (`quron.php` da `> 9` ishlatilgan — u to'g'ri edi.)
+- **D (takror kod):** `textType2` `textType` ga alias qilindi (bayt-bayt bir xil edi).
+- **SQLi:** `asmaulhusna.php` `WHERE id='$thisval'` → `intval($thisval)`.
+- **O'lik kod:** ishlatilmagan `SELECT * FROM duolar WHERE type=1` (6 sahifada) va
+  `brain.php` dagi "Eskidan ketdi..." debug `echo` bloki olib tashlandi.
+- **Sinmagan sahifa:** `iymon.php` ning birinchi kartasi (`reloadableContent`) bo'sh edi
+  (JS handler yo'q) — tasodifiy oyat bilan to'ldirildi; duo kartasi yorlig'i tuzatildi.
+
+### F (DB sxema) — yopildi
+- `db/schema.sql` qo'shildi: barcha jadvallar (`suralar, suranames, duolar, hadislar,
+  sunnatlar, asmaulhusna, tags, quron, roviylar, rivoyatchilar, kunyalar, qorilar`) uchun
+  `CREATE TABLE` (koddan tiklangan struktura — ma'lumot dump'i emas).
+
+### Tozalash
+- 21 ta `desktop.ini` va 2 ta 1-baytli axlat fayl (`quronvasunnat`, `www`) git'dan
+  olib tashlandi (`.gitignore` ularni allaqachon e'tiborsiz qoldiradi).
+
+### Hamon ochiq (C)
+- Qisqa PHP teglari (`<?`) — `short_open_tag=On` ga bog'liqlik saqlanib qoldi (hujjatlashtirilgan;
+  ixtiyoriy migratsiya). `d()/dt()/dwt2()` sana funksiyalari hamon o'xshash (kelajak refactor).

@@ -10,16 +10,16 @@ $(document).ready(function () {
       }, 3000)
    })
    $("#qorilar, #qorilar2").change(function () {
-      document.cookie = "qori=" + this.value;
+      document.cookie = "qori=" + this.value + ";path=/;max-age=31536000";
       setTimeout("window.location.reload()", 1000);
       $(".saved").removeClass('d-none')
    })
    $("#darkMode").change(function () {
       if (this.checked == true) {
-         document.cookie = "darkMode=on"
+         document.cookie = "darkMode=on;path=/;max-age=31536000"
          $("body").addClass('darkMode')
       } else {
-         document.cookie = "darkMode=off"
+         document.cookie = "darkMode=off;path=/;max-age=31536000"
          $("body").removeClass('darkMode')
       }
       $(".saved").removeClass('d-none')
@@ -29,9 +29,9 @@ $(document).ready(function () {
    })
    $("#headerSlider").change(function () {
       if (this.checked == true) {
-         document.cookie = "headerSlider=on"
+         document.cookie = "headerSlider=on;path=/;max-age=31536000"
       } else {
-         document.cookie = "headerSlider=off"
+         document.cookie = "headerSlider=off;path=/;max-age=31536000"
       }
       $(".saved").removeClass('d-none')
       setTimeout(function () {
@@ -40,9 +40,9 @@ $(document).ready(function () {
    })
    $("#headerImg").change(function () {
       if (this.checked == true) {
-         document.cookie = "headerImg=on"
+         document.cookie = "headerImg=on;path=/;max-age=31536000"
       } else {
-         document.cookie = "headerImg=off"
+         document.cookie = "headerImg=off;path=/;max-age=31536000"
       }
       $(".saved").removeClass('d-none')
       setTimeout(function () {
@@ -50,12 +50,12 @@ $(document).ready(function () {
       }, 1000);
    })
    $("#globalColor").change(function () {
-      document.cookie = "globalColor=" + this.value;
+      document.cookie = "globalColor=" + this.value + ";path=/;max-age=31536000";
       $(".saved").removeClass('d-none')
       setTimeout("window.location.reload()", 1000);
    })
    $("#resetGbColor").on("click", function () {
-      document.cookie = "globalColor=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+      document.cookie = "globalColor=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
       $(".saved").removeClass('d-none')
       setTimeout("window.location.reload()", 1000);
    })
@@ -206,3 +206,18 @@ function copytext(el) {
    document.execCommand("copy");
    $tmp.remove();
 }
+
+// Mobil sura navigatsiyasi (off-canvas drawer) — quron.php reader uchun.
+$(function () {
+   var $sidebar = $("#surahSidebar");
+   var $backdrop = $("#surahBackdrop");
+   function closeDrawer() { $sidebar.removeClass('open'); $backdrop.removeClass('open'); }
+   $("#surahDrawerToggle").on('click', function (e) {
+      e.preventDefault();
+      $sidebar.addClass('open');
+      $backdrop.addClass('open');
+   });
+   $backdrop.on('click', closeDrawer);
+   $("#surahSidebar .list-group-item").on('click', closeDrawer);
+   $(document).on('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+});

@@ -5,15 +5,15 @@
 	<div class="d-flex align-items-center order-lg-2">
 		<div class="form-inline my-2 my-lg-0">
 			<div class="search-box">
-				<form action="search" class="inside d-flex justify-content-center align-items-center search-form" method="post" accept-charset="utf-8">
-					<input class="form-control mr-sm-2" type="search" placeholder="<?php echo word('Qidirish') ?>" aria-label="Search">
+				<form action="search" class="inside d-flex justify-content-center align-items-center search-form" method="get" accept-charset="utf-8">
+					<input class="form-control mr-sm-2" type="search" name="q" placeholder="<?php echo word('Qidirish') ?>" aria-label="<?php echo word('Qidiruv') ?>">
 					<div class="result"></div>
 				</form>
 			</div>
 		</div>
 		<!-- <i class="fas fa-times fz-20 ml-1 p-2 c-pointer search-close d-none"></i> -->
 		<!-- <i class="fas fa-search fz-20 ml-1 p-2 c-pointer searchBtn"></i> -->
-		<i class="fas fa-cog fz-20 ml-1 p-2 c-pointer" data-toggle="modal" data-target="#modal-settings"></i>
+		<i class="fas fa-cog fz-20 ml-1 p-2 c-pointer" data-toggle="modal" data-target="#modal-settings" role="button" tabindex="0" aria-label="<?php echo word('Sozlamalar') ?>"></i>
 		<!-- <i class="fas fa-user fz-20 ml-1 mr-lg-0 mr-2 p-2 c-pointer" id="userBtn" data-toggle="modal" data-target="#auth"></i> -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -58,7 +58,7 @@
 				</div>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#">
+				<a class="nav-link" href="sunnat">
 					<?php echo word('Sunnat') ?></a>
 			</li>
 			<li class="nav-item">

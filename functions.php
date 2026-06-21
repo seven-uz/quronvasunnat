@@ -217,21 +217,10 @@ function textType($value)
     return($value);
 }
 
-function textType2($value){
-    $value = trim($value);
-    $value = str_replace("ʻ", "'",$value);
-    $value = str_replace("ʼ", "'",$value);
-    $value = str_replace("O'", "O‘",$value);
-    $value = str_replace("o'", "o‘",$value);
-    $value = str_replace("G'", "G‘",$value);
-    $value = str_replace("g'", "g‘",$value);
-    $value = str_replace("'", "’",$value);
-    $value = str_replace(' "', " “",$value);
-    $value = str_replace('" ', "” ",$value);
-    $value = str_replace('", ', "”, ",$value);
-    $value = stripslashes($value);
-    $value = htmlspecialchars($value);
-    return($value);
+function textType2($value)
+{
+    // textType bilan bir xil — takror kodni olib tashlash uchun alias.
+    return textType($value);
 }
 
 function modalScs($value){
@@ -520,4 +509,36 @@ function getArabicDate($date){
 	$response = curl_exec($ch);
 	curl_close($ch);
 	return json_decode($response, true)['data'];
+}
+
+/* ---------------------------------------------------------------------
+ * Urg'u rangi (accent) yordamchilari — foydalanuvchi tanlagan rang (globalColor
+ * cookie) asosida dizayn-tizim CSS o‘zgaruvchilarini qayta bo‘yash uchun.
+ * --------------------------------------------------------------------- */
+function _hex_rgb($hex){
+    $hex = ltrim($hex, '#');
+    return array(hexdec(substr($hex,0,2)), hexdec(substr($hex,2,2)), hexdec(substr($hex,4,2)));
+}
+
+function _rgb_hex($r,$g,$b){
+    return sprintf('#%02x%02x%02x', max(0,min(255,(int)round($r))), max(0,min(255,(int)round($g))), max(0,min(255,(int)round($b))));
+}
+
+// $f < 0 => qoraytirish, $f > 0 => oqartirish (oq tomon).
+function _shade($hex, $f){
+    list($r,$g,$b) = _hex_rgb($hex);
+    if($f < 0){ $t = 1 + $f; $r *= $t; $g *= $t; $b *= $t; }
+    else { $r += (255-$r)*$f; $g += (255-$g)*$f; $b += (255-$b)*$f; }
+    return _rgb_hex($r,$g,$b);
+}
+
+// Tanlangan rangdan dizayn-tizim urg‘u o‘zgaruvchilarini hosil qiladi.
+// Yaroqsiz qiymatda bo‘sh satr qaytaradi (hech narsa o‘zgarmaydi).
+function accent_css($hex){
+    if(!is_string($hex) || !preg_match('/^#[0-9a-fA-F]{6}$/', $hex)) return '';
+    $green    = $hex;
+    $green600 = _shade($hex, -0.12);
+    $green700 = _shade($hex, -0.28);
+    $green50  = _shade($hex, 0.90);
+    return ":root{--green:$green;--green-600:$green600;--green-700:$green700;--green-50:$green50;}";
 }

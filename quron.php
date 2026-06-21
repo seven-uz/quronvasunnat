@@ -46,7 +46,7 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 ?>
 <!-- <div class="triangle"></div> -->
 
-<main>
+<main id="main-content" tabindex="-1">
 	<section>
 		<div class="container-fluid">
 			<div class="page-title d-flex align-items-center justify-content-between">
@@ -80,8 +80,10 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 
 			<?php if(isset($getsura)){ ?>
 
+				<button type="button" class="btn btn-outline-primary surah-drawer-toggle d-md-none mb-3" id="surahDrawerToggle"><i class="fas fa-list mr-2"></i><?php echo word('Suralar ro‘yxati') ?></button>
+				<div class="surah-drawer-backdrop" id="surahBackdrop"></div>
 				<div class="d-flex">
-					<div class="d-md-block d-none">
+					<div class="surah-sidebar" id="surahSidebar">
 						<ul class="list-group listSurah">
 							<?while($row = $allSura->fetch_assoc()){ ?>
 							<a href="quron?sura=<?php echo  $row['id'] ?>#gosidebar<?php echo  $row['id'] ?>" id="gosidebar<?php echo  $row['id'] ?>" class="list-group-item list-group-item-action <?php if($row['id'] == $getsura)echo 'active';?>"><?php echo  $row['id'] . '. ' . $row['title'] ?></a>

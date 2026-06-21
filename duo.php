@@ -18,7 +18,7 @@ if(isset($_GET['id'])){
 include 'blocks/head.php';
 include 'blocks/header.php';
 ?>
-<main>
+<main id="main-content" tabindex="-1">
 	<?php if(isset($_GET['id'])): ?>
 		<section class="section">
 			<div class="container">

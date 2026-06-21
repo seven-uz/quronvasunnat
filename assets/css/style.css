@@ -3783,7 +3783,138 @@ input[type="color"].form-control { padding: .2rem; height: 38px; }
 @media (max-width: 767px) {
 	.suraAr { font-size: 1.7rem; line-height: 2; }
 	.basmala_surah { font-size: 1.6rem; }
-	.listSurah { display: none; }
 	section, .section { padding: 1.75rem 0; }
 	#header { padding: 1.75rem 1rem 1.25rem; }
 }
+
+
+/* =====================================================================
+   Qo'shimcha qatlam: foydalanish qulayligi (a11y), mobil sura navigatsiyasi,
+   chop etish va tungi rejim (dark mode). Yuqoridagi dizayn-tizim ustiga.
+   ===================================================================== */
+
+/* ----- Klaviatura fokusi (accessibility) ---------------------------- */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+.list-group-item:focus-visible,
+.nav-link:focus-visible,
+.dropdown-item:focus-visible {
+	outline: 2px solid var(--green);
+	outline-offset: 2px;
+	border-radius: 6px;
+}
+.randBtns .fas:focus-visible,
+.suraItem-media .fas:focus-visible,
+.up-down .fas:focus-visible,
+.randBtns i:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+/* ----- "Mazmunga o'tish" havolasi ----------------------------------- */
+.skip-link {
+	position: absolute;
+	left: 50%;
+	top: -64px;
+	transform: translateX(-50%);
+	background: var(--green);
+	color: #fff !important;
+	padding: .6rem 1.3rem;
+	border-radius: 0 0 12px 12px;
+	z-index: 2000;
+	font-weight: 600;
+	transition: top .15s ease;
+}
+.skip-link:focus { top: 0; }
+
+/* icon-only tugmalarni klaviaturadan bosish mumkin bo'lsin */
+.randBtns .fas,
+.suraItem-media .fas { outline: none; }
+
+/* ----- Mobil sura navigatsiyasi (off-canvas) ------------------------ */
+.surah-drawer-backdrop { display: none; }
+.surah-sidebar { display: block; }
+@media (max-width: 767px) {
+	.surah-sidebar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 82%;
+		max-width: 330px;
+		background: var(--surface);
+		z-index: 1080;
+		transform: translateX(-100%);
+		transition: transform .25s ease;
+		box-shadow: var(--shadow);
+		overflow-y: auto;
+		padding: .75rem;
+	}
+	.surah-sidebar.open { transform: translateX(0); }
+	.surah-sidebar .listSurah {
+		display: block;
+		max-height: none;
+		border: none;
+		margin: 0;
+		min-width: 0;
+		box-shadow: none;
+	}
+	.surah-drawer-backdrop {
+		display: block;
+		position: fixed;
+		inset: 0;
+		background: rgba(15,30,24,.5);
+		z-index: 1070;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity .2s ease;
+	}
+	.surah-drawer-backdrop.open { opacity: 1; visibility: visible; }
+}
+
+/* ----- Chop etish (print) ------------------------------------------- */
+@media print {
+	#nav, #header, footer, .container-fluid.bottom, .up-down, .page-nav,
+	.surah-drawer-toggle, .surah-sidebar, .surah-drawer-backdrop, .copiedBlock,
+	.randBtns, #output, #output22, .linkBook { display: none !important; }
+	body { background: #fff; color: #000; }
+	.card, .content-item, .surahContent, .pagesz { box-shadow: none; border: 1px solid #ddd; }
+	a { color: #000; text-decoration: none; }
+	section, .section { padding: .5rem 0; }
+}
+
+/* ----- Tungi rejim (dark mode) -------------------------------------- */
+body.darkMode {
+	--bg:        #0F1512;
+	--surface:   #161C19;
+	--surface-2: #1E2622;
+	--ink:       #E7ECE8;
+	--muted:     #9AA39D;
+	--line:      #2A332E;
+	--green:     #36B083;
+	--green-600: #2E9A72;
+	--green-700: #6FD3A8;
+	--green-50:  #18271F;
+	--shadow:    0 1px 2px rgba(0,0,0,.45), 0 10px 28px rgba(0,0,0,.55);
+	--shadow-sm: 0 1px 2px rgba(0,0,0,.45), 0 2px 8px rgba(0,0,0,.45);
+}
+body.darkMode { background: var(--bg); color: var(--ink); }
+body.darkMode #nav.navbar { background: rgba(18,24,21,.88) !important; }
+body.darkMode .navbar-light .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(231,236,232,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+body.darkMode .navbar-toggler { border-color: var(--line); }
+body.darkMode .bg-light { background: var(--surface) !important; }
+body.darkMode .bg-white { background: var(--surface) !important; color: var(--ink); }
+/* sarlavha rasmidagi oq kartalar — matn o'qilishi uchun to'qlashtiramiz */
+body.darkMode .dayLine .bg-white { background: rgba(18,24,21,.92) !important; border-color: rgba(255,255,255,.08); }
+body.darkMode .header-carousel.juma { background: rgba(18,24,21,.95) !important; }
+body.darkMode .dayLine h6 { color: var(--ink); }
+body.darkMode .table { background: var(--surface); }
+body.darkMode select,
+body.darkMode .qorilar,
+body.darkMode .form-control { background: var(--surface); color: var(--ink); }
+body.darkMode .form-control::placeholder { color: var(--muted); }
+body.darkMode .modal-content { background: var(--surface); color: var(--ink); }
+body.darkMode .empty-state { background: var(--surface); }
+body.darkMode .close { color: var(--ink); text-shadow: none; }
+body.darkMode ::selection { background: var(--green-700); color: #0F1512; }

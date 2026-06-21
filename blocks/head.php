@@ -21,7 +21,7 @@
 	<link rel="manifest" href="assets/images/favicon/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
-	<meta name="theme-color" content="#1B7F5E">
+	<meta name="theme-color" content="<?= ($_COOKIE['darkMode'] ?? 'off') === 'on' ? '#0F1512' : '#1B7F5E' ?>">
 
 	<!-- Fonts: serif sarlavhalar (Lora) + sans matn (Inter), kirill+lotin qo'llab-quvvatlaydi -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,10 @@
 
 	<!-- Custom Styles -->
 	<!-- <link rel="stylesheet" href="assets/css/element.css"> -->
-	<link rel="stylesheet" href="assets/css/style.css?v=2.0.0">
+	<link rel="stylesheet" href="assets/css/style.css?v=2.1.0">
+	<?php if (function_exists('accent_css') && !empty($_COOKIE['globalColor'])): $accentCss = accent_css($_COOKIE['globalColor']); if ($accentCss !== ''): ?>
+	<style id="accentOverride"><?= $accentCss ?></style>
+	<?php endif; endif; ?>
 	<!-- <link rel="stylesheet" href="assets/css/media.css"> -->
 	<title><?= $pageTitle . $siteTitle ?></title>
 	<!-- Yandex.Metrika counter -->
@@ -65,4 +68,5 @@
 	<!-- /Yandex.Metrika counter -->
 </head>
 
-<body>
+<body class="<?= ($_COOKIE['darkMode'] ?? 'off') === 'on' ? 'darkMode' : '' ?>">
+<a class="skip-link" href="#main-content"><?php echo word('Asosiy mazmunga o‘tish') ?></a>

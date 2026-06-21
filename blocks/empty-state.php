@@ -1,4 +1,4 @@
-<main>
+<main id="main-content" tabindex="-1">
 	<section>
 		<div class="container">
 			<div class="empty-state">

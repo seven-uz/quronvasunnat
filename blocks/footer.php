@@ -293,17 +293,10 @@
                         </div>
                         <div class="form-group row">
                             <label class="col-6">
-                                <? echo word('Sayt 2-rangi') ?>:</label>
-                            <div class="col-6 custom-control pl-0">
-                                <input type="color" class="form-control" value="#cccccc">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-6">
                                 <? echo word('Tungi rejim') ?>:</label>
                             <div class="col-6 custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                                <label class="custom-control-label" for="customSwitch1"></label>
+                                <input type="checkbox" class="custom-control-input" id="darkMode" <?if(($_COOKIE['darkMode'] ?? 'off')=='on')echo "checked";?>>
+                                <label class="custom-control-label" for="darkMode"></label>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -388,8 +381,8 @@
     </div>
 </div>
 <div class="up-down">
-    <i class="fas fa-angle-up"></i>
-    <i class="fas fa-angle-down"></i>
+    <i class="fas fa-angle-up" role="button" tabindex="0" aria-label="<? echo word('Yuqoriga') ?>"></i>
+    <i class="fas fa-angle-down" role="button" tabindex="0" aria-label="<? echo word('Pastga') ?>"></i>
 </div>
 <div class="copiedBlock d-none" id="copiedBlock">
     Matn ko'chirib olindi. Kerakli joyga qo'yish uchun "CTRL + V" ni bosing!

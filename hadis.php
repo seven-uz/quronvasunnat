@@ -11,7 +11,7 @@ require 'blocks/head.php';
 require 'blocks/header.php';
 
 ?>
-<main>
+<main id="main-content" tabindex="-1">
 	<section class="section" id="lastHadis">
 		<div class="container">
 			<?php if(isset($_GET['id'])):

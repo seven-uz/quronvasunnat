@@ -27,13 +27,7 @@ if(isset($_GET['lang'])){header("Location: ".$_SERVER['HTTP_REFERER']);}
 if(!isset($_COOKIE['qori'])){$_COOKIE['qori'] = "Alafasy_128kbps";}
 if(!isset($_COOKIE['headerSlider'])){$_COOKIE['headerSlider'] = "on";}
 if(!isset($_COOKIE['headerImg'])){$_COOKIE['headerImg'] = "on";}
-
-if(!isset($_COOKIE['sendToTg'])) {
-	setcookie("sendToTg", time(), time()+60*60*24);
-}elseif($_COOKIE['sendToTg'] > time() + (60 * 60 * 24)){
-    echo "Eskidan ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi";
-    setcookie("sendToTg", time(), time()+(60*60*24));
-}
+if(!isset($_COOKIE['darkMode'])){$_COOKIE['darkMode'] = "off";}
 
 if(isset($_GET['lang'])){
     if($_GET['lang'] == 'uzl'){

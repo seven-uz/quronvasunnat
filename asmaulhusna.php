@@ -7,13 +7,12 @@ $pageTitle = "Asma ul-Hunsa";
 $headerImg = "asmaulhusna.webp";
 $headerColor = "linear-gradient(74deg, rgba(24,24,24,1) 0%, rgba(121,121,121,1) 50%, rgba(27,27,27,1) 100%);";
 
-$duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 include 'blocks/head.php';
 // include 'blocks/nav.php';
 include 'blocks/header.php';
 ?>
-<main>
+<main id="main-content" tabindex="-1">
 	<section>
 		<div class="container">
 			<h3 class="h2">
@@ -44,7 +43,7 @@ include 'blocks/header.php';
 									$thisval = strstr($value, ':', true);
 									$thisvalafter = strstr($value, ':');
 									$thisvalafter = substr($thisvalafter, 1);
-									$thisquery = mysqli_query($db, "SELECT * FROM suranames WHERE id='$thisval'");
+									$thisquery = mysqli_query($db, "SELECT * FROM suranames WHERE id=".intval($thisval));
 									$myrow = $thisquery->fetch_assoc();
 									$myresult .= '<a href="quron?sura='.$myrow['id'].'#'.$thisvalafter.'">'.word($myrow['title'].'['.$thisvalafter.']').'</a>, ';
 								}

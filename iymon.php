@@ -7,13 +7,12 @@ $pageTitle = word('Iymon');
 $headerImg = "iymon.webp";
 $headerColor = "linear-gradient(to right top, #000000, #392123, #6f3d37, #a45f42, #d28948, #de984c, #e9a951, #f3b956, #e8ab5c, #dc9e60, #cd9264, #bc8767);";
 
-$duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
 
 require 'blocks/head.php';
 require 'blocks/header.php';
 
 ?>
-<main>
+<main id="main-content" tabindex="-1">
 	<section>
 		<div class="container">
 			<div class="row sameHeight">
@@ -39,8 +38,10 @@ require 'blocks/header.php';
 							</div>
 						</div>
 						<div class="card-body" id="reloadableContent">
-
-						</div>
+								<p class="randDuo"><?= $row101['textar']; ?></p>
+								<p class="mano indent-20"><b><?php echo word($row101['mano']) ?></b></p>
+								<a href="quron?sura=<?= $row101['ns'] ?>#<?= $row101['no'] ?>">[<?php echo word($row101['title']) . ' ' . word('surasi') . ' ' . $row101['no'] . '-' . word('oyat') ?>]</a>
+							</div>
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -54,7 +55,7 @@ require 'blocks/header.php';
 								$row201 = mysqli_fetch_assoc($result201);
 								?>
 						<div class="card-header d-flex justify-content-between">
-							<span class="btn btn-transparent disabled mr-5">Tasodifiy oyat</span>
+							<span class="btn btn-transparent disabled mr-5">Tasodifiy duo</span>
 							<div class="randBtns">
 								<i class="fas fa-sync-alt" id="randDuoBtn"></i>
 							</div>

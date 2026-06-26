@@ -501,14 +501,48 @@ function removeSymbol($value){
 
 
 
+// Tashqi API (JSON) javobini fayl keshida saqlaydi — har so'rovdagi jonli curl o'rniga.
+// $ttl soniyada amal qiladi. Tarmoq uzilsa, eskirgan kesh (bo'lsa) qaytariladi (graceful).
+function cached_json_get($url, $ttl = 21600){
+	$dir = __DIR__ . '/cache';
+	if(!is_dir($dir)) @mkdir($dir, 0775, true);
+	$file = $dir . '/api_' . md5($url) . '.json';
+
+	// Yangi kesh bo'lsa — undan foydalanamiz.
+	if(is_file($file) && (time() - filemtime($file)) < $ttl){
+		$cached = @file_get_contents($file);
+		if($cached !== false && $cached !== '') return json_decode($cached, true);
+	}
+
+	// Jonli olish (qisqa timeout — API sekin/uzilgan bo'lsa sahifa kutib qolmasin).
+	$response = false;
+	if(function_exists('curl_init')){
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+		$response = curl_exec($ch);
+		curl_close($ch);
+	}
+
+	if($response !== false && $response !== ''){
+		@file_put_contents($file, $response, LOCK_EX);
+		return json_decode($response, true);
+	}
+
+	// API javob bermadi — eskirgan kesh bo'lsa ham, yo'qdan ko'ra yaxshi.
+	if(is_file($file)){
+		$stale = @file_get_contents($file);
+		if($stale !== false && $stale !== '') return json_decode($stale, true);
+	}
+	return null;
+}
+
+// Berilgan milodiy sana (d-m-Y) uchun hijriy sana ma'lumoti (keshlangan).
 function getArabicDate($date){
-	$url = 'https://api.aladhan.com/v1/gToH/'.$date.'?date='.$date;
-	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_URL, $url);
-	$response = curl_exec($ch);
-	curl_close($ch);
-	return json_decode($response, true)['data'];
+	$data = cached_json_get('https://api.aladhan.com/v1/gToH?date=' . urlencode($date), 21600);
+	return $data['data'] ?? null;
 }
 
 /* ---------------------------------------------------------------------

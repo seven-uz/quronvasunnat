@@ -1,6 +1,7 @@
 <?php
 
-// $arabic_date = getArabicDate(date("d-m-Y"));
+// Hijriy sana (keshlangan — getArabicDate fayl keshidan o'qiydi, jonli curl emas).
+$arabic_date = getArabicDate(date("d-m-Y"));
 
 $hijriMonthName = $arabic_date['hijri']['month']['en'] ?? '';
 $hijriMonthNameAr = $arabic_date['hijri']['month']['ar'] ?? '';

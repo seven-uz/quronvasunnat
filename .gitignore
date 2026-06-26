@@ -6,6 +6,10 @@ adm/config.local.php
 .claude/settings.local.json
 .claude/worktrees/
 
+# API kesh (runtime'da yoziladi) — papka qoladi, ichidagilari kuzatilmaydi
+/cache/*
+!/cache/.gitkeep
+
 # OS / muharrir fayllari
 desktop.ini
 Thumbs.db

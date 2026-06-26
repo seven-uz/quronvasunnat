@@ -13,11 +13,13 @@ Yangilangan sana: 2026-06-21.
 
 ## Ish jarayoni qoidasi (MUHIM)
 
-1. **Har mazmunli o'zgarishdan keyin commit qilinadi va `git push` qilinadi.** Loyiha
-   doim git bilan sinxron yuradi (boshqa joyda davom ettirish uchun).
-2. **Har yangilanishda shu `MEMORY.md` ham yangilanadi** — pastdagi "Holat" va
-   "Keyingi qadamlar" bo'limlari dolzarb saqlanadi. So'ng commit + push.
-3. Commit oldidan o'zgargan PHP `php -n -d short_open_tag=On -l <fayl>` bilan lint qilinadi.
+1. **Kichik bo'lmagan (mazmunli) HAR ishdan keyin — so'ramasdan, avtomatik:**
+   `MEMORY.md` yangilanadi → o'zgargan PHP lint → mantiqiy guruhlab tushunarli commit →
+   `git push`. Loyiha doim git bilan sinxron yuradi (boshqa joyda davom ettirish uchun).
+2. **Commitlar** mantiqiy guruhlangan, har biri bitta aniq mavzu; xabar o'zbekcha,
+   sarlavha + nima/nega bandlari. Aralash/tushunarsiz commit qilinmaydi.
+3. Lint: `php -n -d short_open_tag=On -l <fayl>`. Avtomatik: `.github/workflows/lint.yml`
+   har push'da; ixtiyoriy lokal hook — `git config core.hooksPath .githooks`.
 4. Maxfiy qiymatlar hech qachon commit qilinmaydi (qarang: yuqoridagi ogohlantirish).
 
 ---

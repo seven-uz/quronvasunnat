@@ -6,11 +6,18 @@ Bu fayl Claude Code (va boshqa AI agentlar) uchun ushbu repozitoriyda ishlash yo
 
 - Loyiha holati, qarorlar va keyingi qadamlar [MEMORY.md](MEMORY.md) da (ko'chma xotira).
   Suhbat boshida uni o'qing; loyiha boshqa kompyuterda ham shu fayldan davom etadi.
-- **Har mazmunli o'zgarishdan keyin:** `MEMORY.md` ni yangilang (holat/keyingi qadamlar) →
-  commit qiling → `git push` qiling. Loyiha doim git bilan sinxron yuradi.
-- Commit oldidan o'zgargan PHP ni `php -d short_open_tag=On -l` bilan lint qiling.
+- **Kichik bo'lmagan (mazmunli) HAR ishdan keyin — so'ramasdan, avtomatik:**
+  1. `MEMORY.md` ni yangilang ("Holat" / "Keyingi qadamlar" + sana).
+  2. O'zgargan PHP ni `php -d short_open_tag=On -l` bilan lint qiling.
+  3. Mantiqiy guruhlab commit qiling — har commit bitta aniq mavzu, xabari tushunarli
+     (o'zbekcha, sarlavha + nima/nega bandlari). Aralash, tushunarsiz commit qilmang.
+  4. `git push` qiling. Loyiha doim git bilan sinxron yuradi.
+  - "Kichik" = bitta matn tuzatish, savol-javob. "Mazmunli" = kod/dizayn/sxema/hujjat
+    o'zgarishi, yangi fayl, bog'liq bir nechta tahrir.
 - Maxfiy qiymatlar (parol/token/kredensial) hech qachon commit qilinmaydi — faqat
   gitignore'dagi `blocks/db.local.php` va `adm/config.local.php` da.
+- Avtomatik tekshiruv: `.github/workflows/lint.yml` har push'da butun loyihani lint qiladi;
+  ixtiyoriy lokal `pre-commit` hook uchun: `git config core.hooksPath .githooks`.
 
 @MEMORY.md
 

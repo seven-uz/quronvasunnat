@@ -1,0 +1,35 @@
+name: PHP Lint
+
+# Har push va pull request'da butun loyihani PHP sintaksisiga tekshiradi.
+# Sayt qisqa teglar (<?, <?=) ishlatadi, shuning uchun short_open_tag=On.
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: PHP 8.3 o'rnatish
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Barcha PHP fayllarni lint qilish (assets/ chetlanadi)
+        run: |
+          set -u
+          err=0
+          while IFS= read -r f; do
+            out=$(php -d short_open_tag=On -l "$f" 2>&1) || true
+            if ! printf '%s' "$out" | grep -q "No syntax errors"; then
+              echo "FAIL: $f"
+              echo "$out"
+              err=1
+            fi
+          done < <(find . -path ./assets -prune -o -name '*.php' -print)
+          if [ "$err" = "0" ]; then
+            echo "Hammasi joyida — PHP sintaksis xatosi yo'q (assets/ chetlandi)."
+          fi
+          exit $err

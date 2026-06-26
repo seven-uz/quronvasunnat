@@ -1,0 +1,25 @@
+#!/bin/sh
+# Commit oldidan staged PHP fayllarni lint qiladi (qisqa teglar yoqilgan).
+# Yoqish (bir marta):  git config core.hooksPath .githooks
+# php PATH'da topilmasa, hook bloklamaydi — faqat ogohlantiradi.
+
+if ! command -v php >/dev/null 2>&1; then
+	echo "pre-commit: 'php' PATH'da yo'q — lint o'tkazib yuborildi." >&2
+	exit 0
+fi
+
+fail=0
+for f in $(git diff --cached --name-only --diff-filter=ACM | grep '\.php$'); do
+	[ -f "$f" ] || continue
+	out=$(php -d short_open_tag=On -l "$f" 2>&1) || true
+	case "$out" in
+		*"No syntax errors"*) ;;
+		*) echo "Lint FAIL: $f"; echo "$out"; fail=1 ;;
+	esac
+done
+
+if [ "$fail" != "0" ]; then
+	echo "Commit to'xtatildi: PHP sintaksis xatosi bor. Tuzating va qayta urinib ko'ring." >&2
+	exit 1
+fi
+exit 0

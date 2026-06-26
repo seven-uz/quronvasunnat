@@ -1,0 +1,9 @@
+# Loyihaning asosiy fayllari tarixan CRLF — uni saqlaymiz (avtomatik aniqlash).
+* text=auto
+
+# Quyidagilar ALBATTA LF bo'lishi kerak (aks holda Linux/Git Bash'da ishlamaydi):
+# shell hook'lari, CI skriptlari, YAML.
+.githooks/pre-commit text eol=lf
+*.sh   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf

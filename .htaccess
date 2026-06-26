@@ -4,6 +4,10 @@ ErrorDocument 401 /error/error.php
 ErrorDocument 403 /error/error.php
 ErrorDocument 404 /error/error.php
 ErrorDocument 500 /error/error.php
+# robots.txt va sitemap.xml — dinamik PHP fayllar bilan beriladi (domen avtomatik).
+RewriteRule ^robots\.txt$ robots.php [L]
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php

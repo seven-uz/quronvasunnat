@@ -23,6 +23,44 @@
 	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="<?= ($_COOKIE['darkMode'] ?? 'off') === 'on' ? '#0F1512' : '#1B7F5E' ?>">
 
+	<?php
+		// ---- SEO / ulashish meta (Open Graph, Twitter, canonical, JSON-LD) ----
+		$__scheme = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+			|| (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https')) ? 'https' : 'http';
+		$__host = $_SERVER['HTTP_HOST'] ?? '';
+		$__base = $__scheme . '://' . $__host;
+		$__canonical = $__base . ($_SERVER['REQUEST_URI'] ?? '/');
+		$__ogImg = $__base . '/assets/images/' . (!empty($headerImg) ? $headerImg : 'favicon/android-icon-192x192.png');
+		$__title = trim(($pageTitle ?? '') . ($siteTitle ?? ''));
+		$__desc = $pageDescription ?? "Qur'on va Sunnat — o'zbek tilida Qur'on (tarjima va tilovat), duolar, hadislar, sunnatlar va Asma ul-Husna.";
+		$__ld = [
+			'@context' => 'https://schema.org',
+			'@type'    => 'WebSite',
+			'name'     => "Qur'on va Sunnat",
+			'url'      => $__base . '/',
+			'inLanguage' => 'uz',
+			'potentialAction' => [
+				'@type'  => 'SearchAction',
+				'target' => $__base . '/search?q={search_term_string}',
+				'query-input' => 'required name=search_term_string',
+			],
+		];
+	?>
+	<meta name="description" content="<?= htmlspecialchars($__desc, ENT_QUOTES, 'UTF-8') ?>">
+	<link rel="canonical" href="<?= htmlspecialchars($__canonical, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Qur'on va Sunnat">
+	<meta property="og:locale" content="uz_UZ">
+	<meta property="og:title" content="<?= htmlspecialchars($__title, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:description" content="<?= htmlspecialchars($__desc, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:url" content="<?= htmlspecialchars($__canonical, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:image" content="<?= htmlspecialchars($__ogImg, ENT_QUOTES, 'UTF-8') ?>">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="<?= htmlspecialchars($__title, ENT_QUOTES, 'UTF-8') ?>">
+	<meta name="twitter:description" content="<?= htmlspecialchars($__desc, ENT_QUOTES, 'UTF-8') ?>">
+	<meta name="twitter:image" content="<?= htmlspecialchars($__ogImg, ENT_QUOTES, 'UTF-8') ?>">
+	<script type="application/ld+json"><?= json_encode($__ld, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
+
 	<!-- Fonts: serif sarlavhalar (Lora) + sans matn (Inter), kirill+lotin qo'llab-quvvatlaydi -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

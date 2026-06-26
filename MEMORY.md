@@ -7,7 +7,7 @@ darhol tushunib, ishni davom ettira olsin. Repozitoriya bilan birga git'da yurad
 > Bu yerda **HECH QACHON** maxfiy ma'lumot (parol, token, real kredensial) yozilmaydi.
 > Ular faqat gitignore qilingan `blocks/db.local.php` va `adm/config.local.php` da turadi.
 
-Yangilangan sana: 2026-06-21.
+Yangilangan sana: 2026-06-26.
 
 ---
 
@@ -83,6 +83,26 @@ konvensiyalar va xavfsizlik qoidalari: [CLAUDE.md](CLAUDE.md). Audit tarixi:
 - **Tekshiruv**: barcha 39 PHP fayl `php-parser` (JS) bilan parse qilindi — 0 xato.
   (Bu muhitda PHP runtime yo'q; sintaksis shu yo'l bilan tekshirildi.)
 
+### 2026-06-26 yangilanishi (avtomatlashtirish, SEO, xavfsizlik, tezlik, namoz vaqtlari)
+- **Ish jarayoni avtomatlashtirildi**: CI lint (`.github/workflows/lint.yml`) har push'da;
+  ixtiyoriy `pre-commit` hook (`.githooks/`, `git config core.hooksPath .githooks`);
+  `.gitattributes` (hook/CI/YAML — LF, qolgani CRLF). Qoida CLAUDE.md/MEMORY.md da aniqlashtirildi.
+- **Tezlik**: `functions.php` `cached_json_get()` — tashqi API (aladhan) javoblari `cache/` da
+  TTL bilan keshlanadi (qisqa timeout; uzilsa eskirgan keshdan). `getArabicDate` shu orqali;
+  `header.php` da hijriy sana qayta yoqildi (endi keshlangan, sekinlatmaydi). `.htaccess` ga
+  statik fayl cache (mod_expires). Eslatma: `blocks/header2.php` hech qayerda ulanmagan (o'lik).
+- **Xavfsizlik**: `.htaccess` xavfsizlik headerlari (X-Frame-Options, X-Content-Type-Options,
+  Referrer-Policy, Permissions-Policy); HSTS va HTTPS-redirect izohda — **SSL tasdiqlangach yoqing**.
+  Buzuq 404 tuzatildi → `error/error.php` (mustaqil, DB'siz). Sessiya cookie'lari
+  HttpOnly+SameSite=Lax (+HTTPS'da Secure) — `brain.php` va admin bootstrap. Admin login
+  throttling: IP bo'yicha 5 urinishdan keyin 5 daqiqa qulf (`cache/` da, fayl asosida).
+- **SEO/ulashish**: `head.php` ga description, canonical, Open Graph, Twitter Card + JSON-LD
+  (WebSite + SearchAction). Dinamik `robots.php` (/robots.txt) va `sitemap.php` (/sitemap.xml —
+  statik sahifalar + suralar/duolar/hadislar/sunnatlar). `.htaccess` da yo'naltirishlar.
+- **Namoz vaqtlari**: `prayertimes.php` endi ishlaydi — 14 shahar tanlash (cookie `PTcity`),
+  aladhan `timingsByCity` (keshlangan), 6 vaqt jadvali + keyingi namoz belgilanadi, xatoda
+  ko'rkam fallback. `kalendar.php` hozircha empty-state (alohida sahifa, kelajak ishi).
+
 ### Admin'ga kirish
 - Standart login/parol: **admin / admin** (faqat dastlabki sozlash uchun).
 - Production'da ALBATTA o'zgartiring: `adm/config.local.example.php` ni `adm/config.local.php`
@@ -101,5 +121,10 @@ konvensiyalar va xavfsizlik qoidalari: [CLAUDE.md](CLAUDE.md). Audit tarixi:
    admin panel orqali yoki mavjud dump'dan yuklash kerak.
 4. **[O'RTA] Qisqa PHP teglari (`<?`)** — hamon `short_open_tag=On` ga bog'liq (ANALYSIS "C").
    Server sozlamasi hujjatlashtirilgan; xohlasa asta `<?php`/`<?=` ga o'tkazish mumkin.
-5. (Ixtiyoriy) `functions.php` dagi `d()/dt()/dwt2()` sana funksiyalari hamon o'xshash —
-   kelajakda umumiy yordamchiga birlashtirish mumkin (`textType2` allaqachon alias qilindi).
+5. **HTTPS/HSTS**: SSL sertifikat o'rnatilgach `.htaccess` dagi izohga olingan HTTPS-redirect
+   va HSTS bloklarini yoqing (lokal OSPanel'da o'chiq qoldiring).
+6. **`cache/` papkasi yoziladigan bo'lsin** (chmod) — aks holda API keshi/login throttling
+   ishlamaydi (sayt baribir ishlaydi, lekin har so'rovda jonli API).
+7. `kalendar.php` hali empty-state — xohlasa hijriy oy taqvimi sahifasiga aylantirish mumkin.
+8. (Ixtiyoriy) `functions.php` dagi `d()/dt()/dwt2()` sana funksiyalari hamon o'xshash —
+   kelajakda umumiy yordamchiga birlashtirish mumkin (`textType2` allaqachon alias qilingan).

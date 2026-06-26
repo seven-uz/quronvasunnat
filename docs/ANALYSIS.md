@@ -249,3 +249,46 @@ Barcha o'zgargan/yangi PHP fayllar `php-parser` (JS) bilan parse qilindi — **3
 ### Hamon ochiq (C)
 - Qisqa PHP teglari (`<?`) — `short_open_tag=On` ga bog'liqlik saqlanib qoldi (hujjatlashtirilgan;
   ixtiyoriy migratsiya). `d()/dt()/dwt2()` sana funksiyalari hamon o'xshash (kelajak refactor).
+
+---
+
+## 2026-06-26: avtomatlashtirish, SEO, xavfsizlik qatlamlari, tezlik, namoz vaqtlari
+
+Barcha o'zgargan/yangi PHP fayllar lokal PHP 8.1 (`-n -d short_open_tag=On -l`) bilan lint
+qilindi — butun loyiha (assets/ tashqari) 0 xato.
+
+### Ish jarayoni avtomatlashtirish
+- `.github/workflows/lint.yml`: har push/PR'da butun loyiha PHP lint (PHP 8.3, short tags).
+- `.githooks/pre-commit`: commit oldidan staged PHP lint (php yo'q bo'lsa bloklamaydi).
+- `.gitattributes`: hook/CI/YAML — LF; qolgan fayllar mavjud CRLF.
+
+### Tezlik
+- `functions.php` `cached_json_get($url,$ttl)`: tashqi API javoblarini `cache/` da fayl
+  keshida saqlaydi (qisqa connect/exec timeout; API uzilsa eskirgan keshdan beradi).
+  `getArabicDate()` shu orqali. `blocks/header.php` da hijriy sana qayta yoqildi (keshlangan).
+- `.htaccess`: statik fayllar (CSS/JS/rasm/shrift/audio) uchun `mod_expires` brauzer keshi.
+- Eslatma: `blocks/header2.php` hech qayerda `include` qilinmagan (o'lik dublikat).
+
+### Xavfsizlik (keyingi qatlam)
+- `.htaccess`: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`,
+  `Permissions-Policy`. HSTS va HTTPS→HTTPS redirect **izohda** — SSL tasdiqlangach yoqiladi
+  (lokal/nuqtasiz domen chetlanadi).
+- Buzuq `ErrorDocument 404 /admin/404.php` (o'chirilgan papka) → barcha 401/403/404/500
+  endi `error/error.php` (mustaqil, DB/curl'siz — 500'da ham ishonchli).
+- Sessiya cookie: `HttpOnly` + `SameSite=Lax` (+HTTPS'da `Secure`) — `brain.php` va
+  `adm/inc/bootstrap.php`.
+- Admin login throttling: IP bo'yicha 5 noto'g'ri urinishdan keyin 5 daqiqa qulf
+  (`cache/login_<md5(ip)>.json`), `usleep` ustiga qo'shimcha.
+
+### SEO / ulashish
+- `blocks/head.php`: `description`, `canonical`, Open Graph, Twitter Card + JSON-LD
+  (`WebSite` + `SearchAction`). Qiymatlar joriy sahifadan (sarlavha/URL/headerImg) olinadi.
+- `robots.php` (→ `/robots.txt`) va `sitemap.php` (→ `/sitemap.xml`): dinamik, domen
+  avtomatik. Sitemap statik sahifalar + `suranames/duolar/hadislar/sunnatlar` id'lari.
+- `.htaccess`: `/robots.txt` va `/sitemap.xml` shu fayllarga yo'naltirildi.
+
+### Namoz vaqtlari
+- `prayertimes.php` (avval empty-state) ishga tushirildi: 14 shahar tanlash (cookie
+  `PTcity`, oq ro'yxat), aladhan `timingsByCity` (keshlangan), 6 vaqt jadvali + keyingi
+  namoz (shahar TZ bo'yicha), milodiy/hijriy sana, xatoda ko'rkam fallback.
+- `kalendar.php` hamon empty-state (kelajakda hijriy taqvim sahifasi qilinishi mumkin).

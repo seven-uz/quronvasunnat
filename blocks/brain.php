@@ -1,5 +1,16 @@
 <?
-if(session_status() === PHP_SESSION_NONE) session_start();
+if(session_status() === PHP_SESSION_NONE){
+	$httpsOn = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+		|| (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+	session_set_cookie_params([
+		'lifetime' => 0,
+		'path'     => '/',
+		'httponly' => true,   // JS cookie'ni o'qiy olmaydi (XSS himoyasi)
+		'samesite' => 'Lax',  // CSRF yuzasini kamaytiradi
+		'secure'   => $httpsOn,
+	]);
+	session_start();
+}
 
 // Muhitga qarab xatolar: lokal/dev'da HAMMA xato ekranda ko‘rinadi (debug uchun),
 // hosting/production'da ko‘rsatilmaydi — faqat log'ga yoziladi.

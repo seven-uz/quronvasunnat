@@ -1,9 +1,9 @@
 RewriteEngine On
 AddDefaultCharset UTF-8
-ErrorDocument 401 /error/401.php
-ErrorDocument 403 /error/403.php
-ErrorDocument 404 /admin/404.php
-ErrorDocument 500 /error/500.php
+ErrorDocument 401 /error/error.php
+ErrorDocument 403 /error/error.php
+ErrorDocument 404 /error/error.php
+ErrorDocument 500 /error/error.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
@@ -26,3 +26,23 @@ RewriteRule ^(.*)$ $1.php
 	ExpiresByType font/ttf "access plus 1 year"
 	ExpiresByType audio/mpeg "access plus 1 year"
 </IfModule>
+
+# ---- Xavfsizlik headerlari ----
+<IfModule mod_headers.c>
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set X-Frame-Options "SAMEORIGIN"
+	Header always set Referrer-Policy "strict-origin-when-cross-origin"
+	Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+	# HSTS — faqat sayt to'liq HTTPS'da ishlaganda yoqing (aks holda foydalanuvchini qulflab qo'yadi):
+	# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
+# ---- HTTPS'ga yo'naltirish ----
+# SSL sertifikat o'rnatilgach yoqing. Lokal OSPanel (nuqtasiz domen/localhost) chetlanadi.
+# <IfModule mod_rewrite.c>
+# 	RewriteCond %{HTTPS} off
+# 	RewriteCond %{HTTP:X-Forwarded-Proto} !https
+# 	RewriteCond %{HTTP_HOST} \.
+# 	RewriteCond %{HTTP_HOST} !^localhost [NC]
+# 	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>

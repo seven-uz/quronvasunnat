@@ -7,24 +7,39 @@ if (is_logged_in()) {
 }
 
 $error = '';
+$lock = login_lock_seconds();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	verify_csrf();
-	$user = trim($_POST['user'] ?? '');
-	$pass = (string)($_POST['pass'] ?? '');
 
-	$userOk = hash_equals(ADMIN_USER, $user);
-	$passOk = password_verify($pass, ADMIN_PASS_HASH);
+	if ($lock > 0) {
+		// Qulflangan — urinishni tekshirmaymiz ham.
+		$error = 'Juda ko\'p urinish. ' . $lock . ' soniyadan keyin qayta urinib ko\'ring.';
+	} else {
+		$user = trim($_POST['user'] ?? '');
+		$pass = (string)($_POST['pass'] ?? '');
 
-	if ($userOk && $passOk) {
-		session_regenerate_id(true);
-		$_SESSION['admin_ok'] = true;
-		redirect('index.php');
+		$userOk = hash_equals(ADMIN_USER, $user);
+		$passOk = password_verify($pass, ADMIN_PASS_HASH);
+
+		if ($userOk && $passOk) {
+			login_reset_throttle();
+			session_regenerate_id(true);
+			$_SESSION['admin_ok'] = true;
+			redirect('index.php');
+		}
+
+		// Aniq xato bermaymiz (login yoki parol — bittasi noto'g'ri).
+		login_register_fail();
+		$lock = login_lock_seconds();
+		$error = 'Login yoki parol noto\'g\'ri.';
+		usleep(300000); // brute-force'ni biroz sekinlashtirish
 	}
+}
 
-	// Aniq xato bermaymiz (login yoki parol — bittasi noto'g'ri).
-	$error = 'Login yoki parol noto\'g\'ri.';
-	usleep(300000); // brute-force'ni biroz sekinlashtirish
+// GET'da ham qulflangan bo'lsa ogohlantiramiz.
+if ($lock > 0 && $error === '') {
+	$error = 'Juda ko\'p urinish. ' . $lock . ' soniyadan keyin qayta urinib ko\'ring.';
 }
 ?><!DOCTYPE html>
 <html lang="uz">

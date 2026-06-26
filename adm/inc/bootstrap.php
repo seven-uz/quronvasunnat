@@ -4,6 +4,15 @@
 // Sessiya, konfiguratsiya, DB ulanishi va yordamchi funksiyalar shu yerda.
 
 if (session_status() === PHP_SESSION_NONE) {
+	$httpsOn = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+		|| (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+	session_set_cookie_params([
+		'lifetime' => 0,
+		'path'     => '/',
+		'httponly' => true,
+		'samesite' => 'Lax',
+		'secure'   => $httpsOn,
+	]);
 	session_start();
 }
 
@@ -100,4 +109,41 @@ function table_columns($db, $table) {
 // Ustun "uzun matn"mi (textarea kerakmi)?
 function is_textarea_col($type) {
 	return (stripos($type, 'text') !== false || stripos($type, 'blob') !== false);
+}
+
+// ---- Kirishni cheklash (brute-force'ga qarshi, IP bo'yicha, fayl asosida) ----
+
+function _login_throttle_file() {
+	$dir = __DIR__ . '/../../cache';
+	if (!is_dir($dir)) @mkdir($dir, 0775, true);
+	$ip = $_SERVER['REMOTE_ADDR'] ?? 'cli';
+	return $dir . '/login_' . md5($ip) . '.json';
+}
+
+// Qulflangan bo'lsa qolgan soniyani, aks holda 0 ni qaytaradi.
+function login_lock_seconds() {
+	$f = _login_throttle_file();
+	if (!is_file($f)) return 0;
+	$d = json_decode(@file_get_contents($f), true);
+	$until = is_array($d) ? (int)($d['lock_until'] ?? 0) : 0;
+	return ($until > time()) ? ($until - time()) : 0;
+}
+
+// Muvaffaqiyatsiz urinishni qayd etadi; $max martadan oshsa $lock soniya qulflaydi.
+function login_register_fail($max = 5, $lock = 300) {
+	$f = _login_throttle_file();
+	$d = is_file($f) ? json_decode(@file_get_contents($f), true) : [];
+	if (!is_array($d)) $d = [];
+	$d['fails'] = (int)($d['fails'] ?? 0) + 1;
+	if ($d['fails'] >= $max) {
+		$d['lock_until'] = time() + $lock;
+		$d['fails'] = 0;
+	}
+	@file_put_contents($f, json_encode($d), LOCK_EX);
+}
+
+// Muvaffaqiyatli kirishda hisoblagichni tozalaydi.
+function login_reset_throttle() {
+	$f = _login_throttle_file();
+	if (is_file($f)) @unlink($f);
 }

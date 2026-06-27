@@ -24,16 +24,18 @@ require 'blocks/header.php';
 			<?php endif; ?>
 				<?php
 				if(isset($_GET['id'])){
-					$_hId = intval($_GET['id']);
+					$_hId    = intval($_GET['id']);
 					$_hTitle = htmlspecialchars(word($row['title']), ENT_QUOTES, 'UTF-8');
 					$_hText  = htmlspecialchars(mb_substr(word($row['text']), 0, 150), ENT_QUOTES, 'UTF-8');
+					$_hShareText = htmlspecialchars(mb_substr(word($row['text']), 0, 200), ENT_QUOTES, 'UTF-8');
 					echo '<div>
 					<p>'.word($row['rivoyatchi'].' '.$row['kunya']) .word('dan rivoyat qilinadi').':</p>
 					<p class="card-text mb-4">'.word($row['titlear']).'</p>
 					<p class="card-text mb-4">'.word($row['textar']).'</p>
 					<p class="card-text mb-4">'.word($row['text']).'</p>
 					<p class="card-text mb-4">'.word($row['mano']).'</p>
-					<button class="btn btn-outline-danger fav-btn mt-2"
+					<div class="d-flex flex-wrap align-items-center mt-2">
+					<button class="btn btn-outline-danger fav-btn mr-2 mb-2"
 						data-type="hadis"
 						data-id="'.$_hId.'"
 						data-title="'.$_hTitle.'"
@@ -41,6 +43,13 @@ require 'blocks/header.php';
 						aria-pressed="false">
 						<i class="far fa-heart" aria-hidden="true"></i> '.word('Sevimliga qo\'shish').'
 					</button>
+					<button class="btn btn-outline-secondary share-btn mb-2"
+						data-title="'.$_hTitle.'"
+						data-text="'.$_hShareText.'"
+						aria-label="'.word('Ulashish').'">
+						<i class="fas fa-share-alt" aria-hidden="true"></i> '.word('Ulashish').'
+					</button>
+					</div>
 					</div>';
 				}else{
 					echo '<div class="row">';
@@ -52,7 +61,7 @@ require 'blocks/header.php';
 								<div class="card-body d-flex flex-column">
 									<h5 class="card-title">'.word($row['title']).'</h5>
 									<p class="card-text mb-4">'.mb_strimwidth(word($row['text']), 0, 80, '...').'</p>
-									<a href="hadis?id='.$row['id'].'" class="btn btn-primary mt-auto align-self-start">'.word('To‘liq ko‘rish').'</a>
+									<a href="hadis?id='.$row['id'].'" class="btn btn-primary mt-auto align-self-start">'.word('To'liq ko'rish').'</a>
 								</div>
 							</div>
 							</div>';

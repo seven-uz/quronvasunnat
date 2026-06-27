@@ -159,7 +159,13 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 					?>
 						<div class="suraItem">
 							<div class="suraItem-media">
-								<!-- <i class="fas fa-share-alt" data-toggle="tooltip" data-placement="top" title="Do'stlar bilan ulashish" id="<?php echo  $share ?>"></i> -->
+								<i class="fas fa-share-alt c-pointer share-btn"
+									data-title="<?= htmlspecialchars($rsn['title'] . ' surasi ' . $rowSura['no'] . '-oyat', ENT_QUOTES, 'UTF-8') ?>"
+									data-text="<?= htmlspecialchars($rowSura['mano'], ENT_QUOTES, 'UTF-8') ?>"
+									data-url="/quron?sura=<?= (int)$rowSura['ns'] ?>#<?= (int)$rowSura['no'] ?>"
+									data-toggle="tooltip" data-placement="top"
+									title="<?= word('Ulashish') ?>"
+									aria-label="<?= word('Ulashish') ?>"></i>
 								<i onclick="copytext('#<?php echo  $copy ?>')" class="fas fa-copy" data-toggle="tooltip" data-placement="top" title="Matnni ko'chirib olish"></i>
 								<i class="far fa-heart c-pointer fav-btn"
 									data-type="ayah"
@@ -286,6 +292,13 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 					</div>
 				</div>
 			<?}elseif(empty($_GET)){ ?>
+				<div class="mb-3 d-flex align-items-center">
+					<input type="text" id="suraFilter" class="form-control"
+						placeholder="<?= word('Sura nomini yoki raqamini kiriting...') ?>"
+						aria-label="<?= word('Sura qidiruvi') ?>"
+						autocomplete="off">
+					<span class="ml-2 mano" id="suraFilterCount" style="white-space:nowrap"></span>
+				</div>
 				<!-- <svg id="play" viewBox="0 0 163 163" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"="0px">
 					<g fill="none">
 						<g  transform="translate(2.000000, 2.000000)" stroke-width="4">
@@ -487,6 +500,30 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
   </div>
 </div>
 <script>
+	// ---- Sura live filter (faqat barcha suralar jadvalida, empty($_GET) holatda) ----
+	document.addEventListener('DOMContentLoaded', function () {
+		var inp = document.getElementById('suraFilter');
+		if (!inp) return;
+		var rows = document.querySelectorAll('.quronFullTable tbody tr');
+		var counter = document.getElementById('suraFilterCount');
+		inp.addEventListener('input', function () {
+			var q = this.value.trim().toLowerCase();
+			var visible = 0;
+			rows.forEach(function (tr) {
+				if (!q) { tr.style.display = ''; visible++; return; }
+				var match = tr.textContent.toLowerCase().indexOf(q) !== -1;
+				tr.style.display = match ? '' : 'none';
+				if (match) visible++;
+			});
+			if (counter) counter.textContent = q ? (visible + ' ta') : '';
+		});
+		inp.addEventListener('keydown', function (e) {
+			if (e.key !== 'Enter') return;
+			var num = parseInt(this.value.trim(), 10);
+			if (num >= 1 && num <= 114) location.href = 'quron?sura=' + num;
+		});
+	});
+
 	// ---- Audio pleer: bir vaqtda faqat bitta ijro, tugach ikonkalar avtomatik tiklanadi ----
 	var _qvsAudio  = null;  // hozir ijro etilayotgan <audio> elementi
 	var _qvsRowId  = null;  // unga tegishli tugmalar row id si

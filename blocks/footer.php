@@ -403,6 +403,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/livesearch.js"></script>
 <script src="assets/js/favourites.js"></script>
+<script src="assets/js/share.js"></script>
 
 <script>
 	$("#contactform").on('submit', (function(el) {

@@ -7,7 +7,7 @@ darhol tushunib, ishni davom ettira olsin. Repozitoriya bilan birga git'da yurad
 > Bu yerda **HECH QACHON** maxfiy ma'lumot (parol, token, real kredensial) yozilmaydi.
 > Ular faqat gitignore qilingan `blocks/db.local.php` va `adm/config.local.php` da turadi.
 
-Yangilangan sana: 2026-06-27.
+Yangilangan sana: 2026-06-27 (kechqurun).
 
 ---
 
@@ -125,6 +125,20 @@ Tugatgach, odatdagidek: MEMORY.md yangilang → commit → `git push` (shu branc
 
 ---
 
+### 2026-06-27 (2) yangilanishi (Sura tez-filtri, Web Share API)
+
+- **Sura tez-filtri** (`quron.php`): "Barcha suralar" tabida jadval ustiga live filter input
+  qo'shildi. Foydalanuvchi sura nomini yozganda jadval qatorlari darhol filterlandi;
+  ko'rinadigan sura soni (`X ta`) real vaqtda yangilandi. Enter + raqam (1-114) yozilsa,
+  bevosita o'sha suraga o'tish.
+- **Web Share API** (`assets/js/share.js`): global `.share-btn[data-title][data-text][data-url?]`
+  pattern. Mobilda `navigator.share()` native dialog; desktop'da clipboard nusxalash + snackbar
+  toast. `blocks/footer.php` ga ulandi (barcha sahifalar uchun).
+- **Ulashish tugmasi** qo'shildi: `duo.php` (id rejim), `hadis.php` (id rejim),
+  `sunnat.php` (id rejim) — har birida fav button yonida `btn-outline-secondary share-btn`.
+- **quron.php per-ayah** ulashish: izohlangan `fa-share-alt` ikonkasi active `.share-btn`
+  ga o'zgartirild — har oyat uchun `data-title`, `data-text`, `data-url` bilan.
+
 ### 2026-06-27 yangilanishi (PWA, Sevimlilar, Audio)
 
 - **PWA**: `manifest.webmanifest` (to'g'ri manifest, ikonkalar, standalone rejim) + `sw.js`
@@ -145,8 +159,9 @@ Tugatgach, odatdagidek: MEMORY.md yangilang → commit → `git push` (shu branc
 
 1. **[KRITIK] Tarqalgan production DB paroli git tarixida qoldi** — hostingda **darhol
    almashtiring**. (Qiymat bu yerda yozilmaydi; eski commit'larda bor.)
-2. Admin CRUD, yangi dizayn, dark mode, qidiruv va `sunnat.php` **haqiqiy MySQL bilan
-   brauzerda tekshirilmadi** (bu muhitda DB yo'q). Egasi serverda bir bor ko'zdan kechirsin.
+2. Admin CRUD, yangi dizayn, dark mode, qidiruv, `sunnat.php` va **yangi sura filtri / share
+   tugmalari** **haqiqiy MySQL bilan brauzerda tekshirilmadi** (bu muhitda DB yo'q).
+   Egasi serverda bir bor ko'zdan kechirsin.
 3. **DB to'ldirish**: `db/schema.sql` faqat struktura. Oyatlar/duolar/hadislar kabi kontentni
    admin panel orqali yoki mavjud dump'dan yuklash kerak.
 4. **[O'RTA] Qisqa PHP teglari (`<?`)** — hamon `short_open_tag=On` ga bog'liq (ANALYSIS "C").

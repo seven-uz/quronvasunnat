@@ -487,80 +487,109 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
   </div>
 </div>
 <script>
-	$(".playSura").on("click", function() {
-		var id = this.id
-		$(this).addClass('d-none');
-		$("#pause" + id).removeClass('d-none');
-	})
-	$(".pauseSura").on("click", function() {
-		var id = $(this).attr("alt")
-		$(this).addClass('d-none');
-		$("#" + id).removeClass('d-none');
-	})
-	$(".loopSura").on("click", function() {
-		var id = $(this).attr("alt")
-		$(this).addClass('d-none');
-		$("#" + id).addClass('d-none');
-		$("#pause" + id).addClass('d-none');
-		$("#stop" + id).removeClass('d-none');
-	})
-	$(".stopSura").on("click", function() {
-		var id = $(this).attr("alt")
-		$(this).addClass('d-none');
-		$("#" + id).removeClass('d-none');
-		$("#loop" + id).removeClass('d-none');
-	})
+	// ---- Audio pleer: bir vaqtda faqat bitta ijro, tugach ikonkalar avtomatik tiklanadi ----
+	var _qvsAudio  = null;  // hozir ijro etilayotgan <audio> elementi
+	var _qvsRowId  = null;  // unga tegishli tugmalar row id si
 
-	$(".playAyah").on("click", function() {
-		var id = this.id
-		$(this).addClass('d-none');
-		$("#pause" + id).removeClass('d-none');
-	})
-	$(".pauseAyah").on("click", function() {
-		var id = $(this).attr("alt")
-		$(this).addClass('d-none');
-		$("#" + id).removeClass('d-none');
-	})
-	$(".loopAyah").on("click", function() {
-		var id = $(this).attr("alt")
-		$(this).addClass('d-none');
-		$("#" + id).addClass('d-none');
-		$("#pause" + id).addClass('d-none');
-		$("#stop" + id).removeClass('d-none');
-	})
-	$(".stopAyah").on("click", function() {
-		var id = $(this).attr("alt")
-		$(this).addClass('d-none');
-		$("#" + id).removeClass('d-none');
-		$("#loop" + id).removeClass('d-none');
-	})
+	// Ikonkalarni boshlang'ich holatga qaytarish
+	function _qvsResetIcons(rowId) {
+		if (!rowId) return;
+		$('#' + rowId).removeClass('d-none');
+		$('#pause' + rowId).addClass('d-none');
+		$('#loop'  + rowId).removeClass('d-none');
+		$('#stop'  + rowId).addClass('d-none');
+	}
 
+	// Avvalgi audioni to'xtatish (yangi audio bilan bir xil bo'lsa o'tkazib yuborish)
+	function _qvsStopPrev(newAudio) {
+		if (_qvsAudio && _qvsAudio !== newAudio) {
+			try { _qvsAudio.pause(); _qvsAudio.currentTime = 0; _qvsAudio.onended = null; } catch(e) {}
+			_qvsResetIcons(_qvsRowId);
+		}
+		_qvsAudio = null;
+		_qvsRowId = null;
+	}
+
+	// Play tugmasini bosish — ikonka va tracker yangilash
+	$(".playSura, .playAyah").on("click", function() {
+		var id = this.id;
+		// Audio element — play/pause/loop/stop bilan bir xil parent ichida siblings
+		var audio = $(this).siblings('audio')[0];
+		_qvsStopPrev(audio);
+		_qvsAudio  = audio || null;
+		_qvsRowId  = id;
+		$(this).addClass('d-none');
+		$('#pause' + id).removeClass('d-none');
+		// Ijro tugagach ikonkalarni avtomatik tiklash
+		if (_qvsAudio) {
+			_qvsAudio.onended = function() {
+				_qvsResetIcons(id);
+				_qvsAudio = null;
+				_qvsRowId = null;
+			};
+		}
+	});
+
+	// Pause — faqat to'xtatish, tracker saqlanadi
+	$(".pauseSura, .pauseAyah").on("click", function() {
+		var id = $(this).attr("alt");
+		$(this).addClass('d-none');
+		$('#' + id).removeClass('d-none');
+	});
+
+	// Loop — yangi audio boshlanganda avvalgisini to'xtatish
+	$(".loopSura, .loopAyah").on("click", function() {
+		var id = $(this).attr("alt");
+		var audio = $(this).siblings('audio')[0];
+		_qvsStopPrev(audio);
+		_qvsAudio = audio || null;
+		_qvsRowId = id;
+		$(this).addClass('d-none');
+		$('#' + id).addClass('d-none');
+		$('#pause' + id).addClass('d-none');
+		$('#stop'  + id).removeClass('d-none');
+		// Loop rejimida audio.onended ishga tushmaydi (audio.loop=true), shuning uchun tozalaymiz
+		if (_qvsAudio) { _qvsAudio.onended = null; }
+	});
+
+	// Stop — inline onclick allaqachon audioga .pause() + .currentTime=0 bergan
+	$(".stopSura, .stopAyah").on("click", function() {
+		var id = $(this).attr("alt");
+		if (_qvsAudio) { try { _qvsAudio.onended = null; } catch(e) {} }
+		_qvsAudio = null;
+		_qvsRowId = null;
+		$(this).addClass('d-none');
+		$('#' + id).removeClass('d-none');
+		$('#loop' + id).removeClass('d-none');
+	});
+
+	// Header (hozir izohda; kelajak uchun saqlanadi)
 	$(".playHeader").on("click", function() {
-		var id = this.id
+		var id = this.id;
 		$(this).addClass('d-none');
-		$("#pause" + id).removeClass('d-none');
-	})
+		$('#pause' + id).removeClass('d-none');
+	});
 	$(".pauseHeader").on("click", function() {
-		var id = $(this).attr("alt")
+		var id = $(this).attr("alt");
 		$(this).addClass('d-none');
-		$("#" + id).removeClass('d-none');
-		$("#stop" + id).addClass('d-none');
-		$("#loop" + id).removeClass('d-none');
-	})
+		$('#' + id).removeClass('d-none');
+		$('#stop' + id).addClass('d-none');
+		$('#loop' + id).removeClass('d-none');
+	});
 	$(".loopHeader").on("click", function() {
-		var id = $(this).attr("alt")
+		var id = $(this).attr("alt");
 		$(this).addClass('d-none');
-		$("#" + id).addClass('d-none');
-		$("#pause" + id).removeClass('d-none');
-		$("#stop" + id).removeClass('d-none');
-	})
+		$('#' + id).addClass('d-none');
+		$('#pause' + id).removeClass('d-none');
+		$('#stop'  + id).removeClass('d-none');
+	});
 	$(".stopHeader").on("click", function() {
-		var id = $(this).attr("alt")
+		var id = $(this).attr("alt");
 		$(this).addClass('d-none');
-		$("#" + id).removeClass('d-none');
-		$("#pause" + id).addClass('d-none');
-		$("#loop" + id).removeClass('d-none');
-	})
+		$('#' + id).removeClass('d-none');
+		$('#pause' + id).addClass('d-none');
+		$('#loop'  + id).removeClass('d-none');
+	});
 	// $(window).scroll(function() {
 	// 	var scrolTop = $(window).scrollTop()
 	// 	var documentHeight = $(document).height()

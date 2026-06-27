@@ -161,6 +161,15 @@ $duolar = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 							<div class="suraItem-media">
 								<!-- <i class="fas fa-share-alt" data-toggle="tooltip" data-placement="top" title="Do'stlar bilan ulashish" id="<?php echo  $share ?>"></i> -->
 								<i onclick="copytext('#<?php echo  $copy ?>')" class="fas fa-copy" data-toggle="tooltip" data-placement="top" title="Matnni ko'chirib olish"></i>
+								<i class="far fa-heart c-pointer fav-btn"
+									data-type="ayah"
+									data-id="<?= $rowSura['ns'] ?>-<?= $rowSura['no'] ?>"
+									data-title="<?= htmlspecialchars($rsn['title'] . ' ' . $rowSura['no'] . '-oyat', ENT_QUOTES, 'UTF-8') ?>"
+									data-text="<?= htmlspecialchars(mb_substr($rowSura['mano'], 0, 150), ENT_QUOTES, 'UTF-8') ?>"
+									data-toggle="tooltip" data-placement="top"
+									title="<?= word('Sevimliga qo\'shish') ?>"
+									aria-pressed="false"
+									aria-label="<?= word('Sevimliga qo\'shish') ?>"></i>
 								<i onclick="document.getElementById('oyat<?php echo  $rowSura['ns'] . $rowSura['no'] ?>').play();document.getElementById('oyat<?php echo  $rowSura['ns'] . $rowSura['no'] ?>').loop = false;" class="fas fa-play c-pointer playAyah" id="<?php echo  $rowSura['id'] ?>" data-toggle="tooltip" data-placement="top" title="Eshitish"></i>
 								<i onclick="document.getElementById('oyat<?php echo  $rowSura['ns'] . $rowSura['no'] ?>').pause();document.getElementById('oyat<?php echo  $rowSura['ns'] . $rowSura['no'] ?>').loop = false;" class="fas fa-pause c-pointer d-none pauseAyah" id="pause<?php echo  $rowSura['id'] ?>" alt="<?php echo  $rowSura['id'] ?>" data-toggle="tooltip" data-placement="top" title="To'xtatish"></i>
 								<i onclick="document.getElementById('oyat<?php echo  $rowSura['ns'] . $rowSura['no'] ?>').play();document.getElementById('oyat<?php echo  $rowSura['ns'] . $rowSura['no'] ?>').loop = true;" class="fas fa-sync-alt c-pointer loopAyah" id="loop<?php echo  $rowSura['id'] ?>" alt="<?php echo  $rowSura['id'] ?>" data-toggle="tooltip" data-placement="top" title="Qayta-qayta eshitish"></i>

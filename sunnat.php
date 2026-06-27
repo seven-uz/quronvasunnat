@@ -24,7 +24,17 @@ require 'blocks/header.php';
 							<p><?php echo word($row['text']) ?></p>
 						</div>
 					</div>
-					<a href="sunnat" class="btn btn-outline-primary mt-4"><i class="fas fa-arrow-left mr-2"></i><?php echo word('Barcha sunnatlar') ?></a>
+					<div class="mt-4 d-flex gap-3 flex-wrap align-items-center">
+						<a href="sunnat" class="btn btn-outline-primary"><i class="fas fa-arrow-left mr-2"></i><?php echo word('Barcha sunnatlar') ?></a>
+						<button class="btn btn-outline-danger fav-btn"
+							data-type="sunnat"
+							data-id="<?= $sid ?>"
+							data-title="<?= htmlspecialchars(word($row['title']), ENT_QUOTES, 'UTF-8') ?>"
+							data-text="<?= htmlspecialchars(mb_substr(word($row['text']), 0, 150), ENT_QUOTES, 'UTF-8') ?>"
+							aria-pressed="false">
+							<i class="far fa-heart" aria-hidden="true"></i> <?= word('Sevimliga qo\'shish') ?>
+						</button>
+					</div>
 				<?php else: ?>
 					<div class="empty-state">
 						<i class="fas fa-mosque"></i>

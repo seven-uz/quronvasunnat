@@ -24,12 +24,23 @@ require 'blocks/header.php';
 			<?php endif; ?>
 				<?php
 				if(isset($_GET['id'])){
+					$_hId = intval($_GET['id']);
+					$_hTitle = htmlspecialchars(word($row['title']), ENT_QUOTES, 'UTF-8');
+					$_hText  = htmlspecialchars(mb_substr(word($row['text']), 0, 150), ENT_QUOTES, 'UTF-8');
 					echo '<div>
 					<p>'.word($row['rivoyatchi'].' '.$row['kunya']) .word('dan rivoyat qilinadi').':</p>
 					<p class="card-text mb-4">'.word($row['titlear']).'</p>
 					<p class="card-text mb-4">'.word($row['textar']).'</p>
 					<p class="card-text mb-4">'.word($row['text']).'</p>
 					<p class="card-text mb-4">'.word($row['mano']).'</p>
+					<button class="btn btn-outline-danger fav-btn mt-2"
+						data-type="hadis"
+						data-id="'.$_hId.'"
+						data-title="'.$_hTitle.'"
+						data-text="'.$_hText.'"
+						aria-pressed="false">
+						<i class="far fa-heart" aria-hidden="true"></i> '.word('Sevimliga qo\'shish').'
+					</button>
 					</div>';
 				}else{
 					echo '<div class="row">';

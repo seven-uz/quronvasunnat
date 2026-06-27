@@ -82,6 +82,12 @@
 				<a class="nav-link" href="asmaulhusna">
 					<?php echo word('Asma ul-Husna') ?></a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="sevimlilar" aria-label="<?php echo word('Sevimlilar') ?>">
+					<i class="far fa-heart" aria-hidden="true"></i>
+					<span class="d-none d-xl-inline ml-1"><?php echo word('Sevimlilar') ?></span>
+				</a>
+			</li>
 		</ul>
 	</div>
 </nav>

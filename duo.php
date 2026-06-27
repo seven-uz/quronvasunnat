@@ -29,6 +29,14 @@ include 'blocks/header.php';
 				<p style="text-align: right;"><?php echo $rowDuo['textar'] ?></p>
 				<p><?php echo word($rowDuo['text']) ?></p>
 				<p><?php echo word($rowDuo['mano']) ?></p>
+				<button class="btn btn-outline-danger fav-btn mt-3"
+					data-type="duo"
+					data-id="<?= intval($rowDuo['id']) ?>"
+					data-title="<?= htmlspecialchars(word($rowDuo['title']), ENT_QUOTES, 'UTF-8') ?>"
+					data-text="<?= htmlspecialchars(mb_substr(word($rowDuo['mano']), 0, 150), ENT_QUOTES, 'UTF-8') ?>"
+					aria-pressed="false">
+					<i class="far fa-heart" aria-hidden="true"></i> <?= word('Sevimliga qo\'shish') ?>
+				</button>
 			</div>
 		</section>
 	<?php else: ?>

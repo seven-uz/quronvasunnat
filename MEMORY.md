@@ -7,7 +7,7 @@ darhol tushunib, ishni davom ettira olsin. Repozitoriya bilan birga git'da yurad
 > Bu yerda **HECH QACHON** maxfiy ma'lumot (parol, token, real kredensial) yozilmaydi.
 > Ular faqat gitignore qilingan `blocks/db.local.php` va `adm/config.local.php` da turadi.
 
-Yangilangan sana: 2026-06-26.
+Yangilangan sana: 2026-06-27.
 
 ---
 
@@ -124,6 +124,22 @@ Tugatgach, odatdagidek: MEMORY.md yangilang → commit → `git push` (shu branc
   `php -r "echo password_hash('YANGI_PAROL', PASSWORD_DEFAULT);"`
 
 ---
+
+### 2026-06-27 yangilanishi (PWA, Sevimlilar, Audio)
+
+- **PWA**: `manifest.webmanifest` (to'g'ri manifest, ikonkalar, standalone rejim) + `sw.js`
+  (App Shell kesh: statik cache-first, dinamik network-first, admin/metrika keshlanmaydi).
+  `blocks/head.php`: manifest.json → `/manifest.webmanifest`, SW registration skripti.
+  `.htaccess`: `AddType application/manifest+json .webmanifest`.
+- **Sevimlilar (Bookmarks)**: `assets/js/favourites.js` — localStorage asosida toggle/has/add/remove
+  API, `.fav-btn[data-type][data-id]` avtomatik ikonka va aria yangilash, `favPop` animatsiya.
+  `sevimlilar.php` — saqlangan elementlar sahifasi (JS render), o'chirish, bo'sh holat.
+  Fav tugma: `duo.php` (id=), `hadis.php` (id=), `sunnat.php` (id=), `quron.php` (har oyat).
+  `blocks/nav.php` ga yurak ikonkasi + havola; `blocks/footer.php` ga script ulandi.
+  `assets/css/style.css` ga `.fav-btn`, `@keyframes favPop`, dark mode uslublari.
+- **Audio pleer**: `quron.php` JS qayta yozildi — `_qvsStopPrev()` bir vaqtda bitta audio
+  (yangi boshlanganda avvalgisi to'xtatiladi), `ended` hodisasi ikonkalarni avtomatik tiklaydi.
+  DOM sibling traversal bilan audio topiladi (`$(this).siblings('audio')[0]`).
 
 ## Keyingi qadamlar / ochiq ishlar
 

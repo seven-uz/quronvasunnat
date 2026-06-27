@@ -12,6 +12,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php
 
+# ---- PWA: MIME turlar ----
+AddType application/manifest+json .webmanifest
+
 # ---- Statik fayllar uchun brauzer keshi (tezlik) ----
 # CSS/JS versiyalangan (?v=) — uzoq kesh xavfsiz; o'zgarsa versiyani oshiring.
 <IfModule mod_expires.c>

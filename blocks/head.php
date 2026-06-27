@@ -18,7 +18,7 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-	<link rel="manifest" href="assets/images/favicon/manifest.json">
+	<link rel="manifest" href="/manifest.webmanifest">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="<?= ($_COOKIE['darkMode'] ?? 'off') === 'on' ? '#0F1512' : '#1B7F5E' ?>">
@@ -104,6 +104,16 @@
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/97104503" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
+	<!-- PWA: Service Worker ro'yxatga olish -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('/sw.js').catch(function(err) {
+					console.warn('SW ro\'yxatdan o\'tmadi:', err);
+				});
+			});
+		}
+	</script>
 </head>
 
 <body class="<?= ($_COOKIE['darkMode'] ?? 'off') === 'on' ? 'darkMode' : '' ?>">

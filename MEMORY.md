@@ -38,6 +38,20 @@ konvensiyalar va xavfsizlik qoidalari: [CLAUDE.md](CLAUDE.md). Audit tarixi:
 - **Bu muhitda MySQL/OSPanel ishlamaydi** — UI va DB so'rovlari brauzerda tekshirilmaydi.
   Kod ehtiyotkorlik bilan yoziladi, egasi haqiqiy serverda tekshiradi.
 - Repo: `github.com/seven-uz/quronvasunnat`. Asosiy branch: `main`.
+- **Faol ishchi branch: `claude/elegant-herschel-33c6c6`** — barcha so'nggi ish shu yerda,
+  origin'ga push qilingan. `main` ga hali merge qilinmagan.
+
+### Davom ettirish (boshqa kompyuterda)
+```
+git clone https://github.com/seven-uz/quronvasunnat.git
+cd quronvasunnat
+git checkout claude/elegant-herschel-33c6c6      # faol branch
+git pull                                          # eng so'nggi holat
+cp blocks/db.local.php.example blocks/db.local.php # DB parolini kiriting (gitignore)
+cp adm/config.local.example.php adm/config.local.php # admin parolini o'zgartiring
+git config core.hooksPath .githooks               # (ixtiyoriy) commit oldidan lint
+```
+Tugatgach, odatdagidek: MEMORY.md yangilang → commit → `git push` (shu branchga).
 
 ---
 

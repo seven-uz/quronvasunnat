@@ -13,7 +13,6 @@ if(!isset($_COOKIE['headerImg'])){$_COOKIE['headerImg'] = "on";}
 if(!isset($_COOKIE['sendToTg'])) {
 	setcookie("sendToTg", time(), time()+60*60*24);
 }elseif($_COOKIE['sendToTg'] > time() + (60 * 60 * 24)){
-    echo "Eskidan ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi ketdi Eskidan ketdi";
     setcookie("sendToTg", time(), time()+(60*60*24));
 }
 

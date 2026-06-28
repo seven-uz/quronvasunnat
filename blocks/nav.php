@@ -30,6 +30,8 @@
 						<?php echo word('Iymon'); ?></a>
 					<a class="dropdown-item" href="namoz">
 						<?php echo word('Namoz'); ?></a>
+					<a class="dropdown-item text-primary" href="namoz-vaqtlari">
+						<i class="fas fa-clock mr-1"></i><?php echo word('Namoz vaqtlari'); ?></a>
 					<a class="dropdown-item" href="roza">
 						<?php echo word('Roza'); ?></a>
 					<a class="dropdown-item" href="zakot">

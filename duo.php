@@ -8,7 +8,8 @@ $headerImg = "dua.webp";
 $headerColor = "linear-gradient(143deg, rgba(0,0,0,1) 0%, rgba(91,65,40,1) 100%);";
 
 if(isset($_GET['id'])){
-	$duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE id = '{$_GET['id']}'");
+	$duoId = intval($_GET['id']);
+	$duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE id = $duoId");
 	$rowDuo = $duoDaily->fetch_assoc();
 }else{
 	$duoDaily = mysqli_query($db, "SELECT * FROM duolar WHERE type=1");
@@ -432,25 +433,17 @@ include 'blocks/header.php';
 		<section class="section">
 			<div class="container">
 				<div class="d-flex justify-content-between">
-					<h4><?php echo $rowDuo['title'] ?></h4>
-					<h4 style="text-align: right;"><?php echo $rowDuo['titlear'] ?></h4>
+					<h4><?php echo word($rowDuo['title']) ?></h4>
+					<h4 style="text-align: right;"><?php echo h($rowDuo['titlear']) ?></h4>
 				</div>
-				<p style="text-align: right;"><?php echo $rowDuo['textar'] ?></p>
-				<p><?php echo $rowDuo['text'] ?></p>
-				<p><?php echo $rowDuo['mano'] ?></p>
+				<p style="text-align: right;"><?php echo h($rowDuo['textar']) ?></p>
+				<p><?php echo word($rowDuo['text']) ?></p>
+				<p><?php echo word($rowDuo['mano']) ?></p>
 			</div>
 		</section>
 	<?php else: ?>
 		<section class="section" id="lastDuo">
 			<?
-				$result51 = mysqli_query($db,get('*','duolar'));
-				while ($row51 = $result51->fetch_assoc()){
-					$typeQ = mysqli_query($db,getAll("types WHERE id=$row51[type]"));
-
-				}
-
-				$update = mysqli_query($db,update('duolar','id=3','id=14'));
-
 				$result5 = mysqli_query($db,getAllOrderLimit('duolar','id',9));
 				$row5 = mysqli_fetch_assoc($result5);
 			?>

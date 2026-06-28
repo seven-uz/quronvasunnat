@@ -11,6 +11,15 @@ function word($value){
     }
 }
 
+/**
+ * h() — HTML chiqarish uchun xavfsiz XSS escape yordamchisi.
+ * htmlspecialchars($v, ENT_QUOTES, 'UTF-8') ning qisqartmasi.
+ * Foydalanish: echo h($row['title']);
+ */
+function h($value) {
+    return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
+}
+
 function shareTg($url, $text) {
   $share_url = 'https://t.me/share/url?url='.rawurlencode($url).'&text='.rawurlencode($text);
   return "$share_url";

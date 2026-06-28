@@ -23,6 +23,27 @@
 	<meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
+	<?php
+		// SEO meta teglar
+		$__title = trim(($pageTitle ?? '') . ($siteTitle ?? ''));
+		$__desc  = $pageDescription ?? "Qur'on va Sunnat — o'zbek tilida Qur'on tarjimasi va tilovati, duolar, hadislar, sunnatlar va Asma ul-Husna.";
+		$__scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+		$__base = $__scheme . '://' . ($_SERVER['HTTP_HOST'] ?? '');
+		$__canonical = $__base . ($_SERVER['REQUEST_URI'] ?? '/');
+		$__ogImg = $__base . '/assets/images/' . (!empty($headerImg) ? $headerImg : 'favicon/android-icon-192x192.png');
+	?>
+	<meta name="description" content="<?= htmlspecialchars($__desc, ENT_QUOTES, 'UTF-8') ?>">
+	<link rel="canonical" href="<?= htmlspecialchars($__canonical, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Qur'on va Sunnat">
+	<meta property="og:title" content="<?= htmlspecialchars($__title, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:description" content="<?= htmlspecialchars($__desc, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:url" content="<?= htmlspecialchars($__canonical, ENT_QUOTES, 'UTF-8') ?>">
+	<meta property="og:image" content="<?= htmlspecialchars($__ogImg, ENT_QUOTES, 'UTF-8') ?>">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="<?= htmlspecialchars($__title, ENT_QUOTES, 'UTF-8') ?>">
+	<meta name="twitter:description" content="<?= htmlspecialchars($__desc, ENT_QUOTES, 'UTF-8') ?>">
+
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
 

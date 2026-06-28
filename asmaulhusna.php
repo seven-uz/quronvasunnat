@@ -25,10 +25,10 @@ include 'blocks/header.php';
 					$n2 = 1;
 					while($row = $asmaulhusna->fetch_assoc()){
 						echo '
-						<div class="content-item" id="'.$row['title'].'">
+						<div class="content-item" id="'.htmlspecialchars($row['title'], ENT_QUOTES, 'UTF-8').'">
 							<div class="head-item d-flex justify-content-between">
 								<h4>'.$n++.'. '.word($row['title']).'</h4>
-								<h4 class="arabicFont">'.arabicNumbers($n2++).'. '.$row['titlear'].'</h4>
+								<h4 class="arabicFont">'.arabicNumbers($n2++).'. '.h($row['titlear']).'</h4>
 							</div>
 							<div class="body-item">
 							<p>'.word($row['text']).'</p>
@@ -44,7 +44,7 @@ include 'blocks/header.php';
 									$thisval = strstr($value, ':', true);
 									$thisvalafter = strstr($value, ':');
 									$thisvalafter = substr($thisvalafter, 1);
-									$thisquery = mysqli_query($db, "SELECT * FROM suranames WHERE id='$thisval'");
+									$thisquery = mysqli_query($db, "SELECT * FROM suranames WHERE id=".intval($thisval));
 									$myrow = $thisquery->fetch_assoc();
 									$myresult .= '<a href="quron?sura='.$myrow['id'].'#'.$thisvalafter.'">'.word($myrow['title'].'['.$thisvalafter.']').'</a>, ';
 								}

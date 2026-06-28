@@ -7,7 +7,7 @@ darhol tushunib, ishni davom ettira olsin. Repozitoriya bilan birga git'da yurad
 > Bu yerda **HECH QACHON** maxfiy ma'lumot (parol, token, real kredensial) yozilmaydi.
 > Ular faqat gitignore qilingan `blocks/db.local.php` va `adm/config.local.php` da turadi.
 
-Yangilangan sana: 2026-06-27 (kechqurun).
+Yangilangan sana: 2026-06-28.
 
 ---
 
@@ -124,6 +124,13 @@ Tugatgach, odatdagidek: MEMORY.md yangilang → commit → `git push` (shu branc
   `php -r "echo password_hash('YANGI_PAROL', PASSWORD_DEFAULT);"`
 
 ---
+
+### 2026-06-28 yangilanishi (Kunlik oyat/duo/sunnat)
+
+- **Asosiy sahifada "Kunlik kontent"** (`index.php`): 3 kartadagi `mt_rand()` o'rniga
+  `abs(crc32(date('Y-m-d').'tip')) % max(1, $total)` — bir kun davomida bir xil kontent,
+  ertaga avtomatik yangi. Sarlavhalar: "Tasodifiy oyat/duo/sunnat" → "Kunlik oyat/duo/sunnat".
+  Foydalanuvchi kiritmasi yo'q, SQL safe (PHP hisoblangan butun son LIMIT ga tushadi).
 
 ### 2026-06-27 (2) yangilanishi (Sura tez-filtri, Web Share API)
 

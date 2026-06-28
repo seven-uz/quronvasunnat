@@ -26,7 +26,7 @@ $randomAuH = rtrim($randomAuH, ',');
 				<div class="col-md-4">
 					<div class="card w-100">
 						<?$getSura = mysqli_query($db, "SELECT count(*) FROM suralar");
-						$suraRand = mt_rand(0,$getSura->fetch_row()[0] - 1);
+						$suraRand = abs(crc32(date('Y-m-d').'oyat')) % max(1, intval($getSura->fetch_row()[0]));
 						$sura = mysqli_query($db, "SELECT * FROM suralar LIMIT $suraRand, 1");
 						$suraRow = $sura->fetch_assoc();
 						$ns = str_pad((string)$suraRow['ns'], 3, '0', STR_PAD_LEFT);
@@ -36,7 +36,7 @@ $randomAuH = rtrim($randomAuH, ',');
 						?>
 						<div class="card-header p-2 d-flex justify-content-between">
 							<span class="btn btn-transparent disabled mr-5">
-								<?php echo word('Tasodifiy oyat') ?>
+								<?php echo word('Kunlik oyat') ?>
 							</span>
 							<div class="randBtns">
 								<i onclick="document.getElementById('s<?= $suraRow['ns'] ?>o<?= $suraRow['no'] ?>').play();document.getElementById('s<?= $suraRow['ns'] ?>o<?= $suraRow['no'] ?>').loop = false;" class="fas fa-play" id="playRS" data-toggle="tooltip" data-placement="top" title="<?php echo word('Eshitish') ?>"></i>
@@ -69,13 +69,13 @@ $randomAuH = rtrim($randomAuH, ',');
 				<div class="col-md-4 py-md-0 py-4">
 					<div class="card w-100">
 						<?$getDuo = mysqli_query($db, "SELECT count(*) FROM duolar");
-						$duoRand = mt_rand(0,$getDuo->fetch_row()[0] - 1);
+						$duoRand = abs(crc32(date('Y-m-d').'duo')) % max(1, intval($getDuo->fetch_row()[0]));
 						$duo = mysqli_query($db, "SELECT * FROM duolar LIMIT $duoRand, 1");
 						$duoRow = $duo->fetch_assoc();
 						?>
 						<div class="card-header d-flex justify-content-between">
 							<span class="btn btn-transparent disabled mr-5">
-								<?php echo word('Tasodifiy duo') ?></span>
+								<?php echo word('Kunlik duo') ?></span>
 							<div class="randBtns">
 								<i onclick="document.getElementById('d<?= $duoRow['id'] ?>').play();document.getElementById('d<?= $duoRow['id'] ?>').loop = false;" class="fas fa-play" id="playRD" data-toggle="tooltip" data-placement="top" title="<?php echo word('Eshitish') ?>"></i>
 								<i onclick="document.getElementById('d<?= $duoRow['id'] ?>').pause();document.getElementById('d<?= $duoRow['id'] ?>').loop = false;" class="fas fa-pause d-none" id="pauseRD" data-toggle="tooltip" data-placement="top" title="<?php echo word('Qotirish') ?>"></i>
@@ -111,14 +111,14 @@ $randomAuH = rtrim($randomAuH, ',');
 						$sunnatCount = $getSunnat->fetch_row()[0];
 						if($sunnatCount > 0){
 
-							$sunnatRand = mt_rand(0,$sunnatCount - 1);
+							$sunnatRand = abs(crc32(date('Y-m-d').'sunnat')) % max(1, $sunnatCount);
 							$sunnat = mysqli_query($db, "SELECT * FROM sunnatlar LIMIT $sunnatRand, 1");
 							$sunnatRow = $sunnat->fetch_assoc();
 
 							?>
 							<div class="card-header d-flex justify-content-between">
 								<span class="btn btn-transparent disabled mr-5">
-									<?php echo word('Tasodifiy sunnat') ?></span>
+									<?php echo word('Kunlik sunnat') ?></span>
 								<div class="randBtns">
 									<i class="fas fa-share-alt" id="shareAyah" data-toggle="tooltip" data-placement="top" title="<?php echo word('Do‘stlar bilan baham ko‘rish') ?>"></i>
 									<i onclick="copytext('#copyRSun<?= $sunnatRow['id'] ?>')" class="fas fa-copy" data-toggle="tooltip" data-placement="top" title="<?php echo word('Matnni ko‘chirib olish') ?>"></i>

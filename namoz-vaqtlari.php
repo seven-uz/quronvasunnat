@@ -9,23 +9,9 @@ $pageDescription = "O'zbekiston shaharlari uchun bugungi namoz vaqtlari: Bomdod,
 $headerImg = "namaz.webp";
 $headerColor = "linear-gradient(to bottom, #732200, #7f2a02, #8c3203, #983a04, #a54204, #a14006, #9e3e07, #9a3c09, #85300b, #70250a, #5c1b07, #481100);";
 
-// O'zbekiston shaharlari: kenglik, uzunlik. Vaqt mintaqasi UTC+5.
-$cities = array(
-    'toshkent'  => array('name' => 'Toshkent',   'lat' => 41.2995, 'lng' => 69.2401),
-    'samarqand' => array('name' => 'Samarqand',  'lat' => 39.6270, 'lng' => 66.9750),
-    'buxoro'    => array('name' => 'Buxoro',     'lat' => 39.7680, 'lng' => 64.4210),
-    'andijon'   => array('name' => 'Andijon',    'lat' => 40.7830, 'lng' => 72.3500),
-    'namangan'  => array('name' => 'Namangan',   'lat' => 40.9983, 'lng' => 71.6726),
-    'fargona'   => array('name' => 'Farg‘ona',   'lat' => 40.3864, 'lng' => 71.7864),
-    'qarshi'    => array('name' => 'Qarshi',     'lat' => 38.8606, 'lng' => 65.7891),
-    'nukus'     => array('name' => 'Nukus',      'lat' => 42.4600, 'lng' => 59.6100),
-    'urganch'   => array('name' => 'Urganch',    'lat' => 41.5500, 'lng' => 60.6310),
-    'termiz'    => array('name' => 'Termiz',     'lat' => 37.2242, 'lng' => 67.2783),
-    'jizzax'    => array('name' => 'Jizzax',     'lat' => 40.1158, 'lng' => 67.8422),
-    'navoiy'    => array('name' => 'Navoiy',     'lat' => 40.0844, 'lng' => 65.3792),
-    'guliston'  => array('name' => 'Guliston',   'lat' => 40.4897, 'lng' => 68.7842),
-    'nurafshon' => array('name' => 'Nurafshon',  'lat' => 41.0167, 'lng' => 69.3500),
-);
+// O'zbekiston shaharlari (kenglik, uzunlik) — qibla sahifasi bilan umumiy manba.
+// Vaqt mintaqasi UTC+5.
+$cities = require 'blocks/cities.php';
 
 // Tanlangan shahar (xavfsiz)
 $cityKey = isset($_GET['shahar']) && isset($cities[$_GET['shahar']]) ? $_GET['shahar'] : 'toshkent';
